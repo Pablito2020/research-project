@@ -30,7 +30,7 @@ Aquest TdR tractarà de l'aplicació del llenguatge de programació Java en les 
 - [ ] 2.3.2 ByteCode Java
 - [ ] 2.3.3 Compilador Javac
 - [ ] 2.3.4 Java Virtual Machine (JVM) 
-- [ ] 2.3 Versions del Java JDK ( Possiblement eliminat, depén de la teoria) 
+- [ ] 2.4 Versions del Java JDK ( Possiblement eliminat, depén de la teoria) 
 
 ## 3. Aplicació del llenguatge Java en Android :
 - [ ] 3.1 Packages de Java en Android
