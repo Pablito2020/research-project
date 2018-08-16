@@ -24,8 +24,8 @@ Aquest TdR tractarà de l'aplicació del llenguatge de programació Java en les 
 ## 2. Introducció a Java:
 - [x] 2.1 Definició i característiques del llenguatge de programació Java
 - [x] 2.1.1 Programació dedicada a objectes (POO)
-- [ ] 2.2 Introducció a la forma d'una aplicació programada en java
-- [ ] 2.3 Introducció a la creació de l'aplicació java a partir del codi
+- [ ] 2.2 Introducció a l'ecosistema del codi de java
+- [ ] 2.3 Introducció a la compilació del codi java
 - [ ] 2.3.1 Java JDK
 - [ ] 2.3.2 ByteCode Java
 - [ ] 2.3.3 Compilador Javac
