@@ -22,9 +22,10 @@ Com funciona Android Gradle (interesant per a la pràctica):
 ByteCode:
    · https://es.wikipedia.org/wiki/Compilador#Etapas_del_proceso
    · https://es.wikipedia.org/wiki/M%C3%A1quina_virtual_Java
-MIRAR REFERÈNCIES.
+             MIRAR REFERÈNCIES.
 
-
+Bytecode (explicat a "l'inversa" però pot servir per explicar el procés normalment: 
+   · https://resources.infosecinstitute.com/java-bytecode-reverse-engineering/#gref
 
 
 PERSONES CITADES :
