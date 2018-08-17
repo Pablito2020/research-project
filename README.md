@@ -26,9 +26,9 @@ Aquest TdR tractarà de l'aplicació del llenguatge de programació Java en les 
 - [x] 2.1.1 Programació dedicada a objectes (POO)
 - [x] 2.2 Introducció a l'ecosistema del codi de java
 - [x] 2.2.1 Java JDK
-- [ ] 2.2.2 Versions del Java JDK
-- [ ] 2.3 Creació de l'aplicació a partir del codi font
-- [ ] 2.3.1 Procés de compilació i execució d’una aplicació escrita en java 
+- [x] 2.2.2 Aplicacions incloses en el JDK
+- [x] 2.3 Creació de l'aplicació a partir del codi font
+- [ ] 2.3.1 Procés de compilació i execució d’una aplicació escrita en java
 
 ## 3. Aplicació del llenguatge Java en Android :
 - [ ] 3.1 Packages de Java en Android
@@ -37,7 +37,6 @@ Aquest TdR tractarà de l'aplicació del llenguatge de programació Java en les 
 ## 5. Android Studio:
 - [ ] 5.1 Introducció de Android Studio
 - [ ] 5.2 Introducció al compilador Gradle
-- [ ] 5.3 
 
 ## 6. Part Visual d'una aplicació amb Android Studio:
 - [ ] Introducció del llenguatge XML adaptat a Android Studio
