@@ -1,0 +1,47 @@
+PART TEÒRICA:
+
+Programació orientada a objectes (POO) :
+   · https://scholar.google.es/scholar?biw=1366&bih=662&um=1&ie=UTF-8&lr&q=related:ewpZOUbAU-Q2FM:scholar.google.com/
+   · http://luis.izqui.org/resources/ProgOrientadaObjetos.pdf
+   · http://www.revistas.utp.ac.pa/index.php/ric/article/view/1750/2491
+
+Adaptació de Java a Android (important per a fer l'app):
+   · https://developer.android.com/reference/packages  (libreríes de Android)
+   · https://developer.android.com/guide/ (guía general de gràfics i d'activitats)
+
+Java (programa en general, història, etc.): ---> pot ser útil per la teoría
+   · http://www.ciberaula.com/articulo/palabras_reservadas_java
+   · http://www.ciberaula.com/articulo/introduccion_java
+
+GNU licence --> pot ser útil per la teoría
+   · https://smaldone.com.ar/opinion/docs/slvssp.html 
+
+Com funciona Android Gradle (interesant per a la pràctica):
+   · https://medium.com/mindorks/compilers-in-android-studio-3-2-cc7e68446d09
+
+ByteCode:
+   · https://es.wikipedia.org/wiki/Compilador#Etapas_del_proceso
+   · https://es.wikipedia.org/wiki/M%C3%A1quina_virtual_Java
+MIRAR REFERÈNCIES.
+
+
+
+
+PERSONES CITADES :
+   · Elivar Largo:
+     Linkedin: https://www.linkedin.com/in/elivarlargo/
+     Informació: https://www.ecodeup.com/4-elementos-claves-para-entender-la-programacion-orientada-objetos-en-java/
+     
+     
+PART PRÀCTICA:
+Notificacions (programació d'aquestes):
+   · https://developer.android.com/guide/topics/ui/notifiers/notifications
+
+Adaptative Icon Design ( Necessari per a l'implementació d'android Oreo):
+   · https://developer.android.com/guide/practices/ui_guidelines/icon_design_adaptive
+
+Floating Action Button:
+   · https://developer.android.com/guide/topics/ui/floating-action-button
+
+Crear Calculadora amb l'ajuda del Fork de Dipharth Shah, després cambiar icones, tema, etc.
+

@@ -1,0 +1,4 @@
+Imatge 1.2: 
+  · Autor codi: SimpleMobileTools
+  · Repositori: Simple-Calculator
+  · Link: https://github.com/SimpleMobileTools/Simple-Calculator

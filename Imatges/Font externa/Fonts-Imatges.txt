@@ -1,0 +1,7 @@
+Arxiu: GNU licence logo
+   Format: PNG
+   Font:https://www.gnu.org/
+
+Arxiu: java-logo
+   Format: jpg
+   Font: https://www.java.com/es/
