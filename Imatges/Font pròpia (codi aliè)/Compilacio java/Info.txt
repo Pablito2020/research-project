@@ -1,0 +1,3 @@
+Les captures i la compilacio ha estat feta per mi, el codi ha estat agafat de la pagina web de java Oracle.
+Link del codi: https://www.oracle.com/technetwork/java/compile-136656.html // Apartat writting a program.
+
