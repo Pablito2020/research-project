@@ -28,8 +28,8 @@ Aquest TdR tractarà de l'aplicació del llenguatge de programació Java en les 
 - [x] 2.2.1 Java JDK
 - [x] 2.2.2 Aplicacions incloses en el JDK
 - [x] 2.3 Creació de l'aplicació a partir del codi font
-- [ ] 2.3.1 Introducció a la compilació del codi en els llenguatges de programació
-- [ ] 2.3.2 Compilació i execució d'un codi escrit en java
+- [x] 2.3.1 Introducció a la compilació del codi en els llenguatges de programació
+- [x] 2.3.2 Compilació i execució d'un codi escrit en java
 
 ## 3. Aplicació del llenguatge Java en Android :
 - [ ] 3.1 Packages de Java en Android
