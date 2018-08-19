@@ -27,6 +27,9 @@ ByteCode:
 Bytecode (explicat a "l'inversa" però pot servir per explicar el procés normalment: 
    · https://resources.infosecinstitute.com/java-bytecode-reverse-engineering/#gref
 
+Compilació definició de Java Oracle.
+   · https://www.oracle.com/technetwork/java/compile-136656.html
+   
 
 PERSONES CITADES :
    · Elivar Largo:
