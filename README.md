@@ -16,6 +16,7 @@ Aquest TdR tractarà de l'aplicació del llenguatge de programació Java en les 
 - [x] 1.2.1.2 Explicació de les anotacions
 - [x] 1.2.2 Executable
 - [x] 1.2.3 Explicació de la variant d'un programa anomenat aplicació
+- [ ] 1.2.4 Procediment de compilació
 - [x] 1.3 Diferents tipus de llenguatges de programació i la seva utilitat
 - [x] 1.4 Introducció a les llicències dels llenguatges de programació i de software
 - [x] 1.4.1 Llicències de Software Lliure
