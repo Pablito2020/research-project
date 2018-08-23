@@ -22,32 +22,35 @@ Aquest TdR tractarà de l'aplicació del llenguatge de programació Java en les 
 - [x] 1.4.1 Llicències de Software Lliure
 - [x] 1.4.2 Llicències de Software Propietari 
 
-## 2. Introducció a Java:
-- [x] 2.1 Definició i característiques del llenguatge de programació Java
-- [x] 2.1.1 Programació dedicada a objectes (POO)
-- [x] 2.2 Introducció a l'ecosistema del codi de java
-- [x] 2.2.1 Java JDK
-- [x] 2.2.2 Aplicacions incloses en el JDK
-- [x] 2.3 Creació de l'aplicació a partir del codi font
-- [x] 2.3.1 Introducció a la compilació del codi en els llenguatges de programació
-- [x] 2.3.2 Compilació i execució d'un codi escrit en java
+## 2. Compiladors:
+- [ ] 2.1 Definició de Compilador
+- [ ] 2.2 Tipus de Compiladors
+- [ ] 2.3 Fases del Compilador
 
-## 3. Aplicació del llenguatge Java en Android :
-- [ ] 3.1 Packages de Java en Android
-- [ ] 3.2 Android Runtime, la substitució de JVM en Android.
-   
-## 5. Android Studio:
-- [ ] 5.1 Introducció de Android Studio
-- [ ] 5.2 Introducció al compilador Gradle
+## 3. Introducció a Java:
+- [x] 3.1 Definició i característiques del llenguatge de programació Java
+- [x] 3.1.1 Programació dedicada a objectes (POO)
+- [x] 3.2 Introducció a l'ecosistema del codi de java
+- [x] 3.2.1 Java JDK
+- [x] 3.2.2 Aplicacions incloses en el JDK
+- [x] 3.3 Creació de l'aplicació a partir del codi font
+- [x] 3.3.1 Introducció a la compilació del codi en els llenguatges de programació
+- [x] 3.3.2 Compilació i execució d'un codi escrit en java
 
-## 6. Part Visual d'una aplicació amb Android Studio:
-- [ ] Introducció del llenguatge XML adaptat a Android Studio
-- [ ] Icones (mesures, adaptació a les noves versions de Android)
-- [ ] Notificacions ( Barra d’estat, pantalla de bloqueig i app icon badge)
+## 4. Android Studio:
+- [ ] 4.1 Introducció a Android Studio
+- [ ] 4.2 Android SDK
+- [ ] 4.3 API packages i classes d'Android
 
+## 5 Java Adaptat a Android:
+- [ ] Android Runtime (ART), la substitució de JVM en Android
+- [ ] Recursos d'uan app Android
+- [ ] Manifest d'una app Android
+- [ ] Permissos d'una app Android
+- [ ] Compatibilitat gràfica
 
 ## Part Pràctica (Sense Començar) :
 
 - [ ] Creació d'una aplicació de Calculadora
 
-- [ ] Creació d'una altra app ( WIP)
+- [ ] Creació d'una altra app
