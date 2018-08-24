@@ -1,5 +1,16 @@
 PART TEÒRICA:
 
+Compilador (definició, característiques, tipus... )
+   · https://books.google.es/books?hl=es&lr=&id=Pq7pHwG1_OkC&oi=fnd&pg=PA1&dq=compiler&ots=4Z6_Npb6nO&sig=ZYKLNEtyd7srae5M19YnLtRUjqQ#v=onepage&q&f=false
+   · http://www.eis.mdx.ac.uk/staffpages/r_bornat/books/compiling.pdf
+   · https://books.google.es/books?id=yG6qJBAnE9UC&pg=PA359&lpg=PA359&dq=tipos+de+compiladores&source=bl&ots=rtYMN1c5lQ&sig=7y2OZtdUxB9FJHXys-IWPAfUkYU&hl=es&sa=X&ved=2ahUKEwjPlIux_4TdAhUPNhoKHb29Ai04ChDoATAKegQIBRAB#v=onepage&q&f=false
+   · https://www.win.tue.nl/~mvdbrand/courses/GLT/0910/papers/notes.pdf
+   · https://docs.oracle.com/javase/tutorial/getStarted/problems/index.html
+   · http://users.dsic.upv.es/~jsilva/uned/compiladores/Apuntes01.pdf
+   · https://www.oracle.com/technetwork/java/compile-136656.html
+
+   · http://www.dtic.upf.edu/~rramirez/PL2/L02comp.pdf
+
 Programació orientada a objectes (POO) :
    · https://scholar.google.es/scholar?biw=1366&bih=662&um=1&ie=UTF-8&lr&q=related:ewpZOUbAU-Q2FM:scholar.google.com/
    · http://luis.izqui.org/resources/ProgOrientadaObjetos.pdf
@@ -22,14 +33,13 @@ Com funciona Android Gradle (interesant per a la pràctica):
 ByteCode:
    · https://es.wikipedia.org/wiki/Compilador#Etapas_del_proceso
    · https://es.wikipedia.org/wiki/M%C3%A1quina_virtual_Java
-             MIRAR REFERÈNCIES.
-
-Bytecode (explicat a "l'inversa" però pot servir per explicar el procés normalment: 
    · https://resources.infosecinstitute.com/java-bytecode-reverse-engineering/#gref
 
-Compilació definició de Java Oracle.
-   · https://www.oracle.com/technetwork/java/compile-136656.html
-   
+Com Android Funciona i el perquè de la execució de els diferents programes en Android Studio.
+   · https://developer.android.com/studio/build/?hl=es-419
+
+Gradle (pot ser important):
+   · https://guides.gradle.org/building-android-apps/
 
 PERSONES CITADES :
    · Elivar Largo:
@@ -38,6 +48,7 @@ PERSONES CITADES :
      
      
 PART PRÀCTICA:
+
 Notificacions (programació d'aquestes):
    · https://developer.android.com/guide/topics/ui/notifiers/notifications
 
@@ -47,5 +58,5 @@ Adaptative Icon Design ( Necessari per a l'implementació d'android Oreo):
 Floating Action Button:
    · https://developer.android.com/guide/topics/ui/floating-action-button
 
-Crear Calculadora amb l'ajuda del Fork de Dipharth Shah, després cambiar icones, tema, etc.
-
+Adaptative Icon:
+   · https://github.com/LineageOS/android_packages_apps_ExactCalculator/commit/dee6f25ff8c768ec7109e44a834c08546e0e3412
