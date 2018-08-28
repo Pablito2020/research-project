@@ -8,6 +8,8 @@ Compilador (definició, característiques, tipus... )
    · https://docs.oracle.com/javase/tutorial/getStarted/problems/index.html
    · http://users.dsic.upv.es/~jsilva/uned/compiladores/Apuntes01.pdf
    · https://www.oracle.com/technetwork/java/compile-136656.html
+   · http://www.compilers.net/paedia/compiler/index.htm
+   · https://www.tutorialspoint.com/es/compiler_design/compiler_design_phases_of_compiler.htm
 
    · http://www.dtic.upf.edu/~rramirez/PL2/L02comp.pdf
 

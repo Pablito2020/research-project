@@ -7,7 +7,6 @@ Aquest TdR tractarà de l'aplicació del llenguatge de programació Java en les 
 
 ## Part Teòrica:
 
-
 ## 1. Introducció al llenguatge de programació:
 - [x] 1.1 Definició de programar
 - [x] 1.2 Definició de programa.
@@ -16,16 +15,15 @@ Aquest TdR tractarà de l'aplicació del llenguatge de programació Java en les 
 - [x] 1.2.1.2 Explicació de les anotacions
 - [x] 1.2.2 Executable
 - [x] 1.2.3 Explicació de la variant d'un programa anomenat aplicació
-- [ ] 1.2.4 Procediment de compilació
 - [x] 1.3 Diferents tipus de llenguatges de programació i la seva utilitat
 - [x] 1.4 Introducció a les llicències dels llenguatges de programació i de software
 - [x] 1.4.1 Llicències de Software Lliure
 - [x] 1.4.2 Llicències de Software Propietari 
 
 ## 2. Compiladors:
-- [ ] 2.1 Definició de Compilador
-- [ ] 2.2 Tipus de Compiladors
-- [ ] 2.3 Fases del Compilador
+- [x] 2.1 Definició de Compilador
+- [x] 2.2 Fases del compilador
+- [ ] 2.3 Tipus de compiladors
 
 ## 3. Introducció a Java:
 - [x] 3.1 Definició i característiques del llenguatge de programació Java
