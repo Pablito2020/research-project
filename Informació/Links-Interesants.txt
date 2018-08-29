@@ -62,3 +62,11 @@ Floating Action Button:
 
 Adaptative Icon:
    · https://github.com/LineageOS/android_packages_apps_ExactCalculator/commit/dee6f25ff8c768ec7109e44a834c08546e0e3412
+
+
+
+
+https://developer.android.com/studio/intro/
+https://developer.android.com/studio/write/sample-code
+https://developer.android.com/guide/topics/resources/providing-resources
+https://developer.android.com/studio/releases/
