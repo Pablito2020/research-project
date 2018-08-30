@@ -1,5 +1,4 @@
 PART TEÒRICA:
-
 Compilador (definició, característiques, tipus... )
    · https://books.google.es/books?hl=es&lr=&id=Pq7pHwG1_OkC&oi=fnd&pg=PA1&dq=compiler&ots=4Z6_Npb6nO&sig=ZYKLNEtyd7srae5M19YnLtRUjqQ#v=onepage&q&f=false
    · http://www.eis.mdx.ac.uk/staffpages/r_bornat/books/compiling.pdf
@@ -10,7 +9,6 @@ Compilador (definició, característiques, tipus... )
    · https://www.oracle.com/technetwork/java/compile-136656.html
    · http://www.compilers.net/paedia/compiler/index.htm
    · https://www.tutorialspoint.com/es/compiler_design/compiler_design_phases_of_compiler.htm
-
    · http://www.dtic.upf.edu/~rramirez/PL2/L02comp.pdf
 
 Programació orientada a objectes (POO) :
@@ -19,29 +17,38 @@ Programació orientada a objectes (POO) :
    · http://www.revistas.utp.ac.pa/index.php/ric/article/view/1750/2491
 
 Adaptació de Java a Android (important per a fer l'app):
-   · https://developer.android.com/reference/packages  (libreríes de Android)
    · https://developer.android.com/guide/ (guía general de gràfics i d'activitats)
 
 Java (programa en general, història, etc.): ---> pot ser útil per la teoría
    · http://www.ciberaula.com/articulo/palabras_reservadas_java
    · http://www.ciberaula.com/articulo/introduccion_java
 
+Java API:
+   · https://www.saylor.org/site/wp-content/uploads/2013/02/CS101-1.3.5.3-Java-Application-Programming-Interface-API-FINAL.pdf
+
 GNU licence --> pot ser útil per la teoría
    · https://smaldone.com.ar/opinion/docs/slvssp.html 
 
 Com funciona Android Gradle (interesant per a la pràctica):
    · https://medium.com/mindorks/compilers-in-android-studio-3-2-cc7e68446d09
+   · https://guides.gradle.org/building-android-apps/
 
 ByteCode:
    · https://es.wikipedia.org/wiki/Compilador#Etapas_del_proceso
    · https://es.wikipedia.org/wiki/M%C3%A1quina_virtual_Java
    · https://resources.infosecinstitute.com/java-bytecode-reverse-engineering/#gref
 
-Com Android Funciona i el perquè de la execució de els diferents programes en Android Studio.
-   · https://developer.android.com/studio/build/?hl=es-419
+Arquitectura Android: 
+   · https://developer.android.com/guide/platform/?hl=es-419
 
-Gradle (pot ser important):
-   · https://guides.gradle.org/building-android-apps/
+Android Activity:
+   · https://developer.android.com/guide/components/activities?hl=es-419
+   · https://developer.android.com/guide/components/tasks-and-back-stack?hl=es-419
+
+
+IMPORTANT: REVISAR OBJECTES I CLASSES EN JAVA:
+   · https://www.aprenderaprogramar.com/index.php?option=com_content&view=article&id=411:conceptos-de-objetos-y-clases-en-java-definicion-de-instancia-ejemplos-basicos-y-practicos-cu00619b&catid=68&Itemid=188
+
 
 PERSONES CITADES :
    · Elivar Largo:
@@ -49,6 +56,9 @@ PERSONES CITADES :
      Informació: https://www.ecodeup.com/4-elementos-claves-para-entender-la-programacion-orientada-objetos-en-java/
      
      
+
+
+
 PART PRÀCTICA:
 
 Notificacions (programació d'aquestes):
@@ -63,8 +73,8 @@ Floating Action Button:
 Adaptative Icon:
    · https://github.com/LineageOS/android_packages_apps_ExactCalculator/commit/dee6f25ff8c768ec7109e44a834c08546e0e3412
 
-
-
+Android Compilation Process in Android Studio:
+   · https://developer.android.com/studio/build/?hl=es-419
 
 https://developer.android.com/studio/intro/
 https://developer.android.com/studio/write/sample-code
