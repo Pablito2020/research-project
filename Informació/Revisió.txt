@@ -13,3 +13,4 @@ Apartat 3:
      Links de Oracles sobre aquest tema: 
      Mètode: https://docs.oracle.com/javase/tutorial/java/javaOO/methods.html
      Constructors: https://docs.oracle.com/javase/tutorial/java/javaOO/constructors.html
+   * 3.3.1 Foto de la compilació d'un arxiu .jar

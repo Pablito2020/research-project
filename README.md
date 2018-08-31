@@ -38,7 +38,7 @@ Aquest TdR tractarà de l'aplicació del llenguatge de programació Java en les 
 
 ## 4. Android Studio:
 - [x] 4.1 Introducció a Android Studio
-- [ ] 4.2 Android SDK
+- [X] 4.2 Android SDK
 
 ## 5 Java Adaptat a Android:
 - [x] Funcionament d'Android

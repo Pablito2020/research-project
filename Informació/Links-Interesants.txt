@@ -1,4 +1,13 @@
-PART TEÒRICA:
+************************************ PART TEÒRICA *******************************************
+
+## 1) Introducció al llenguatge de programació:
+
+GNU licence --> pot ser útil per la teoría
+   · https://smaldone.com.ar/opinion/docs/slvssp.html
+
+
+## 2) Compiladors:
+
 Compilador (definició, característiques, tipus... )
    · https://books.google.es/books?hl=es&lr=&id=Pq7pHwG1_OkC&oi=fnd&pg=PA1&dq=compiler&ots=4Z6_Npb6nO&sig=ZYKLNEtyd7srae5M19YnLtRUjqQ#v=onepage&q&f=false
    · http://www.eis.mdx.ac.uk/staffpages/r_bornat/books/compiling.pdf
@@ -11,13 +20,18 @@ Compilador (definició, característiques, tipus... )
    · https://www.tutorialspoint.com/es/compiler_design/compiler_design_phases_of_compiler.htm
    · http://www.dtic.upf.edu/~rramirez/PL2/L02comp.pdf
 
+ByteCode:
+   · https://es.wikipedia.org/wiki/Compilador#Etapas_del_proceso
+   · https://es.wikipedia.org/wiki/M%C3%A1quina_virtual_Java
+   · https://resources.infosecinstitute.com/java-bytecode-reverse-engineering/#gref
+
+
+## 3) Introducció a Java:
+
 Programació orientada a objectes (POO) :
    · https://scholar.google.es/scholar?biw=1366&bih=662&um=1&ie=UTF-8&lr&q=related:ewpZOUbAU-Q2FM:scholar.google.com/
    · http://luis.izqui.org/resources/ProgOrientadaObjetos.pdf
    · http://www.revistas.utp.ac.pa/index.php/ric/article/view/1750/2491
-
-Adaptació de Java a Android (important per a fer l'app):
-   · https://developer.android.com/guide/ (guía general de gràfics i d'activitats)
 
 Java (programa en general, història, etc.): ---> pot ser útil per la teoría
    · http://www.ciberaula.com/articulo/palabras_reservadas_java
@@ -26,17 +40,22 @@ Java (programa en general, història, etc.): ---> pot ser útil per la teoría
 Java API:
    · https://www.saylor.org/site/wp-content/uploads/2013/02/CS101-1.3.5.3-Java-Application-Programming-Interface-API-FINAL.pdf
 
-GNU licence --> pot ser útil per la teoría
-   · https://smaldone.com.ar/opinion/docs/slvssp.html 
+ByteCode:
+   · https://es.wikipedia.org/wiki/Compilador#Etapas_del_proceso
+   · https://es.wikipedia.org/wiki/M%C3%A1quina_virtual_Java
+   · https://resources.infosecinstitute.com/java-bytecode-reverse-engineering/#gref
+
+IMPORTANT: REVISAR OBJECTES I CLASSES EN JAVA:
+   · https://www.aprenderaprogramar.com/index.php?option=com_content&view=article&id=411:conceptos-de-objetos-y-clases-en-java-definicion-de-instancia-ejemplos-basicos-y-practicos-cu00619b&catid=68&Itemid=188
+
+## 4) Android Studio:
 
 Com funciona Android Gradle (interesant per a la pràctica):
    · https://medium.com/mindorks/compilers-in-android-studio-3-2-cc7e68446d09
    · https://guides.gradle.org/building-android-apps/
 
-ByteCode:
-   · https://es.wikipedia.org/wiki/Compilador#Etapas_del_proceso
-   · https://es.wikipedia.org/wiki/M%C3%A1quina_virtual_Java
-   · https://resources.infosecinstitute.com/java-bytecode-reverse-engineering/#gref
+Adaptació de Java a Android (important per a fer l'app):
+   · https://developer.android.com/guide/ (guía general de gràfics i d'activitats)
 
 Arquitectura Android: 
    · https://developer.android.com/guide/platform/?hl=es-419
@@ -47,22 +66,23 @@ Compatibilitat Android:
 Android Activity:
    · https://developer.android.com/guide/components/activities?hl=es-419
    · https://developer.android.com/guide/components/tasks-and-back-stack?hl=es-419
+      
+Funcionament d'Android, guía definitiva per David Griffiths:
+   · Com funciona una app (desde el arxiu .java fins a l'execució del apk):
+     https://github.com/dogriffiths/HeadFirstAndroid/wiki/How-Android-Apps-are-Built-and-Run
+   · Projecte complet:
+     https://github.com/dogriffiths/HeadFirstAndroid
 
 
-IMPORTANT: REVISAR OBJECTES I CLASSES EN JAVA:
-   · https://www.aprenderaprogramar.com/index.php?option=com_content&view=article&id=411:conceptos-de-objetos-y-clases-en-java-definicion-de-instancia-ejemplos-basicos-y-practicos-cu00619b&catid=68&Itemid=188
+************************************ CITACIONS (QUE NO SIGUIN DE LLIBRES O ARTICLES ) *******************************************
 
-
-PERSONES CITADES :
+Programació Orientada a Objectes  :
    · Elivar Largo:
      Linkedin: https://www.linkedin.com/in/elivarlargo/
      Informació: https://www.ecodeup.com/4-elementos-claves-para-entender-la-programacion-orientada-objetos-en-java/
-     
-     
 
 
-
-PART PRÀCTICA:
+************************************ PART PRÀCTICA *******************************************
 
 Notificacions (programació d'aquestes):
    · https://developer.android.com/guide/topics/ui/notifiers/notifications
