@@ -34,14 +34,15 @@ Aquest TdR tractarà de l'aplicació del llenguatge de programació Java en les 
 - [x] 3.3 Creació de l'aplicació a partir del codi font
 - [x] 3.3.1 Introducció a la compilació del codi en els llenguatges de programació
 - [x] 3.3.2 Compilació i execució d'un codi escrit en java
+- [x] 3.4 Java API
 
 ## 4. Android Studio:
-- [ ] 4.1 Introducció a Android Studio
+- [x] 4.1 Introducció a Android Studio
 - [ ] 4.2 Android SDK
-- [ ] 4.3 API packages i classes d'Android
 
 ## 5 Java Adaptat a Android:
-- [ ] Android Runtime (ART), la substitució de JVM en Android
+- [x] Funcionament d'Android
+- [ ] ART i el seu funcionament
 - [ ] Recursos d'uan app Android
 - [ ] Manifest d'una app Android
 - [ ] Permissos d'una app Android

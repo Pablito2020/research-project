@@ -5,8 +5,11 @@ Apartat 1:
      evolució històrica, manera d'executarse, manera de fer la tasca, 
      lloc d'execució, concurrencia, interactivitat, reaització visual i
      la productivitat) ???
-
    * Revisar gnu lgpl --> Diferenciar de software amb llenguatge de programació?
 
-Apartat 2: 
-   * Revisar 2.1 (programació dedicada a objectes, fer un breu resum o lligar-ho amb el apartat 2.1.3)?
+Apartat 3: 
+   * Revisar 3.1 (programació dedicada a objectes, fer un breu resum o lligar-ho amb el apartat 2.1.3)?
+   * 3.1.2 Programació orientada a objectes. Explicar métodes i constructors. 
+     Links de Oracles sobre aquest tema: 
+     Mètode: https://docs.oracle.com/javase/tutorial/java/javaOO/methods.html
+     Constructors: https://docs.oracle.com/javase/tutorial/java/javaOO/constructors.html
