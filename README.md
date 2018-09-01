@@ -48,8 +48,20 @@ Aquest TdR tractarà de l'aplicació del llenguatge de programació Java en les 
 - [ ] Permissos d'una app Android
 - [ ] Compatibilitat gràfica
 
-## Part Pràctica (Sense Començar) :
+## Part Pràctica :
 
-- [ ] Creació d'una aplicació de Calculadora
+- [ ] Creació d'una aplicació de Calculadora:
 
-- [ ] Creació d'una altra app
+     - [ ] Codi Font
+	 
+	      - [x] Funcionament correcte
+		  
+		  - [ ] Senzill i amb anotacions
+	 
+	 - [ ] UI ( Interfície d'usuari)
+	 
+	 - [ ] UI API ( APIS per a l'interfície d'usuari) no tenen que veure amb funcionalitat, sinò amb estètica 
+
+	 - [ ] Afegida la GNU llicence
+
+- [ ] Aplicació 2 ( sense elecció encara) 
