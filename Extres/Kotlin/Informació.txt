@@ -1,3 +1,0 @@
-Aquesta carpeta és únicament per si un cas el treball de recerca s'acabés abans de setembre i tingués temps de passar 
-el codi dels programes a kotlin, un llenguatge més optimitzat a Android. 
-

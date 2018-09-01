@@ -1,5 +1,0 @@
-Programació General:
-   · Link: http://files.sanjo2014.webnode.es/200000001-c34cac445e/INTRODUCCION%20A%20LA%20PROGRAMACION.pdf
-
-Programació Orientada a Objectes (POO):
-   · Link: https://s3.amazonaws.com/academia.edu.documents/52038278/Programacion-Orientada-a-Objetos-Con-Java.pdf?AWSAccessKeyId=AKIAIWOWYYGZ2Y53UL3A&Expires=1527332923&Signature=KbLY95lPqwrmkY04QMjp3ggLzfk%3D&response-content-disposition=inline%3B%20filename%3DProgramacion_Orientada_a_Objetos_Con_Jav.pdf
