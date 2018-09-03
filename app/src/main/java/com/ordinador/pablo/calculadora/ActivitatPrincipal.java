@@ -2,7 +2,7 @@
 Nom de l'aplicació: Calculadora
 Autor: Pablo Fraile Alonso
 Llicència: GNU License 3.0
- */
+*/
 
 package com.ordinador.pablo.calculadora;
 
@@ -71,71 +71,97 @@ public class ActivitatPrincipal extends AppCompatActivity implements OnClickList
     @Override
     public void onClick(View v) {
         // Crea les variables x (primer nombre), y (segon nombre), z (resultat)
-        double x=0;
-        double y=0;
+        int x=0;
+        int y=0;
         double z=0;
-
-        // Dis que quan s'inicia l'aplicació, la suma, la resta, la multiplicació i la divisió no s'han pres (=false)
-        boolean suma = true;
-        boolean resta = true;
-        boolean multiplicacio = true;
-        boolean divisio = true;
-
 
         // Administra la funcionalitat de cada botó. Amb el métode si es pren el botó x, fer y acció.
         if(v == findViewById(R.id.nombre1)){
-            boolean resta=true;
+            Toast.makeText(this, "Nombre 1", Toast.LENGTH_LONG).show();
         }
+        
         //else if(v == findViewById(R.id.nombre0)){
-          //  Toast.makeText(this, "Nombre 0", Toast.LENGTH_LONG).show();
+        //  Toast.makeText(this, "Nombre 0", Toast.LENGTH_LONG).show();
         //}
+        
         else if(v == findViewById(R.id.nombre2)){
             Toast.makeText(this, "Nombre 2", Toast.LENGTH_LONG).show();
         }
+        
         else if(v == findViewById(R.id.nombre3)){
             Toast.makeText(this, "Nombre 3", Toast.LENGTH_LONG).show();
         }
+        
         else if(v == findViewById(R.id.nombre4)){
             Toast.makeText(this, "Nombre 4", Toast.LENGTH_LONG).show();
         }
+        
         else if(v == findViewById(R.id.nombre5)){
             Toast.makeText(this, "Nombre 5", Toast.LENGTH_LONG).show();
         }
+        
         else if(v == findViewById(R.id.nombre6)){
             Toast.makeText(this, "Nombre 6", Toast.LENGTH_LONG).show();
-            }
+        }
+        
         else if(v == findViewById(R.id.nombre7)){
             Toast.makeText(this, "Nombre 7", Toast.LENGTH_LONG).show();
         }
+        
         else if(v == findViewById(R.id.nombre8)){
             Toast.makeText(this, "Nombre 8", Toast.LENGTH_LONG).show();
         }
+        
         else if(v == findViewById(R.id.nombre9)){
+            Toast.makeText(this, "Nombre 9", Toast.LENGTH_LONG).show();
         }
 
+        
         // Botons d'operacions matemàtiques
         if(v == findViewById(R.id.botodivisio)){
+            boolean divisio = true;
         }
 
         if(v == findViewById(R.id.botomultiplicacio)){
-            if (multiplicacio==false){
-            return;
+            boolean multiplicacio = true;
         }
 
         if(v == findViewById(R.id.botoresta)){
+            boolean resta = true;
         }
 
         if(v == findViewById(R.id.botosuma)){
+            boolean suma = true;
         }
 
+        
         // Botons de borrar
         else if(v == findViewById(R.id.borraunnum)){
         }
+        
         else if(v == findViewById(R.id.borratot)){
+            x = 0;
+            y = 0;
+            z = 0;       
         }
 
         // Botó de igual
          if(v == findViewById(R.id.botoigual)){
+             if (multiplicacio==true){
+             // Si la multiplicació = true mira si x!=0 i si y!=0 i fes x · y
+             }
+             else if (divisio==true){
+             // Si la divisió = true mira si x!=0 i si y!=0 i fes x / y
+             }
+             else if (suma==true){
+             // Si la suma = true mira si x!=0 i si y!=0 i fes x + y
+             }
+             else if (resta==true){
+             // Si la resta = true mira si x!=0 i si y!=0 i fes x - y
+             }
+             else{
+                  Toast.makeText(this, "Apreti alguan operació matemàtica", Toast.LENGTH_LONG).show();
+             }
         }
     }
 }
