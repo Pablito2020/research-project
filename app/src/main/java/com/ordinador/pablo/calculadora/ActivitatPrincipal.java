@@ -2,6 +2,7 @@
 Nom de l'aplicació: Calculadora
 Autor: Pablo Fraile Alonso
 Llicència: GNU License 3.0
+Android API: 
 */
 
 package com.ordinador.pablo.calculadora;
@@ -29,7 +30,6 @@ public class ActivitatPrincipal extends AppCompatActivity implements OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activitat_principal);
         // Dona nom als botons mitjançant la ID
-
         //Button nombre0 = findViewById(R.id.nombre0);
         // nombre0.setOnClickListener(this);
         Button nombre1 = findViewById(R.id.nombre1);
@@ -66,54 +66,93 @@ public class ActivitatPrincipal extends AppCompatActivity implements OnClickList
         borratot.setOnClickListener(this);
         Button borraun = findViewById(R.id.borraunnum);
         borraun.setOnClickListener(this);
+        
+        // TextView on aniràn els nombres
+        textview = (TextView)findViewById(R.id.nombres);
     }
 
     @Override
     public void onClick(View v) {
-        // Crea les variables x (primer nombre), y (segon nombre), z (resultat)
-        int x=0;
-        int y=0;
-        double z=0;
 
-        // Administra la funcionalitat de cada botó. Amb el métode si es pren el botó x, fer y acció.
+        /*
+        Objectiu del métode:
+        Administra la funció de cada botó.
+        Funcionament:
+        Fes que la "textview" definida anteriorment en el arxiu xml de la activityprincipal, s'utilitzi per a guardar els nombres.
+        Una vegada es pren el botó d'un nombre determinat,aquest llegeix el que es troba en el textview i li suma el seu nombre corresponent.
+      
+        Exemple:
+        A el textview ja hi trobem que hi ha un 5 i nosaltres prenem el botó 1, per tant el programa asignarà un 1 després del 5, per tant 
+        el resultat final quedarà 51.
+        */
+        
         if(v == findViewById(R.id.nombre1)){
             Toast.makeText(this, "Nombre 1", Toast.LENGTH_LONG).show();
+            nombre = textview.getText().toString();
+            nombre = nombre + "1";
+            textview.setText(nombre);
         }
-        
         //else if(v == findViewById(R.id.nombre0)){
         //  Toast.makeText(this, "Nombre 0", Toast.LENGTH_LONG).show();
+            //nombre = textview.getText().toString();
+            //nombre = nombre + "0";
+            //textview.setText(nombre);
         //}
         
         else if(v == findViewById(R.id.nombre2)){
             Toast.makeText(this, "Nombre 2", Toast.LENGTH_LONG).show();
+            nombre = textview.getText().toString();
+            nombre = nombre + "2";
+            textview.setText(nombre);
         }
         
         else if(v == findViewById(R.id.nombre3)){
             Toast.makeText(this, "Nombre 3", Toast.LENGTH_LONG).show();
+            nombre = textview.getText().toString();
+            nombre = nombre + "3";
+            textview.setText(nombre);
         }
         
         else if(v == findViewById(R.id.nombre4)){
             Toast.makeText(this, "Nombre 4", Toast.LENGTH_LONG).show();
+            nombre = textview.getText().toString();
+            nombre = nombre + "4";
+            textview.setText(nombre);
         }
         
         else if(v == findViewById(R.id.nombre5)){
             Toast.makeText(this, "Nombre 5", Toast.LENGTH_LONG).show();
+            nombre = textview.getText().toString();
+            nombre = nombre + "5";
+            textview.setText(nombre);
         }
         
         else if(v == findViewById(R.id.nombre6)){
             Toast.makeText(this, "Nombre 6", Toast.LENGTH_LONG).show();
+            nombre = textview.getText().toString();
+            nombre = nombre + "6";
+            textview.setText(nombre);
         }
         
         else if(v == findViewById(R.id.nombre7)){
             Toast.makeText(this, "Nombre 7", Toast.LENGTH_LONG).show();
+            nombre = textview.getText().toString();
+            nombre = nombre + "7";
+            textview.setText(nombre);
         }
         
         else if(v == findViewById(R.id.nombre8)){
             Toast.makeText(this, "Nombre 8", Toast.LENGTH_LONG).show();
+            nombre = textview.getText().toString();
+            nombre = nombre + "8";
+            textview.setText(nombre);
         }
         
         else if(v == findViewById(R.id.nombre9)){
             Toast.makeText(this, "Nombre 9", Toast.LENGTH_LONG).show();
+            nombre = textview.getText().toString();
+            nombre = nombre + "9";
+            textview.setText(nombre);
         }
 
         
@@ -139,10 +178,7 @@ public class ActivitatPrincipal extends AppCompatActivity implements OnClickList
         else if(v == findViewById(R.id.borraunnum)){
         }
         
-        else if(v == findViewById(R.id.borratot)){
-            x = 0;
-            y = 0;
-            z = 0;       
+        else if(v == findViewById(R.id.borratot)){     
         }
 
         // Botó de igual
