@@ -72,12 +72,11 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/operand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="444dp"
         android:layout_marginStart="72dp"
-        android:text="Aquí tenen que aparèixer els nombres"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
