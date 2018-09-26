@@ -1,8 +1,45 @@
 # Treball-de-Recerca
-Programació d'aplicacions Android mitjanҫant el llenguatge de programació Java i l'eïna Android Studio
+	 
+## Creació d'una aplicació de Calculadora mitjançant la IDE Android Studio i el llenguatje de programació Java	 
+	 
+	 
+	 ## Codi Font
+	 
+	- [ ] Funcionament correcte
+	
+	     - [x]	Funcionament dels botons numèrics
+		 - [x]  Funcionament dels botons amb funcions matemàtiques ( + - * / )
+		 - [ ]  Funcionament del botó igual 
+		 - [ ]  Funcionament del botó "."
+		 - [x]  Funcionament del botó borratot (C)
+		 - [ ]  Funcionament del botó borraun (Ce)
+	
+	- [x] Explicació de cada métode i package importat
+	 
+	 
+	 ## Interfície Gràfica
+	 
+	     - [x] Colors Correctes
+		 
+		     - [x] Color Primari Correcte
+		 
+		 - [ ]Botons Correctes
+		 
+		 - [x]Strings Correctes
+		 
+		 - [ ] Menú Paràmetres afegit i funcionant( pot canviar en un futur)
+		     
 
-*** Part pràctica ***
+    ## Llicència
+	
+	 - [x] Afegida la GNU llicence
+	 
+	 
+## Imatges del projecte ( No es una versió final, les imatges poden variar a la última versió) 
 
-probar això per a invertir boolean: https://stackoverflow.com/questions/2479058/how-to-make-a-boolean-variable-switch-between-true-and-false-every-time-a-method
+![Captura 1](/imatges/26-09-18/calculadora-1.png)
+Format: ![Alt Text](url)
 
-var multiplicacio = false;
+![Captura 2](/imatges/26-09-18/calculadora-2.png)
+Format: ![Alt Text](url)
+
