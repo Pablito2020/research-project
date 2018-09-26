@@ -35,7 +35,7 @@
 	 
 ## Imatges del projecte ( No es una versió final, les imatges poden variar a la última versió) 
 
-![Captura 1](/imatges/26-09-18/calculadora-1.png =200x400)
+![Captura 1](/imatges/26-09-18/calculadora-1.png){:height="500px" width="200px"}
 
-![Captura 2](/imatges/26-09-18/calculadora-2.png =200x400)
+![Captura 2](/imatges/26-09-18/calculadora-2.png){:height="500px" width="200px"}
 
