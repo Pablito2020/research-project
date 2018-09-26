@@ -10,11 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ActivitatPrincipal">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
+            <intent-filter android:label="@string/launcher"> <!---Redirecciona a la string a la carpeta values per a saber el nom de la app -->
+                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 

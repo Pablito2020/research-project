@@ -2,7 +2,8 @@
 Aplicació: Calculadora
 Autor: Pablo Fraile Alonso
 Llicència: GNU License 3.0
-Android API: 
+Android SDK mínima per a l'aplicació: 22
+Android SDK utilitzada: 28
 */
 
 package com.ordinador.pablo.calculadora;
@@ -11,7 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 /*
 Importació de packages:
-Packages necessàris perl funcionament de la calculadora:
+Packages necessàris per al funcionament de la calculadora:
 1) android.widget.Button ------------ Necessari per a indicar i nombrar els botons escrits en el layout
 2) android.view.view ---------------- Necessari per a localitzar els botons i poder renombral's.
 3) android.widget.TextView ---------- Necessari per a poder llegir el textview dels nombres
@@ -21,6 +22,8 @@ import android.widget.Button;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.RelativeLayout;
+//import java.awt.Color;
 
 
 // Activitat Principal ( Vista per el usuari)
@@ -48,6 +51,7 @@ public class ActivitatPrincipal extends AppCompatActivity {
         Button botodivisio = findViewById(R.id.botodivisio);
         Button botosuma = findViewById(R.id.botosuma);
         Button botoresta = findViewById(R.id.botoresta);
+        Button botompultiplicacio = findViewById(R.id.botomultiplicacio);
 
         // Botons de Borrar
         Button borratot = findViewById(R.id.borratot);
@@ -73,7 +77,6 @@ public class ActivitatPrincipal extends AppCompatActivity {
              operand.setText(input);
         }
         });
-
         nombre2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -82,7 +85,6 @@ public class ActivitatPrincipal extends AppCompatActivity {
              operand.setText(input);
             }
         });
-
         nombre3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -91,7 +93,6 @@ public class ActivitatPrincipal extends AppCompatActivity {
                 operand.setText(input);
             }
         });
-
         nombre4.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -100,7 +101,6 @@ public class ActivitatPrincipal extends AppCompatActivity {
                 operand.setText(input);
             }
         });
-
         nombre5.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -109,7 +109,6 @@ public class ActivitatPrincipal extends AppCompatActivity {
                 operand.setText(input);
             }
         });
-
         nombre6.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -118,7 +117,6 @@ public class ActivitatPrincipal extends AppCompatActivity {
                 operand.setText(input);
             }
         });
-
         nombre7.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -127,7 +125,6 @@ public class ActivitatPrincipal extends AppCompatActivity {
                 operand.setText(input);
             }
         });
-
         nombre8.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -136,7 +133,6 @@ public class ActivitatPrincipal extends AppCompatActivity {
                 operand.setText(input);
             }
         });
-
         nombre9.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -157,8 +153,35 @@ public class ActivitatPrincipal extends AppCompatActivity {
         botodivisio.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                String input = "";
-                operand.setText(input);
+                String operacio = "/";
+                String primernombre = operand.getText().toString();
+                operand.setText("");
+
+            }
+        });
+        botosuma.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                String operacio = "+";
+                String primernombre = operand.getText().toString();
+                operand.setText("");
+
+            }
+        });
+        botoresta.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                String operacio = "-";
+                String primernombre = operand.getText().toString();
+                operand.setText("");
+            }
+        });
+        botompultiplicacio.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                String operacio = "*";
+                String primernombre = operand.getText().toString();
+                operand.setText("");
             }
         });
 
