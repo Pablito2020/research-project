@@ -1,11 +1,21 @@
 <resources>
-
-    <!-- Base application theme. -->
+    <!-- Tema blanc -->
     <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorturquesa</item>
-        <item name="colorPrimaryDark">@color/colorturquesabarra</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorbarra</item>
+        <item name="colorPrimaryDark">@color/colorbarranot</item>
+        <item name="colorAccent">@color/colorswitch</item>
+        <item name="backgroundcolor">@color/colorfonsblanc</item>
+        <item name="buttoncolor">@color/colorbotoblanc</item>
+        <item name="textcolor">@color/colortextnegre</item>
     </style>
 
+    <!-- Tema obscur -->
+    <style name="DarkTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorbarra</item>
+        <item name="colorPrimaryDark">@color/colorbarranot</item>
+        <item name="colorAccent">@color/colorswitch</item>
+        <item name="backgroundcolor">@color/colorfonsnegre</item>
+        <item name="buttoncolor">@color/colorbotonegre</item>
+        <item name="textcolor">@color/colortextblanc</item>
+    </style>
 </resources>

@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorbarra">#2d8e76</color>
+    <color name="colorbarranot">#1f6050</color>
+    <color name="colorswitch">#2d846e</color>
 
-    <color name="colorturquesa">#3bbf9e</color>
-    <color name="colorturquesabarra">#2d846e</color>
-    <color name="colorobscur">#3a3a3a</color>
+    <!-- Colors tema blanc-->
+    <color name="colorfonsblanc">#ffffff</color>
+    <color name="colorbotoblanc">#f2f2f2</color>
+    <color name="colortextnegre">#111111</color>
 
+    <!-- Colors tema negre-->
+    <color name="colorfonsnegre">#333333</color>
+    <color name="colorbotonegre">#444444</color>
+    <color name="colortextblanc">#ffffff</color>
 </resources>

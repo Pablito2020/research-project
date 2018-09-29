@@ -5,162 +5,168 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/relativeLayout"
-    android:background="#424242"
+    android:background="?attr/backgroundcolor"
     tools:context=".ActivitatPrincipal">
 
     <TextView
         android:id="@+id/operand"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/gridLayout"
-        android:layout_marginBottom="14dp"
-        android:height="100dp"
-        android:textAlignment="textEnd"
-        android:textColor="#F5F5F5"
-        android:textSize="35dp"
-        android:layout_centerHorizontal="true" />
-
-    <GridLayout
-        android:id="@+id/gridLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_gravity="center"
-        android:columnCount="4"
-        android:orientation="horizontal"
-        android:padding="0dp"
-        android:rowCount="6">
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="119dp"
+        android:height="100dp"
+        android:textColor="?attr/textcolor"
+        android:gravity="center"
+        android:textSize="35sp" />
+    <!--android:textAlignment="textEnd"-->
 
-        <Button
-            android:id="@+id/borratot"
-            android:layout_margin="2dp"
-            android:background="#424242"
-            android:text="C"
-            android:textColor="#3bbf9e" />
+   <GridLayout
+       android:id="@+id/gridLayout"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignParentBottom="true"
+       android:layout_alignParentEnd="true"
+       android:layout_alignParentStart="true"
+       android:layout_gravity="center"
+       android:columnCount="4"
+       android:orientation="horizontal"
+       android:padding="10dp"
+       android:rowCount="4">
 
-        <Button
-            android:id="@+id/botodivisio"
-            android:layout_margin="2dp"
-            android:background="#424242"
-            android:text="/"
-            android:textColor="#3bbf9e" />
+      <Button
+          android:id="@+id/borra"
+          android:layout_margin="2dp"
+          android:layout_row="0"
+          android:background="?attr/buttoncolor"
+          android:text="C"
+          android:textColor="?attr/textcolor" />
 
-        <Button
-            android:id="@+id/botomultiplicacio"
-            android:layout_margin="2dp"
-            android:background="#424242"
-            android:text="X"
-            android:textColor="#3bbf9e" />
+      <Button
+          android:id="@+id/botodivisio"
+          android:layout_margin="2dp"
+          android:background="?attr/buttoncolor"
+          android:text="/"
+          android:textColor="?attr/textcolor" />
 
-        <Button
-            android:id="@+id/borraunnum"
+      <Button
+          android:id="@+id/botomultiplicacio"
+          android:layout_margin="2dp"
+          android:background="?attr/buttoncolor"
+          android:text="x"
+          android:textColor="?attr/textcolor" />
 
-            android:layout_margin="2dp"
-            android:background="#424242"
-            android:text="Ce"
-            android:textColor="#3bbf9e" />
+      <Button
+          android:id="@+id/punt"
+          android:layout_margin="2dp"
+          android:background="?attr/buttoncolor"
+          android:text="."
+          android:textColor="?attr/textcolor" />
 
-        <Button
-            android:id="@+id/nombre7"
-            android:layout_margin="2dp"
-            android:background="#424242"
-            android:text="7"
-            android:textColor="#FAFAFA" />
+      <Button
+          android:id="@+id/nombre1"
+          android:layout_margin="2dp"
+          android:background="?attr/buttoncolor"
+          android:text="1"
+          android:textColor="?attr/textcolor" />
 
-        <Button
-            android:id="@+id/nombre8"
-            android:layout_margin="2dp"
-            android:background="#424242"
-            android:text="8"
-            android:textColor="#FAFAFA" />
+      <Button
+          android:id="@+id/nombre2"
+          android:layout_margin="2dp"
+          android:background="?attr/buttoncolor"
+          android:text="2"
+          android:textColor="?attr/textcolor" />
 
-        <Button
-            android:id="@+id/nombre9"
-            android:layout_margin="2dp"
-            android:background="#424242"
-            android:text="9"
-            android:textColor="#FAFAFA" />
+      <Button
+          android:id="@+id/nombre3"
+          android:layout_margin="2dp"
+          android:background="?attr/buttoncolor"
+          android:text="3"
+          android:textColor="?attr/textcolor" />
 
-        <Button
-            android:id="@+id/botoresta"
-            android:layout_margin="2dp"
-            android:background="#424242"
-            android:text="-"
-            android:textColor="#3bbf9e" />
+      <Button
+          android:id="@+id/botoresta"
+          android:layout_margin="2dp"
+          android:background="?attr/buttoncolor"
+          android:text="-"
+          android:textColor="?attr/textcolor" />
 
-        <Button
-            android:id="@+id/nombre4"
-            android:layout_margin="2dp"
-            android:background="#424242"
-            android:text="4"
-            android:textColor="#FAFAFA" />
+      <Button
+          android:id="@+id/nombre4"
+          android:layout_margin="2dp"
+          android:background="?attr/buttoncolor"
+          android:text="4"
+          android:textColor="?attr/textcolor" />
 
-        <Button
-            android:id="@+id/nombre5"
-            android:layout_margin="2dp"
-            android:background="#424242"
-            android:text="5"
-            android:textColor="#FAFAFA" />
+      <Button
+          android:id="@+id/nombre5"
+          android:layout_margin="2dp"
+          android:background="?attr/buttoncolor"
+          android:text="5"
+          android:textColor="?attr/textcolor" />
 
-        <Button
-            android:id="@+id/nombre6"
-            android:layout_margin="2dp"
-            android:background="#424242"
-            android:text="6"
-            android:textColor="#FAFAFA" />
+      <Button
+          android:id="@+id/nombre6"
+          android:layout_margin="2dp"
+          android:background="?attr/buttoncolor"
+          android:text="6"
+          android:textColor="?attr/textcolor" />
 
-        <Button
-            android:id="@+id/botosuma"
-            android:layout_margin="2dp"
-            android:background="#424242"
-            android:text="+"
-            android:textColor="#3bbf9e" />
+      <Button
+          android:id="@+id/botosuma"
+          android:layout_margin="2dp"
+          android:background="?attr/buttoncolor"
+          android:text="+"
+          android:textColor="?attr/textcolor" />
 
-        <Button
-            android:id="@+id/nombre1"
-            android:layout_margin="2dp"
-            android:background="#424242"
-            android:text="1"
-            android:textColor="#FAFAFA" />
+      <Button
+          android:id="@+id/nombre7"
+          android:layout_margin="2dp"
+          android:background="?attr/buttoncolor"
+          android:text="7"
+          android:textColor="?attr/textcolor" />
 
-        <Button
-            android:id="@+id/nombre2"
-            android:layout_margin="2dp"
-            android:background="#424242"
-            android:text="2"
-            android:textColor="#FAFAFA" />
+      <Button
+          android:id="@+id/nombre8"
+          android:layout_margin="2dp"
+          android:background="?attr/buttoncolor"
+          android:text="8"
+          android:textColor="?attr/textcolor" />
 
-        <Button
-            android:id="@+id/nombre3"
-            android:layout_margin="2dp"
-            android:background="#424242"
-            android:text="3"
-            android:textColor="#FAFAFA" />
+      <Button
+          android:id="@+id/nombre9"
+          android:layout_margin="2dp"
+          android:background="?attr/buttoncolor"
+          android:text="9"
+          android:textColor="?attr/textcolor" />
 
-        <Button
-            android:id="@+id/botoigual"
-            android:layout_gravity="fill"
-            android:layout_margin="2dp"
-            android:layout_rowSpan="2"
-            android:background="#424242"
-            android:text="="
-            android:textColor="#3bbf9e" />
+      <Button
+          android:id="@+id/botoigual"
+          android:layout_gravity="fill"
+          android:layout_margin="2dp"
+          android:background="?attr/buttoncolor"
+          android:text="="
+          android:textColor="?attr/textcolor" />
 
-        <Button
-            android:id="@+id/nombre0"
-            android:layout_columnSpan="2"
-            android:layout_gravity="fill"
-            android:layout_margin="2dp"
-            android:background="#424242"
-            android:text="0"
-            android:textColor="#FAFAFA" />
+      <Button
+          android:id="@+id/nombre0"
+          android:layout_width="wrap_content"
+          android:layout_gravity="fill"
+          android:layout_margin="2dp"
+          android:background="?attr/buttoncolor"
+          android:columnCount="2"
+          android:text="0"
+          android:textColor="?attr/textcolor" />
 
-        <Button
-            android:id="@+id/Punto"
-            android:layout_margin="2dp"
-            android:background="#424242"
-            android:text="."
-            android:textColor="#FAFAFA" />
-    </GridLayout>
+   </GridLayout>
+
+<Switch
+   android:id="@+id/darkswitch"
+   android:layout_width="wrap_content"
+   android:layout_height="wrap_content"
+   android:layout_alignParentTop="true"
+   android:layout_centerHorizontal="true"
+   android:layout_marginTop="35dp"
+   android:text="@string/modenocturn"
+   android:textColor="?attr/textcolor" />
 </RelativeLayout>

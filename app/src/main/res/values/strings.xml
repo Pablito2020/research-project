@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">Calculator</string>
     <string name="launcher">Calculator</string>
+    <string name="modenocturn">Night Mode</string>
+    <string name="about">About the app</string>
+
+    <string name="importantinfo">Dear User: </string>
+    <string name="aboutapp">This app has been developed by Pablo Fraile Alonso for the "Treball de Recerca". All the
+    information and work are under the GNU License, so, if you want to use it, be aware of that.</string>
+
+    <string name="titolalerta"> Are you sure?</string>
+    <string name="missatgealerta"> Do you want to close the app? </string>
+    <string name="respostasi"> Yes </string>
+    <string name="respostano"> No </string>
 </resources>
