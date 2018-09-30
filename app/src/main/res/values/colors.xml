@@ -4,6 +4,7 @@
     <color name="colorbarra">#2d8e76</color>
     <color name="colorbarranot">#1f6050</color>
     <color name="colorswitch">#2d846e</color>
+    <color name="colortextespecial">#2d8e76</color>
 
     <!-- Colors tema blanc -->
     <color name="colorfonsblanc">#ffffff</color>

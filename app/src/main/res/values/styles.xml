@@ -4,6 +4,7 @@
         <item name="colorPrimary">@color/colorbarra</item>
         <item name="colorPrimaryDark">@color/colorbarranot</item>
         <item name="colorAccent">@color/colorswitch</item>
+        <item name="colortextespecial">@color/colortextespecial</item>
         <item name="backgroundcolor">@color/colorfonsblanc</item>
         <item name="buttoncolor">@color/colorbotoblanc</item>
         <item name="textcolor">@color/colortextnegre</item>
@@ -14,6 +15,7 @@
         <item name="colorPrimary">@color/colorbarra</item>
         <item name="colorPrimaryDark">@color/colorbarranot</item>
         <item name="colorAccent">@color/colorswitch</item>
+        <item name="colortextespecial">@color/colortextespecial</item>
         <item name="backgroundcolor">@color/colorfonsnegre</item>
         <item name="buttoncolor">@color/colorbotonegre</item>
         <item name="textcolor">@color/colortextblanc</item>

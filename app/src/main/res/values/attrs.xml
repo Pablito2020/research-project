@@ -5,5 +5,6 @@
         <attr name="backgroundcolor" format="color" />
         <attr name="buttoncolor" format="color" />
         <attr name="textcolor" format="color" />
+        <attr name="colortextespecial" format="color" />
     </declare-styleable>
 </resources>

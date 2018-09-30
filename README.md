@@ -22,7 +22,7 @@
 	 
 ## Interfície Gràfica
 
-- [ ] Icona de la app canviada
+- [x] Icona de la app canviada
 
 - [ ] App Icon Badge (opcional, accés directe a la activity menu)
 
@@ -31,7 +31,7 @@
 		 
 - [x] Textview alineada correctament
 
-- [ ] Botons alineats correctament ( GridLayout)
+- [x] Botons alineats correctament ( GridLayout)
 
 - [x] Switch alineat correctament
 		 

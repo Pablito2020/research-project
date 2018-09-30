@@ -79,7 +79,7 @@ public class ActivitatPrincipal extends AppCompatActivity {
         setContentView(R.layout.activity_activitat_principal);
         // Botó Switch
         Switch switchobscur;
-        switchobscur = (Switch)findViewById(R.id.darkswitch);
+        switchobscur = findViewById(R.id.darkswitch);
         // Si el mode nocturn ja està activat, dili que el switch ja està activat
         if (AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES){
             switchobscur.setChecked(true);
@@ -101,28 +101,26 @@ public class ActivitatPrincipal extends AppCompatActivity {
 
         // Configuració de la calculadora
         // Dona nom als botons i al switch mitjançant la ID
-        Button nombre0 = findViewById(R.id.nombre0);
-        Button nombre1 = findViewById(R.id.nombre1);
-        Button nombre2 = findViewById(R.id.nombre2);
-        Button nombre3 = findViewById(R.id.nombre3);
-        Button nombre4 = findViewById(R.id.nombre4);
-        Button nombre5 = findViewById(R.id.nombre5);
-        Button nombre6 = findViewById(R.id.nombre6);
-        Button nombre7 = findViewById(R.id.nombre7);
-        Button nombre8 = findViewById(R.id.nombre8);
-        Button nombre9 = findViewById(R.id.nombre9);
-        // Botons de Funcions matemàtiques
-        Button botoigual = findViewById(R.id.botoigual);
-        Button botodivisio = findViewById(R.id.botodivisio);
-        Button botosuma = findViewById(R.id.botosuma);
-        Button botoresta = findViewById(R.id.botoresta);
-        Button botompultiplicacio = findViewById(R.id.botomultiplicacio);
-        // Botons de Borrar
-        Button borra = findViewById(R.id.borra);
-        Button punt = findViewById(R.id.punt);
-        // TextView on apareixeràn i es guardaràn els nombres
-        final TextView operand = (TextView) findViewById(R.id.operand);
-
+        Button nombre0 = findViewById(R.id.nombre0);                       // 0
+        Button nombre1 = findViewById(R.id.nombre1);                       // 1
+        Button nombre2 = findViewById(R.id.nombre2);                       // 2
+        Button nombre3 = findViewById(R.id.nombre3);                       // 3
+        Button nombre4 = findViewById(R.id.nombre4);                       // 4
+        Button nombre5 = findViewById(R.id.nombre5);                       // 5
+        Button nombre6 = findViewById(R.id.nombre6);                       // 6
+        Button nombre7 = findViewById(R.id.nombre7);                       // 7
+        Button nombre8 = findViewById(R.id.nombre8);                       // 8
+        Button nombre9 = findViewById(R.id.nombre9);                       // 9
+        Button botoigual = findViewById(R.id.botoigual);                   // Botó igual
+        Button botodivisio = findViewById(R.id.botodivisio);               // Botó divisió
+        Button botosuma = findViewById(R.id.botosuma);                     // Botó suma
+        Button botoresta = findViewById(R.id.botoresta);                   // Botó resta
+        Button botompultiplicacio = findViewById(R.id.botomultiplicacio);  // Botó multiplicació
+        Button borra = findViewById(R.id.borra);                           // Botó de Borrar;
+        Button punt = findViewById(R.id.punt);                             // Botó de punt/coma
+        Button pi = findViewById(R.id.pi);                                 // Botó de Pi
+        Button doblezero = findViewById(R.id.nombre00);                    // Botó doble zero
+        final TextView operand = findViewById(R.id.operand);               // Text onn apareixeràn els nombres
 
         // Administra la funció de cada botó.
         nombre0.setOnClickListener(new View.OnClickListener() {
@@ -215,6 +213,25 @@ public class ActivitatPrincipal extends AppCompatActivity {
             }
         });
 
+        pi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                double numpi = Math.PI;
+                coma = true; // El nombre pi conté comes. Si no es canvia el boolean coma, la aplicació falla.
+                String input = operand.getText().toString();
+                input = input + numpi;
+                operand.setText(input);
+            }
+        });
+
+        doblezero.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String input = operand.getText().toString();
+                input = input + "00";
+                operand.setText(input);
+            }
+        });
         punt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -224,8 +241,6 @@ public class ActivitatPrincipal extends AppCompatActivity {
                 coma = true;
             }
         });
-
-        // Administració de Botons de Suma, Resta, Multiplicació, Divisió, igual i borrar.
 
         botosuma.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -339,16 +354,9 @@ public class ActivitatPrincipal extends AppCompatActivity {
                     }
                 }
                 if (signe.equals("/")){
-                    if (coma){
                         resultat = Double.parseDouble(primernombre) / Double.parseDouble(operand.getText().toString());
                         resultatstring = String.valueOf(resultat);
                         operand.setText(resultatstring);
-                    }
-                    else {
-                        resultatint = Integer.parseInt(primernombre) / Integer.parseInt(operand.getText().toString());
-                        resultatstring = String.valueOf(resultatint);
-                        operand.setText(resultatstring);
-                    }
                 }
             }
         });
