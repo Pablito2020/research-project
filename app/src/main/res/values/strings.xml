@@ -1,15 +1,27 @@
 <resources>
+
+    <!-- Strings de layout, launcher i menu -->
     <string name="app_name">Calculator</string>
     <string name="launcher">Calculator</string>
     <string name="modenocturn">Night Mode</string>
     <string name="about">About the app</string>
 
+    <!-- Strings de layout sobre la app -->
     <string name="importantinfo">Dear User: </string>
     <string name="aboutapp">This app has been developed by Pablo Fraile Alonso for the "Treball de Recerca". All the
     information and work are under the GNU License, so, if you want to use it, be aware of that.</string>
 
+    <!-- Strings sobre el missatge de l'alerta al presionar el botó enrere al activity principal -->
     <string name="titolalerta"> Are you sure?</string>
     <string name="missatgealerta"> Do you want to close the app? </string>
     <string name="respostasi"> Yes </string>
     <string name="respostano"> No </string>
+
+    <!-- Strings de els Toast de multiplicació, divisió, suma i resta al mantindre presionat els botons. -->
+    <string name="divisio">split</string>
+    <string name="multiplicacio">multiplied</string>
+    <string name="suma">plus</string>
+    <string name="resta">minus</string>
+    <string name="igual">equals</string>
+
 </resources>

@@ -1,35 +1,45 @@
-/*
-Aplicació: Calculadora
-Autor: Pablo Fraile Alonso
-Llicència: GNU License 3.0
-Android SDK mínima per a l'aplicació: 22
-Android SDK utilitzada: 28
-*/
 
 package com.ordinador.pablo.calculadora;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-// Package per al mode Nocturn
+
+// Classe per al mode Nocturn
 import android.support.v7.app.AppCompatDelegate;
-// Packages de Botons, Caixes de Text i Switch
+
+// Classe necessària per a canviar d'activity
+import android.content.Intent;
+
+// Classes de Botons, Caixes de Text i Switch
 import android.widget.Button;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
-//Packages necessàris per al funcionament del menú de la app
+
+//Classes  necessàries per als missatges flotants
+import android.content.Context;
+import android.widget.Toast;
+
+//Classes necessàries per al funcionament del menú de la app
 import android.view.Menu;
 import android.view.MenuItem;
-// Packages necessàris per a l'avís abans de sortir de la app.
-import android.content.DialogInterface;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.app.AlertDialog;
 
+// Classes necessàris per a l'avís abans de sortir de la app.
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 
 
 public class ActivitatPrincipal extends AppCompatActivity {
 
+    // Variables necesàries per a la calculadora
+    String primernombre = "";
+    String signe = "";
+    String resultatstring = "";
+    double resultat = 0;
+    int resultatint = 0;
+    boolean coma = false;
+
+    // Métodes per a inciar les activities de menú i la principal ( aquesta es únicament per a resetejar la activity quan s'habilita el mode nocturn
     public void activityopcions(View view){
         Intent i = new Intent(this, menuopcions.class);
         startActivity(i);
@@ -39,6 +49,8 @@ public class ActivitatPrincipal extends AppCompatActivity {
         startActivity(i);
         finish();
     }
+
+    // Métodes per a que es mostri el menú i la programació de cada apartat d'aquest
     @Override
     public boolean onCreateOptionsMenu(Menu menuconf) {
         getMenuInflater().inflate(R.menu.menu, menuconf);
@@ -55,19 +67,16 @@ public class ActivitatPrincipal extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // Si el MODE_NIGHT_YES està habilitat, canvia el tema a el mode obscur, sinò, utilitza el tema programat de
-        // fàbrica ( Aquestes linees de codi tenen que anar abans de que es cargui el layout.
+        // Configuració del layout i el switch activador del mode nit.
         if (AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES){
             setTheme(R.style.DarkTheme);
         }
         else {
             setTheme(R.style.AppTheme);
         }
-
         // Afegit per Android Studio, carga el layout Activitat principal
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activitat_principal);
-
         // Botó Switch
         Switch switchobscur;
         switchobscur = (Switch)findViewById(R.id.darkswitch);
@@ -90,6 +99,7 @@ public class ActivitatPrincipal extends AppCompatActivity {
             }
         });
 
+        // Configuració de la calculadora
         // Dona nom als botons i al switch mitjançant la ID
         Button nombre0 = findViewById(R.id.nombre0);
         Button nombre1 = findViewById(R.id.nombre1);
@@ -109,11 +119,12 @@ public class ActivitatPrincipal extends AppCompatActivity {
         Button botompultiplicacio = findViewById(R.id.botomultiplicacio);
         // Botons de Borrar
         Button borra = findViewById(R.id.borra);
-        // TextView on aniràn els nombres
+        Button punt = findViewById(R.id.punt);
+        // TextView on apareixeràn i es guardaràn els nombres
         final TextView operand = (TextView) findViewById(R.id.operand);
 
 
-        // Administrarla funció de cada botó.
+        // Administra la funció de cada botó.
         nombre0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -204,11 +215,158 @@ public class ActivitatPrincipal extends AppCompatActivity {
             }
         });
 
+        punt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String input = operand.getText().toString();
+                input = input + ".";
+                operand.setText(input);
+                coma = true;
+            }
+        });
+
+        // Administració de Botons de Suma, Resta, Multiplicació, Divisió, igual i borrar.
+
+        botosuma.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                primernombre = operand.getText().toString();
+                operand.setText("");
+                signe = ("+");
+            }
+        });
+        botosuma.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Context context = getApplicationContext();
+                int duració = Toast.LENGTH_SHORT;
+                Toast.makeText(context, R.string.suma, duració).show();
+                return true;
+            }
+        });
+
+        botoresta.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                primernombre = operand.getText().toString();
+                operand.setText("");
+                signe = ("-");
+            }
+        });
+        botoresta.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Context context = getApplicationContext();
+                int duració = Toast.LENGTH_SHORT;
+                Toast.makeText(context, R.string.resta, duració).show();
+                return true;
+            }
+        });
+
+        botompultiplicacio.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                primernombre = operand.getText().toString();
+                operand.setText("");
+                signe = ("*");
+            }
+        });
+        botompultiplicacio.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Context context = getApplicationContext();
+                int duració = Toast.LENGTH_SHORT;
+                Toast.makeText(context, R.string.multiplicacio, duració).show();
+                return true;
+            }
+        });
+
+        botodivisio.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                primernombre = operand.getText().toString();
+                operand.setText("");
+                signe = ("/");
+            }
+        });
+        botodivisio.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Context context = getApplicationContext();
+                int duració = Toast.LENGTH_SHORT;
+                Toast.makeText(context, R.string.divisio, duració).show();
+                return true;
+            }
+        });
+
+        botoigual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (signe.equals("+")){
+                    if (coma){
+                        resultat = Double.parseDouble(primernombre) + Double.parseDouble(operand.getText().toString());
+                        resultatstring = String.valueOf(resultat);
+                        operand.setText(resultatstring);
+                    }
+                    else {
+                        resultatint = Integer.parseInt(primernombre) + Integer.parseInt(operand.getText().toString());
+                        resultatstring = String.valueOf(resultatint);
+                        operand.setText(resultatstring);
+                    }
+                }
+                if (signe.equals("-")){
+                    if (coma){
+                        resultat = Double.parseDouble(primernombre) - Double.parseDouble(operand.getText().toString());
+                        resultatstring = String.valueOf(resultat);
+                        operand.setText(resultatstring);
+                    }
+                    else {
+                        resultatint = Integer.parseInt(primernombre) - Integer.parseInt(operand.getText().toString());
+                        resultatstring = String.valueOf(resultatint);
+                        operand.setText(resultatstring);
+                    }
+                }
+                if (signe.equals("*")){
+                    if (coma){
+                        resultat = Double.parseDouble(primernombre) * Double.parseDouble(operand.getText().toString());
+                        resultatstring = String.valueOf(resultat);
+                        operand.setText(resultatstring);
+                    }
+                    else {
+                        resultatint = Integer.parseInt(primernombre) * Integer.parseInt(operand.getText().toString());
+                        resultatstring = String.valueOf(resultatint);
+                        operand.setText(resultatstring);
+                    }
+                }
+                if (signe.equals("/")){
+                    if (coma){
+                        resultat = Double.parseDouble(primernombre) / Double.parseDouble(operand.getText().toString());
+                        resultatstring = String.valueOf(resultat);
+                        operand.setText(resultatstring);
+                    }
+                    else {
+                        resultatint = Integer.parseInt(primernombre) / Integer.parseInt(operand.getText().toString());
+                        resultatstring = String.valueOf(resultatint);
+                        operand.setText(resultatstring);
+                    }
+                }
+            }
+        });
+        botoigual.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Context context = getApplicationContext();
+                int duració = Toast.LENGTH_SHORT;
+                Toast.makeText(context,R.string.igual, duració).show();
+                return true;
+            }
+        });
+
         borra.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 String input = operand.getText().toString();
-                input = input.substring(0,operand.length()-1);
+                input = input.substring(0,operand.length()-1); // https://developer.android.com/reference/android/widget/TextView
                 operand.setText(input);
             }
         });
@@ -216,50 +374,13 @@ public class ActivitatPrincipal extends AppCompatActivity {
             @Override
             public boolean onLongClick(View v) {
                 operand.setText("");
+                signe = ("");
+                primernombre = ("");
+                coma = false;
                 return true ;
             }
         });
 
-        botodivisio.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                String operacio = "/";
-                String primernombre = operand.getText().toString();
-                operand.setText("");
-
-            }
-        });
-        botosuma.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                String operacio = "+";
-                String primernombre = operand.getText().toString();
-                operand.setText("");
-
-            }
-        });
-        botoresta.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                String operacio = "-";
-                String primernombre = operand.getText().toString();
-                operand.setText("");
-            }
-        });
-        botompultiplicacio.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                String operacio = "*";
-                String primernombre = operand.getText().toString();
-                operand.setText("");
-            }
-        });
-        botoigual.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
     }
 
     // Missatge de Alerta quan es pren el botó enrere en la pantalla.

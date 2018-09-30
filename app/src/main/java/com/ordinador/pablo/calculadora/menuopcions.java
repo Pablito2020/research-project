@@ -2,12 +2,22 @@ package com.ordinador.pablo.calculadora;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDelegate;
+
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+
 import android.content.Intent;
 import android.net.Uri;
 
 public class menuopcions extends ActivitatPrincipal{
+    // Métode per a eliminar la barra de menú.
+    @Override
+    public boolean onCreateOptionsMenu(Menu menuconf) {
+        getMenuInflater().inflate(R.menu.menu, menuconf);
+        return false; // Important per a eliminar la barra del menú. Si estigués amb true, s'habilitaria.
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // Si el Mode Nocturn està habilitat, fes que el layout de el menu també tinqui el tema negre

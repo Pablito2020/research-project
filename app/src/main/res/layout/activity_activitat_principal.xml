@@ -159,7 +159,6 @@
           android:textColor="?attr/textcolor" />
 
    </GridLayout>
-
 <Switch
    android:id="@+id/darkswitch"
    android:layout_width="wrap_content"
@@ -169,4 +168,13 @@
    android:layout_marginTop="35dp"
    android:text="@string/modenocturn"
    android:textColor="?attr/textcolor" />
+
+   <TextView
+       android:id="@+id/signe"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignParentTop="true"
+       android:layout_centerHorizontal="true"
+       android:layout_marginTop="189dp"
+       android:visibility="invisible" />
 </RelativeLayout>
