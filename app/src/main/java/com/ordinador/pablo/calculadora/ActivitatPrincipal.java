@@ -28,16 +28,15 @@ import android.view.MenuItem;
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 
-
 public class ActivitatPrincipal extends AppCompatActivity {
 
-    // Variables necesàries per a la calculadora
-    String primernombre = "";
-    String signe = "";
+    String primernombre = ""; // Variable necessària per a guardar el primer nombre escollit per l'usuari
+    String signe = ""; // Variable necessària per a guardar el signe escollit
     String resultatstring = "";
-    double resultat = 0;
-    int resultatint = 0;
-    boolean coma = false;
+    double multiplica= 0; // Variable necessària per al nombre pi
+    double resultat = 0; // Variable necessària per al resultat (decimal)
+    int resultatint = 0; // Variable necessària per al resultat (enters)
+    boolean coma = false; // Variable necessària per a la funció de coma
 
     // Métodes per a inciar les activities de menú i la principal ( aquesta es únicament per a resetejar la activity quan s'habilita el mode nocturn
     public void activityopcions(View view){
@@ -99,7 +98,6 @@ public class ActivitatPrincipal extends AppCompatActivity {
             }
         });
 
-        // Configuració de la calculadora
         // Dona nom als botons i al switch mitjançant la ID
         Button nombre0 = findViewById(R.id.nombre0);                       // 0
         Button nombre1 = findViewById(R.id.nombre1);                       // 1
@@ -120,10 +118,9 @@ public class ActivitatPrincipal extends AppCompatActivity {
         Button punt = findViewById(R.id.punt);                             // Botó de punt/coma
         Button pi = findViewById(R.id.pi);                                 // Botó de Pi
         Button doblezero = findViewById(R.id.nombre00);                    // Botó doble zero
-        final TextView operand = findViewById(R.id.operand);               // Text onn apareixeràn els nombres
+        final TextView operand = findViewById(R.id.operand);               // Text on apareixeràn els nombres
 
-        // Administra la funció de cada botó.
-        nombre0.setOnClickListener(new View.OnClickListener() {
+        nombre0.setOnClickListener(new View.OnClickListener() { // Administració del nombre 0
             @Override
             public void onClick(View v) {
                 String input = operand.getText().toString();
@@ -131,8 +128,7 @@ public class ActivitatPrincipal extends AppCompatActivity {
                 operand.setText(input);
             }
         });
-
-        nombre1.setOnClickListener(new View.OnClickListener(){
+        nombre1.setOnClickListener(new View.OnClickListener(){ // Administració del nombre 1
             @Override
             public void onClick(View v) {
               String input = operand.getText().toString();
@@ -140,8 +136,7 @@ public class ActivitatPrincipal extends AppCompatActivity {
              operand.setText(input);
         }
         });
-
-        nombre2.setOnClickListener(new View.OnClickListener(){
+        nombre2.setOnClickListener(new View.OnClickListener(){ // Administració del nombre 2
             @Override
             public void onClick(View v) {
              String input = operand.getText().toString();
@@ -149,8 +144,7 @@ public class ActivitatPrincipal extends AppCompatActivity {
              operand.setText(input);
             }
         });
-
-        nombre3.setOnClickListener(new View.OnClickListener(){
+        nombre3.setOnClickListener(new View.OnClickListener(){ // Administració del nombre 3
             @Override
             public void onClick(View v) {
                 String input = operand.getText().toString();
@@ -158,8 +152,7 @@ public class ActivitatPrincipal extends AppCompatActivity {
                 operand.setText(input);
             }
         });
-
-        nombre4.setOnClickListener(new View.OnClickListener(){
+        nombre4.setOnClickListener(new View.OnClickListener(){ // Administració del nombre 4
             @Override
             public void onClick(View v) {
                 String input = operand.getText().toString();
@@ -167,8 +160,7 @@ public class ActivitatPrincipal extends AppCompatActivity {
                 operand.setText(input);
             }
         });
-
-        nombre5.setOnClickListener(new View.OnClickListener(){
+        nombre5.setOnClickListener(new View.OnClickListener(){ // Administració del nombre 5
             @Override
             public void onClick(View v) {
                 String input = operand.getText().toString();
@@ -176,8 +168,7 @@ public class ActivitatPrincipal extends AppCompatActivity {
                 operand.setText(input);
             }
         });
-
-        nombre6.setOnClickListener(new View.OnClickListener(){
+        nombre6.setOnClickListener(new View.OnClickListener(){ // Administració del nombre 6
             @Override
             public void onClick(View v) {
                 String input = operand.getText().toString();
@@ -185,8 +176,7 @@ public class ActivitatPrincipal extends AppCompatActivity {
                 operand.setText(input);
             }
         });
-
-        nombre7.setOnClickListener(new View.OnClickListener(){
+        nombre7.setOnClickListener(new View.OnClickListener(){ // Administració del nombre 7
             @Override
             public void onClick(View v) {
                 String input = operand.getText().toString();
@@ -194,8 +184,7 @@ public class ActivitatPrincipal extends AppCompatActivity {
                 operand.setText(input);
             }
         });
-
-        nombre8.setOnClickListener(new View.OnClickListener(){
+        nombre8.setOnClickListener(new View.OnClickListener(){ // Administració del nombre 8
             @Override
             public void onClick(View v) {
                 String input = operand.getText().toString();
@@ -203,8 +192,7 @@ public class ActivitatPrincipal extends AppCompatActivity {
                 operand.setText(input);
             }
         });
-
-        nombre9.setOnClickListener(new View.OnClickListener(){
+        nombre9.setOnClickListener(new View.OnClickListener(){ // Administració del nombre 9
             @Override
             public void onClick(View v) {
                 String input = operand.getText().toString();
@@ -212,27 +200,32 @@ public class ActivitatPrincipal extends AppCompatActivity {
                 operand.setText(input);
             }
         });
-
-        pi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                double numpi = Math.PI;
-                coma = true; // El nombre pi conté comes. Si no es canvia el boolean coma, la aplicació falla.
-                String input = operand.getText().toString();
-                input = input + numpi;
-                operand.setText(input);
-            }
-        });
-
         doblezero.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) { // Administració del botó doble zero (00)
                 String input = operand.getText().toString();
                 input = input + "00";
                 operand.setText(input);
             }
         });
-        punt.setOnClickListener(new View.OnClickListener() {
+        pi.setOnClickListener(new View.OnClickListener() {  // Administració del nombre pi. Es comproba si hi ha un nombre radere, si és el cas, es multiplica per pi , sinò ni ha, s'afegeix el nombre pi
+            @Override
+            public void onClick(View v) {
+                double numpi = Math.PI;
+                coma = true; // El nombre pi conté comes. Si no es canvia el boolean coma, la aplicació falla.
+                String input = operand.getText().toString();
+                if (input!=("")){
+                    multiplica = Double.parseDouble(input) * numpi;
+                    String multiplicacio = String.valueOf(multiplica);
+                    operand.setText(multiplicacio);
+                }
+                else {
+                    input = input + numpi;
+                    operand.setText(input);
+                }
+            }
+        });
+        punt.setOnClickListener(new View.OnClickListener() { // Administració del botó coma
             @Override
             public void onClick(View v) {
                 String input = operand.getText().toString();
@@ -245,72 +238,271 @@ public class ActivitatPrincipal extends AppCompatActivity {
         botosuma.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                primernombre = operand.getText().toString();
-                operand.setText("");
-                signe = ("+");
-            }
-        });
-        botosuma.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                Context context = getApplicationContext();
-                int duració = Toast.LENGTH_SHORT;
-                Toast.makeText(context, R.string.suma, duració).show();
-                return true;
+                String nombretext = operand.getText().toString(); // Agafa el text que hi ha a la textView i donali la variable string nombretext (únicament per a botoresta)
+                if (primernombre!="" && nombretext!="" && signe!=""){
+                    String input = "";
+                    if (signe.equals("+")){
+                        if (coma){
+                            resultat = Double.parseDouble(primernombre) + Double.parseDouble(operand.getText().toString());
+                            resultatstring = String.valueOf(resultat);
+                            primernombre = resultatstring;
+                            operand.setText(input);
+                        }
+                        else {
+                            resultatint = Integer.parseInt(primernombre) + Integer.parseInt(operand.getText().toString());
+                            resultatstring = String.valueOf(resultatint);
+                            primernombre = resultatstring;
+                            operand.setText(input);
+                        }
+                    }
+                    if (signe.equals("-")){
+                        if (coma){
+                            resultat = Double.parseDouble(primernombre) - Double.parseDouble(operand.getText().toString());
+                            resultatstring = String.valueOf(resultat);
+                            primernombre = resultatstring;
+                            operand.setText(input);
+                        }
+                        else {
+                            resultatint = Integer.parseInt(primernombre) - Integer.parseInt(operand.getText().toString());
+                            resultatstring = String.valueOf(resultatint);
+                            primernombre = resultatstring;
+                            operand.setText(input);
+                        }
+                    }
+                    if (signe.equals("*")){
+                        if (coma){
+                            resultat = Double.parseDouble(primernombre) * Double.parseDouble(operand.getText().toString());
+                            resultatstring = String.valueOf(resultat);
+                            primernombre = resultatstring;
+                            operand.setText(input);
+                        }
+                        else {
+                            resultatint = Integer.parseInt(primernombre) * Integer.parseInt(operand.getText().toString());
+                            resultatstring = String.valueOf(resultatint);
+                            primernombre = resultatstring;
+                            operand.setText(input);
+                        }
+                    }
+                    if (signe.equals("/")){
+                        resultat = Double.parseDouble(primernombre) / Double.parseDouble(operand.getText().toString());
+                        resultatstring = String.valueOf(resultat);
+                        primernombre = resultatstring;
+                        operand.setText(input);
+                    }
+                }
+                else {
+                    primernombre = operand.getText().toString();
+                    operand.setText("");
+                    signe = ("+");
+                }
             }
         });
 
         botoresta.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                primernombre = operand.getText().toString();
-                operand.setText("");
-                signe = ("-");
-            }
-        });
-        botoresta.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                Context context = getApplicationContext();
-                int duració = Toast.LENGTH_SHORT;
-                Toast.makeText(context, R.string.resta, duració).show();
-                return true;
+                String nombretext = operand.getText().toString(); // Agafa el text que hi ha a la textView i donali la variable string nombretext (únicament per a botoresta)
+                if (primernombre=="" && signe=="" && nombretext==""){ // Nombre negatiu al primer nombre, al iniciar. Exemple " -6 + 3 "
+                    String input = operand.getText().toString();
+                    input = input + "-";
+                    operand.setText(input);
+                }
+                if (primernombre!="" && nombretext=="" && signe!=""){ // Nombre negatiu al segon nombre . Exemple : "6 + (-6)"
+                    String input = operand.getText().toString();
+                    input = input + "-";
+                    operand.setText(input);
+                }
+                if (primernombre!="" && nombretext!="" && signe!=""){
+                    String input = "";
+                    if (signe.equals("+")){
+                        if (coma){
+                            resultat = Double.parseDouble(primernombre) + Double.parseDouble(operand.getText().toString());
+                            resultatstring = String.valueOf(resultat);
+                            primernombre = resultatstring;
+                            operand.setText(input);
+                        }
+                        else {
+                            resultatint = Integer.parseInt(primernombre) + Integer.parseInt(operand.getText().toString());
+                            resultatstring = String.valueOf(resultatint);
+                            primernombre = resultatstring;
+                            operand.setText(input);
+                        }
+                    }
+                    if (signe.equals("-")){
+                        if (coma){
+                            resultat = Double.parseDouble(primernombre) - Double.parseDouble(operand.getText().toString());
+                            resultatstring = String.valueOf(resultat);
+                            primernombre = resultatstring;
+                            operand.setText(input);
+                        }
+                        else {
+                            resultatint = Integer.parseInt(primernombre) - Integer.parseInt(operand.getText().toString());
+                            resultatstring = String.valueOf(resultatint);
+                            primernombre = resultatstring;
+                            operand.setText(input);
+                        }
+                    }
+                    if (signe.equals("*")){
+                        if (coma){
+                            resultat = Double.parseDouble(primernombre) * Double.parseDouble(operand.getText().toString());
+                            resultatstring = String.valueOf(resultat);
+                            primernombre = resultatstring;
+                            operand.setText(input);
+                        }
+                        else {
+                            resultatint = Integer.parseInt(primernombre) * Integer.parseInt(operand.getText().toString());
+                            resultatstring = String.valueOf(resultatint);
+                            primernombre = resultatstring;
+                            operand.setText(input);
+                        }
+                    }
+                    if (signe.equals("/")){
+                        resultat = Double.parseDouble(primernombre) / Double.parseDouble(operand.getText().toString());
+                        resultatstring = String.valueOf(resultat);
+                        primernombre = resultatstring;
+                        operand.setText(input);
+                    }
+                }
+                else { // Resta normal, cap nombre negatiu
+                    primernombre = operand.getText().toString();
+                    operand.setText("");
+                    signe = ("-");
+                }
             }
         });
 
         botompultiplicacio.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                primernombre = operand.getText().toString();
-                operand.setText("");
-                signe = ("*");
-            }
-        });
-        botompultiplicacio.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                Context context = getApplicationContext();
-                int duració = Toast.LENGTH_SHORT;
-                Toast.makeText(context, R.string.multiplicacio, duració).show();
-                return true;
+                String nombretext = operand.getText().toString(); // Agafa el text que hi ha a la textView i donali la variable string nombretext (únicament per a botoresta)
+                if (primernombre!="" && nombretext!="" && signe!=""){
+                    String input = "";
+                    if (signe.equals("+")){
+                        if (coma){
+                            resultat = Double.parseDouble(primernombre) + Double.parseDouble(operand.getText().toString());
+                            resultatstring = String.valueOf(resultat);
+                            primernombre = resultatstring;
+                            operand.setText(input);
+                        }
+                        else {
+                            resultatint = Integer.parseInt(primernombre) + Integer.parseInt(operand.getText().toString());
+                            resultatstring = String.valueOf(resultatint);
+                            primernombre = resultatstring;
+                            operand.setText(input);
+                        }
+                    }
+                    if (signe.equals("-")){
+                        if (coma){
+                            resultat = Double.parseDouble(primernombre) - Double.parseDouble(operand.getText().toString());
+                            resultatstring = String.valueOf(resultat);
+                            primernombre = resultatstring;
+                            operand.setText(input);
+                        }
+                        else {
+                            resultatint = Integer.parseInt(primernombre) - Integer.parseInt(operand.getText().toString());
+                            resultatstring = String.valueOf(resultatint);
+                            primernombre = resultatstring;
+                            operand.setText(input);
+                        }
+                    }
+                    if (signe.equals("*")){
+                        if (coma){
+                            resultat = Double.parseDouble(primernombre) * Double.parseDouble(operand.getText().toString());
+                            resultatstring = String.valueOf(resultat);
+                            primernombre = resultatstring;
+                            operand.setText(input);
+                        }
+                        else {
+                            resultatint = Integer.parseInt(primernombre) * Integer.parseInt(operand.getText().toString());
+                            resultatstring = String.valueOf(resultatint);
+                            primernombre = resultatstring;
+                            operand.setText(input);
+                        }
+                    }
+                    if (signe.equals("/")){
+                        resultat = Double.parseDouble(primernombre) / Double.parseDouble(operand.getText().toString());
+                        resultatstring = String.valueOf(resultat);
+                        primernombre = resultatstring;
+                        operand.setText(input);
+                    }
+                }
+                else {
+                    primernombre = operand.getText().toString();
+                    operand.setText("");
+                    signe = ("*");
+                }
             }
         });
 
         botodivisio.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                primernombre = operand.getText().toString();
-                operand.setText("");
-                signe = ("/");
+                String nombretext = operand.getText().toString(); // Agafa el text que hi ha a la textView i donali la variable string nombretext (únicament per a botoresta)
+                if (primernombre!="" && nombretext!="" && signe!=""){
+                    String input = "";
+                    if (signe.equals("+")){
+                        if (coma){
+                            resultat = Double.parseDouble(primernombre) + Double.parseDouble(operand.getText().toString());
+                            resultatstring = String.valueOf(resultat);
+                            primernombre = resultatstring;
+                            operand.setText(input);
+                        }
+                        else {
+                            resultatint = Integer.parseInt(primernombre) + Integer.parseInt(operand.getText().toString());
+                            resultatstring = String.valueOf(resultatint);
+                            primernombre = resultatstring;
+                            operand.setText(input);
+                        }
+                    }
+                    if (signe.equals("-")){
+                        if (coma){
+                            resultat = Double.parseDouble(primernombre) - Double.parseDouble(operand.getText().toString());
+                            resultatstring = String.valueOf(resultat);
+                            primernombre = resultatstring;
+                            operand.setText(input);
+                        }
+                        else {
+                            resultatint = Integer.parseInt(primernombre) - Integer.parseInt(operand.getText().toString());
+                            resultatstring = String.valueOf(resultatint);
+                            primernombre = resultatstring;
+                            operand.setText(input);
+                        }
+                    }
+                    if (signe.equals("*")){
+                        if (coma){
+                            resultat = Double.parseDouble(primernombre) * Double.parseDouble(operand.getText().toString());
+                            resultatstring = String.valueOf(resultat);
+                            primernombre = resultatstring;
+                            operand.setText(input);
+                        }
+                        else {
+                            resultatint = Integer.parseInt(primernombre) * Integer.parseInt(operand.getText().toString());
+                            resultatstring = String.valueOf(resultatint);
+                            primernombre = resultatstring;
+                            operand.setText(input);
+                        }
+                    }
+                    if (signe.equals("/")){
+                        resultat = Double.parseDouble(primernombre) / Double.parseDouble(operand.getText().toString());
+                        resultatstring = String.valueOf(resultat);
+                        primernombre = resultatstring;
+                        operand.setText(input);
+                    }
+                }
+                else {
+                    primernombre = operand.getText().toString();
+                    operand.setText("");
+                    signe = ("/");
+                }
             }
         });
-        botodivisio.setOnLongClickListener(new View.OnLongClickListener() {
+
+        borra.setOnClickListener(new View.OnClickListener(){
             @Override
-            public boolean onLongClick(View v) {
-                Context context = getApplicationContext();
-                int duració = Toast.LENGTH_SHORT;
-                Toast.makeText(context, R.string.divisio, duració).show();
-                return true;
+            public void onClick(View v) {
+                String input = operand.getText().toString();
+                input = input.substring(0,operand.length()-1); // https://developer.android.com/reference/android/widget/TextView
+                operand.setText(input);
             }
         });
 
@@ -354,12 +546,14 @@ public class ActivitatPrincipal extends AppCompatActivity {
                     }
                 }
                 if (signe.equals("/")){
-                        resultat = Double.parseDouble(primernombre) / Double.parseDouble(operand.getText().toString());
-                        resultatstring = String.valueOf(resultat);
-                        operand.setText(resultatstring);
+                    resultat = Double.parseDouble(primernombre) / Double.parseDouble(operand.getText().toString());
+                    resultatstring = String.valueOf(resultat);
+                    operand.setText(resultatstring);
                 }
             }
         });
+
+        // Programació de botons quan es prenen durant un periode llarg de temps.
         botoigual.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -369,13 +563,40 @@ public class ActivitatPrincipal extends AppCompatActivity {
                 return true;
             }
         });
-
-        borra.setOnClickListener(new View.OnClickListener(){
+        botosuma.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
-            public void onClick(View v) {
-                String input = operand.getText().toString();
-                input = input.substring(0,operand.length()-1); // https://developer.android.com/reference/android/widget/TextView
-                operand.setText(input);
+            public boolean onLongClick(View v) {
+                Context context = getApplicationContext();
+                int duració = Toast.LENGTH_SHORT;
+                Toast.makeText(context, R.string.suma, duració).show();
+                return true;
+            }
+        });
+        botoresta.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Context context = getApplicationContext();
+                int duració = Toast.LENGTH_SHORT;
+                Toast.makeText(context, R.string.resta, duració).show();
+                return true;
+            }
+        });
+        botompultiplicacio.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Context context = getApplicationContext();
+                int duració = Toast.LENGTH_SHORT;
+                Toast.makeText(context, R.string.multiplicacio, duració).show();
+                return true;
+            }
+        });
+        botodivisio.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Context context = getApplicationContext();
+                int duració = Toast.LENGTH_SHORT;
+                Toast.makeText(context, R.string.divisio, duració).show();
+                return true;
             }
         });
         borra.setOnLongClickListener(new View.OnLongClickListener() {
@@ -388,13 +609,12 @@ public class ActivitatPrincipal extends AppCompatActivity {
                 return true ;
             }
         });
-
     }
-
     // Missatge de Alerta quan es pren el botó enrere en la pantalla.
     public void onBackPressed(){
         mostraalerta();
     }
+
     private void mostraalerta(){
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder .setCancelable(false);
@@ -414,7 +634,6 @@ public class ActivitatPrincipal extends AppCompatActivity {
                 dialog.dismiss();
             }
         });
-        builder.create().show(); // Crea el missatge
+        builder.create().show(); // Crea el missatge i mostra'l
     }
-
 }
