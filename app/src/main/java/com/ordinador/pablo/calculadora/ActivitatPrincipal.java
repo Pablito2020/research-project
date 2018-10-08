@@ -1,4 +1,3 @@
-
 package com.ordinador.pablo.calculadora;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -131,17 +130,17 @@ public class ActivitatPrincipal extends AppCompatActivity {
         nombre1.setOnClickListener(new View.OnClickListener(){ // Administració del nombre 1
             @Override
             public void onClick(View v) {
-              String input = operand.getText().toString();
-              input = input + "1";
-             operand.setText(input);
-        }
+                String input = operand.getText().toString();
+                input = input + "1";
+                operand.setText(input);
+            }
         });
         nombre2.setOnClickListener(new View.OnClickListener(){ // Administració del nombre 2
             @Override
             public void onClick(View v) {
-             String input = operand.getText().toString();
-             input = input + "2";
-             operand.setText(input);
+                String input = operand.getText().toString();
+                input = input + "2";
+                operand.setText(input);
             }
         });
         nombre3.setOnClickListener(new View.OnClickListener(){ // Administració del nombre 3
@@ -214,7 +213,7 @@ public class ActivitatPrincipal extends AppCompatActivity {
                 double numpi = Math.PI;
                 coma = true; // El nombre pi conté comes. Si no es canvia el boolean coma, la aplicació falla.
                 String input = operand.getText().toString();
-                if (input!=("")){
+                if (!input.equals("")){
                     multiplica = Double.parseDouble(input) * numpi;
                     String multiplicacio = String.valueOf(multiplica);
                     operand.setText(multiplicacio);
@@ -239,7 +238,7 @@ public class ActivitatPrincipal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String nombretext = operand.getText().toString(); // Agafa el text que hi ha a la textView i donali la variable string nombretext (únicament per a botoresta)
-                if (primernombre!="" && nombretext!="" && signe!=""){
+                if (!primernombre.equals("") && !nombretext.equals("") && !signe.equals("")){
                     String input = "";
                     if (signe.equals("+")){
                         if (coma){
@@ -302,17 +301,17 @@ public class ActivitatPrincipal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String nombretext = operand.getText().toString(); // Agafa el text que hi ha a la textView i donali la variable string nombretext (únicament per a botoresta)
-                if (primernombre=="" && signe=="" && nombretext==""){ // Nombre negatiu al primer nombre, al iniciar. Exemple " -6 + 3 "
+                if (!primernombre.equals("") && !signe.equals("") && !nombretext.equals("")){ // Nombre negatiu al primer nombre, al iniciar. Exemple " -6 + 3 "
                     String input = operand.getText().toString();
                     input = input + "-";
                     operand.setText(input);
                 }
-                if (primernombre!="" && nombretext=="" && signe!=""){ // Nombre negatiu al segon nombre . Exemple : "6 + (-6)"
+                if (!primernombre.equals("") && !nombretext.equals("") && !signe.equals("")){ // Nombre negatiu al segon nombre . Exemple : "6 + (-6)"
                     String input = operand.getText().toString();
                     input = input + "-";
                     operand.setText(input);
                 }
-                if (primernombre!="" && nombretext!="" && signe!=""){
+                if (!primernombre.equals("") && !nombretext.equals("") && !signe.equals("")){
                     String input = "";
                     if (signe.equals("+")){
                         if (coma){
@@ -375,7 +374,7 @@ public class ActivitatPrincipal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String nombretext = operand.getText().toString(); // Agafa el text que hi ha a la textView i donali la variable string nombretext (únicament per a botoresta)
-                if (primernombre!="" && nombretext!="" && signe!=""){
+                if (!primernombre.equals("") && !nombretext.equals("") && !signe.equals("")){
                     String input = "";
                     if (signe.equals("+")){
                         if (coma){
@@ -438,7 +437,7 @@ public class ActivitatPrincipal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String nombretext = operand.getText().toString(); // Agafa el text que hi ha a la textView i donali la variable string nombretext (únicament per a botoresta)
-                if (primernombre!="" && nombretext!="" && signe!=""){
+                if (!primernombre.equals("") && !nombretext.equals("") && !signe.equals("")){
                     String input = "";
                     if (signe.equals("+")){
                         if (coma){
@@ -565,8 +564,8 @@ public class ActivitatPrincipal extends AppCompatActivity {
             @Override
             public boolean onLongClick(View v) {
                 Context context = getApplicationContext();
-                int duració = Toast.LENGTH_SHORT;
-                Toast.makeText(context,R.string.igual, duració).show();
+                int duracio = Toast.LENGTH_SHORT;
+                Toast.makeText(context,R.string.igual, duracio).show();
                 return true;
             }
         });
@@ -574,8 +573,8 @@ public class ActivitatPrincipal extends AppCompatActivity {
             @Override
             public boolean onLongClick(View v) {
                 Context context = getApplicationContext();
-                int duració = Toast.LENGTH_SHORT;
-                Toast.makeText(context, R.string.suma, duració).show();
+                int duracio = Toast.LENGTH_SHORT;
+                Toast.makeText(context, R.string.suma, duracio).show();
                 return true;
             }
         });
@@ -583,8 +582,8 @@ public class ActivitatPrincipal extends AppCompatActivity {
             @Override
             public boolean onLongClick(View v) {
                 Context context = getApplicationContext();
-                int duració = Toast.LENGTH_SHORT;
-                Toast.makeText(context, R.string.resta, duració).show();
+                int duracio = Toast.LENGTH_SHORT;
+                Toast.makeText(context, R.string.resta, duracio).show();
                 return true;
             }
         });
@@ -592,8 +591,8 @@ public class ActivitatPrincipal extends AppCompatActivity {
             @Override
             public boolean onLongClick(View v) {
                 Context context = getApplicationContext();
-                int duració = Toast.LENGTH_SHORT;
-                Toast.makeText(context, R.string.multiplicacio, duració).show();
+                int duracio = Toast.LENGTH_SHORT;
+                Toast.makeText(context, R.string.multiplicacio, duracio).show();
                 return true;
             }
         });
@@ -601,8 +600,8 @@ public class ActivitatPrincipal extends AppCompatActivity {
             @Override
             public boolean onLongClick(View v) {
                 Context context = getApplicationContext();
-                int duració = Toast.LENGTH_SHORT;
-                Toast.makeText(context, R.string.divisio, duració).show();
+                int duracio = Toast.LENGTH_SHORT;
+                Toast.makeText(context, R.string.divisio, duracio).show();
                 return true;
             }
         });
