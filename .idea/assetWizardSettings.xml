@@ -23,7 +23,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="color" value="c1d0cb" />
+                                                <entry key="color" value="eefffa" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -34,7 +34,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="fontFamily" value="Broadway" />
+                                                <entry key="fontFamily" value="Fira Code" />
                                                 <entry key="text" value="C" />
                                               </map>
                                             </option>
@@ -46,7 +46,7 @@
                                   <option name="values">
                                     <map>
                                       <entry key="backgroundAssetType" value="COLOR" />
-                                      <entry key="backgroundColor" value="2d8e76" />
+                                      <entry key="backgroundColor" value="35946b" />
                                       <entry key="foregroundAssetType" value="TEXT" />
                                     </map>
                                   </option>

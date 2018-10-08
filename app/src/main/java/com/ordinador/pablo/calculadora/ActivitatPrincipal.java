@@ -514,11 +514,13 @@ public class ActivitatPrincipal extends AppCompatActivity {
                         resultat = Double.parseDouble(primernombre) + Double.parseDouble(operand.getText().toString());
                         resultatstring = String.valueOf(resultat);
                         operand.setText(resultatstring);
+                        primernombre="";
                     }
                     else {
                         resultatint = Integer.parseInt(primernombre) + Integer.parseInt(operand.getText().toString());
                         resultatstring = String.valueOf(resultatint);
                         operand.setText(resultatstring);
+                        primernombre="";
                     }
                 }
                 if (signe.equals("-")){
@@ -526,11 +528,13 @@ public class ActivitatPrincipal extends AppCompatActivity {
                         resultat = Double.parseDouble(primernombre) - Double.parseDouble(operand.getText().toString());
                         resultatstring = String.valueOf(resultat);
                         operand.setText(resultatstring);
+                        primernombre="";
                     }
                     else {
                         resultatint = Integer.parseInt(primernombre) - Integer.parseInt(operand.getText().toString());
                         resultatstring = String.valueOf(resultatint);
                         operand.setText(resultatstring);
+                        primernombre="";
                     }
                 }
                 if (signe.equals("*")){
@@ -538,17 +542,20 @@ public class ActivitatPrincipal extends AppCompatActivity {
                         resultat = Double.parseDouble(primernombre) * Double.parseDouble(operand.getText().toString());
                         resultatstring = String.valueOf(resultat);
                         operand.setText(resultatstring);
+                        primernombre="";
                     }
                     else {
                         resultatint = Integer.parseInt(primernombre) * Integer.parseInt(operand.getText().toString());
                         resultatstring = String.valueOf(resultatint);
                         operand.setText(resultatstring);
+                        primernombre="";
                     }
                 }
                 if (signe.equals("/")){
                     resultat = Double.parseDouble(primernombre) / Double.parseDouble(operand.getText().toString());
                     resultatstring = String.valueOf(resultat);
                     operand.setText(resultatstring);
+                    primernombre="";
                 }
             }
         });
