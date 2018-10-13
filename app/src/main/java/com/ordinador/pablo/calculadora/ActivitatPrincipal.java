@@ -2,60 +2,46 @@ package com.ordinador.pablo.calculadora;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-// Classe per al mode Nocturn
-import android.support.v7.app.AppCompatDelegate;
-
-// Classe necessària per a canviar d'activity
-import android.content.Intent;
-
-// Classes de Botons, Caixes de Text i Switch
-import android.widget.Button;
-import android.view.View;
-import android.widget.CompoundButton;
-import android.widget.Switch;
-import android.widget.TextView;
-
-//Classes  necessàries per als missatges flotants
-import android.content.Context;
-import android.widget.Toast;
-
-//Classes necessàries per al funcionament del menú de la app
-import android.view.Menu;
-import android.view.MenuItem;
-
-// Classes necessàris per a l'avís abans de sortir de la app.
-import android.content.DialogInterface;
-import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatDelegate; // Classe Mode Nocturn
+import android.content.Intent; // Classe necessària per a canviar de Activity
+import android.widget.Button; // Classe necessària per als botons
+import android.view.View; // Classe necessària per a mostrar el xml de l'activity
+import android.widget.CompoundButton; // Classe necessària per al switch obscur
+import android.widget.Switch; // Classe necessària per a el switch
+import android.widget.TextView; // Classe necessària per la textview nombres
+import android.content.Context; // Classe necessària per a agafar el contexte per als missatges Toast
+import android.widget.Toast; // Classe necessària per als missatges Toast
+import android.view.Menu; // Classe necessària per mostrar el Menu
+import android.view.MenuItem; // Classe necessària per a mostrar els ítems del Menú.
+import android.content.DialogInterface; // Classe necessària per a el Dialog abans de sortir de la app
+import android.support.v7.app.AlertDialog; //Classe necessària per a el Dialog abans de sortir de la app
 
 public class ActivitatPrincipal extends AppCompatActivity {
 
+    // Variables
+    int resultatint = 0; // Variable necessària per al resultat (enters)
+    double multiplica= 0; // Variable necessària per al nombre pi
+    double resultat = 0; // Variable necessària per al resultat (decimal)
+    boolean coma = false; // Variable necessària per a la funció de coma
     String primernombre = ""; // Variable necessària per a guardar el primer nombre escollit per l'usuari
     String signe = ""; // Variable necessària per a guardar el signe escollit
     String resultatstring = "";
-    double multiplica= 0; // Variable necessària per al nombre pi
-    double resultat = 0; // Variable necessària per al resultat (decimal)
-    int resultatint = 0; // Variable necessària per al resultat (enters)
-    boolean coma = false; // Variable necessària per a la funció de coma
 
-    // Métodes per a inciar les activities de menú i la principal ( aquesta es únicament per a resetejar la activity quan s'habilita el mode nocturn
-    public void activityopcions(View view){
+    // Métodes
+    public void activityopcions(View view){ // Métode per a iniciar la classe " sobre la aplicació"
         Intent i = new Intent(this, menuopcions.class);
         startActivity(i);
     }
-    public void activityprincipal(){
+    public void activityprincipal(){  // Métode per a iniciar la classe activitat principal (necessari per al switch Mode Obscur)
         Intent i = new Intent(getApplicationContext(),ActivitatPrincipal.class);
         startActivity(i);
         finish();
     }
-
-    // Métodes per a que es mostri el menú i la programació de cada apartat d'aquest
-    @Override
-    public boolean onCreateOptionsMenu(Menu menuconf) {
+    public boolean onCreateOptionsMenu(Menu menuconf) {  // Métode per a mostrar el menú
         getMenuInflater().inflate(R.menu.menu, menuconf);
         return true;
     }
-    @Override
-    public boolean onOptionsItemSelected (MenuItem opciomenu) {
+    public boolean onOptionsItemSelected (MenuItem opciomenu) { // Métode per a dir que es fa si es pren determinat apartat del menú
         int id=opciomenu.getItemId();
         if (id==R.id.about){
             activityopcions(null); // No es pot mostrar cap objecte view ( cap widget,etc.) per tant, li donem un parametre null (no tenim res)
@@ -64,25 +50,21 @@ public class ActivitatPrincipal extends AppCompatActivity {
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        // Configuració del layout i el switch activador del mode nit.
+    protected void onCreate(Bundle savedInstanceState) { // Métode incial, inclòs per Android Studio.
+
         if (AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES){
             setTheme(R.style.DarkTheme);
         }
         else {
             setTheme(R.style.AppTheme);
         }
-        // Afegit per Android Studio, carga el layout Activitat principal
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activitat_principal);
-        // Botó Switch
         Switch switchobscur;
         switchobscur = findViewById(R.id.darkswitch);
-        // Si el mode nocturn ja està activat, dili que el switch ja està activat
         if (AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES){
             switchobscur.setChecked(true);
         }
-        // OnCheckedChangeListener
         switchobscur.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -119,6 +101,7 @@ public class ActivitatPrincipal extends AppCompatActivity {
         Button doblezero = findViewById(R.id.nombre00);                    // Botó doble zero
         final TextView operand = findViewById(R.id.operand);               // Text on apareixeràn els nombres
 
+        // Programació de totes les accions dels botons
         nombre0.setOnClickListener(new View.OnClickListener() { // Administració del nombre 0
             @Override
             public void onClick(View v) {
@@ -237,63 +220,9 @@ public class ActivitatPrincipal extends AppCompatActivity {
         botosuma.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                String nombretext = operand.getText().toString(); // Agafa el text que hi ha a la textView i donali la variable string nombretext (únicament per a botoresta)
-                if (!primernombre.equals("") && !nombretext.equals("") && !signe.equals("")){
-                    String input = "";
-                    if (signe.equals("+")){
-                        if (coma){
-                            resultat = Double.parseDouble(primernombre) + Double.parseDouble(operand.getText().toString());
-                            resultatstring = String.valueOf(resultat);
-                            primernombre = resultatstring;
-                            operand.setText(input);
-                        }
-                        else {
-                            resultatint = Integer.parseInt(primernombre) + Integer.parseInt(operand.getText().toString());
-                            resultatstring = String.valueOf(resultatint);
-                            primernombre = resultatstring;
-                            operand.setText(input);
-                        }
-                    }
-                    if (signe.equals("-")){
-                        if (coma){
-                            resultat = Double.parseDouble(primernombre) - Double.parseDouble(operand.getText().toString());
-                            resultatstring = String.valueOf(resultat);
-                            primernombre = resultatstring;
-                            operand.setText(input);
-                        }
-                        else {
-                            resultatint = Integer.parseInt(primernombre) - Integer.parseInt(operand.getText().toString());
-                            resultatstring = String.valueOf(resultatint);
-                            primernombre = resultatstring;
-                            operand.setText(input);
-                        }
-                    }
-                    if (signe.equals("*")){
-                        if (coma){
-                            resultat = Double.parseDouble(primernombre) * Double.parseDouble(operand.getText().toString());
-                            resultatstring = String.valueOf(resultat);
-                            primernombre = resultatstring;
-                            operand.setText(input);
-                        }
-                        else {
-                            resultatint = Integer.parseInt(primernombre) * Integer.parseInt(operand.getText().toString());
-                            resultatstring = String.valueOf(resultatint);
-                            primernombre = resultatstring;
-                            operand.setText(input);
-                        }
-                    }
-                    if (signe.equals("/")){
-                        resultat = Double.parseDouble(primernombre) / Double.parseDouble(operand.getText().toString());
-                        resultatstring = String.valueOf(resultat);
-                        primernombre = resultatstring;
-                        operand.setText(input);
-                    }
-                }
-                else {
                     primernombre = operand.getText().toString();
                     operand.setText("");
                     signe = ("+");
-                }
             }
         });
 
@@ -301,66 +230,16 @@ public class ActivitatPrincipal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String nombretext = operand.getText().toString(); // Agafa el text que hi ha a la textView i donali la variable string nombretext (únicament per a botoresta)
-                if (!primernombre.equals("") && !signe.equals("") && !nombretext.equals("")){ // Nombre negatiu al primer nombre, al iniciar. Exemple " -6 + 3 "
+
+                if (primernombre.equals("") && nombretext.equals("") && signe.equals("")){  //si es comença amb un nombre negatiu. Exemple -6 + 4
                     String input = operand.getText().toString();
                     input = input + "-";
                     operand.setText(input);
                 }
-                if (!primernombre.equals("") && !nombretext.equals("") && !signe.equals("")){ // Nombre negatiu al segon nombre . Exemple : "6 + (-6)"
+                if (!primernombre.equals("") && nombretext.equals("") && !signe.equals("")) {
                     String input = operand.getText().toString();
                     input = input + "-";
                     operand.setText(input);
-                }
-                if (!primernombre.equals("") && !nombretext.equals("") && !signe.equals("")){
-                    String input = "";
-                    if (signe.equals("+")){
-                        if (coma){
-                            resultat = Double.parseDouble(primernombre) + Double.parseDouble(operand.getText().toString());
-                            resultatstring = String.valueOf(resultat);
-                            primernombre = resultatstring;
-                            operand.setText(input);
-                        }
-                        else {
-                            resultatint = Integer.parseInt(primernombre) + Integer.parseInt(operand.getText().toString());
-                            resultatstring = String.valueOf(resultatint);
-                            primernombre = resultatstring;
-                            operand.setText(input);
-                        }
-                    }
-                    if (signe.equals("-")){
-                        if (coma){
-                            resultat = Double.parseDouble(primernombre) - Double.parseDouble(operand.getText().toString());
-                            resultatstring = String.valueOf(resultat);
-                            primernombre = resultatstring;
-                            operand.setText(input);
-                        }
-                        else {
-                            resultatint = Integer.parseInt(primernombre) - Integer.parseInt(operand.getText().toString());
-                            resultatstring = String.valueOf(resultatint);
-                            primernombre = resultatstring;
-                            operand.setText(input);
-                        }
-                    }
-                    if (signe.equals("*")){
-                        if (coma){
-                            resultat = Double.parseDouble(primernombre) * Double.parseDouble(operand.getText().toString());
-                            resultatstring = String.valueOf(resultat);
-                            primernombre = resultatstring;
-                            operand.setText(input);
-                        }
-                        else {
-                            resultatint = Integer.parseInt(primernombre) * Integer.parseInt(operand.getText().toString());
-                            resultatstring = String.valueOf(resultatint);
-                            primernombre = resultatstring;
-                            operand.setText(input);
-                        }
-                    }
-                    if (signe.equals("/")){
-                        resultat = Double.parseDouble(primernombre) / Double.parseDouble(operand.getText().toString());
-                        resultatstring = String.valueOf(resultat);
-                        primernombre = resultatstring;
-                        operand.setText(input);
-                    }
                 }
                 else { // Resta normal, cap nombre negatiu
                     primernombre = operand.getText().toString();
@@ -373,126 +252,18 @@ public class ActivitatPrincipal extends AppCompatActivity {
         botompultiplicacio.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                String nombretext = operand.getText().toString(); // Agafa el text que hi ha a la textView i donali la variable string nombretext (únicament per a botoresta)
-                if (!primernombre.equals("") && !nombretext.equals("") && !signe.equals("")){
-                    String input = "";
-                    if (signe.equals("+")){
-                        if (coma){
-                            resultat = Double.parseDouble(primernombre) + Double.parseDouble(operand.getText().toString());
-                            resultatstring = String.valueOf(resultat);
-                            primernombre = resultatstring;
-                            operand.setText(input);
-                        }
-                        else {
-                            resultatint = Integer.parseInt(primernombre) + Integer.parseInt(operand.getText().toString());
-                            resultatstring = String.valueOf(resultatint);
-                            primernombre = resultatstring;
-                            operand.setText(input);
-                        }
-                    }
-                    if (signe.equals("-")){
-                        if (coma){
-                            resultat = Double.parseDouble(primernombre) - Double.parseDouble(operand.getText().toString());
-                            resultatstring = String.valueOf(resultat);
-                            primernombre = resultatstring;
-                            operand.setText(input);
-                        }
-                        else {
-                            resultatint = Integer.parseInt(primernombre) - Integer.parseInt(operand.getText().toString());
-                            resultatstring = String.valueOf(resultatint);
-                            primernombre = resultatstring;
-                            operand.setText(input);
-                        }
-                    }
-                    if (signe.equals("*")){
-                        if (coma){
-                            resultat = Double.parseDouble(primernombre) * Double.parseDouble(operand.getText().toString());
-                            resultatstring = String.valueOf(resultat);
-                            primernombre = resultatstring;
-                            operand.setText(input);
-                        }
-                        else {
-                            resultatint = Integer.parseInt(primernombre) * Integer.parseInt(operand.getText().toString());
-                            resultatstring = String.valueOf(resultatint);
-                            primernombre = resultatstring;
-                            operand.setText(input);
-                        }
-                    }
-                    if (signe.equals("/")){
-                        resultat = Double.parseDouble(primernombre) / Double.parseDouble(operand.getText().toString());
-                        resultatstring = String.valueOf(resultat);
-                        primernombre = resultatstring;
-                        operand.setText(input);
-                    }
-                }
-                else {
                     primernombre = operand.getText().toString();
                     operand.setText("");
                     signe = ("*");
-                }
             }
         });
 
         botodivisio.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                String nombretext = operand.getText().toString(); // Agafa el text que hi ha a la textView i donali la variable string nombretext (únicament per a botoresta)
-                if (!primernombre.equals("") && !nombretext.equals("") && !signe.equals("")){
-                    String input = "";
-                    if (signe.equals("+")){
-                        if (coma){
-                            resultat = Double.parseDouble(primernombre) + Double.parseDouble(operand.getText().toString());
-                            resultatstring = String.valueOf(resultat);
-                            primernombre = resultatstring;
-                            operand.setText(input);
-                        }
-                        else {
-                            resultatint = Integer.parseInt(primernombre) + Integer.parseInt(operand.getText().toString());
-                            resultatstring = String.valueOf(resultatint);
-                            primernombre = resultatstring;
-                            operand.setText(input);
-                        }
-                    }
-                    if (signe.equals("-")){
-                        if (coma){
-                            resultat = Double.parseDouble(primernombre) - Double.parseDouble(operand.getText().toString());
-                            resultatstring = String.valueOf(resultat);
-                            primernombre = resultatstring;
-                            operand.setText(input);
-                        }
-                        else {
-                            resultatint = Integer.parseInt(primernombre) - Integer.parseInt(operand.getText().toString());
-                            resultatstring = String.valueOf(resultatint);
-                            primernombre = resultatstring;
-                            operand.setText(input);
-                        }
-                    }
-                    if (signe.equals("*")){
-                        if (coma){
-                            resultat = Double.parseDouble(primernombre) * Double.parseDouble(operand.getText().toString());
-                            resultatstring = String.valueOf(resultat);
-                            primernombre = resultatstring;
-                            operand.setText(input);
-                        }
-                        else {
-                            resultatint = Integer.parseInt(primernombre) * Integer.parseInt(operand.getText().toString());
-                            resultatstring = String.valueOf(resultatint);
-                            primernombre = resultatstring;
-                            operand.setText(input);
-                        }
-                    }
-                    if (signe.equals("/")){
-                        resultat = Double.parseDouble(primernombre) / Double.parseDouble(operand.getText().toString());
-                        resultatstring = String.valueOf(resultat);
-                        primernombre = resultatstring;
-                        operand.setText(input);
-                    }
-                }
-                else {
                     primernombre = operand.getText().toString();
                     operand.setText("");
                     signe = ("/");
-                }
             }
         });
 
@@ -616,12 +387,13 @@ public class ActivitatPrincipal extends AppCompatActivity {
             }
         });
     }
-    // Missatge de Alerta quan es pren el botó enrere en la pantalla.
-    public void onBackPressed(){
+
+    // Métodes per a el misatge d'alerta quan es pren el botó enrere.
+    public void onBackPressed(){ // Quan pren el botó enrere, executa el métode mostraalerta
         mostraalerta();
     }
 
-    private void mostraalerta(){
+    private void mostraalerta(){ // Utilitza la classe AlerDialogBuilder i DialogInterface
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder .setCancelable(false);
         builder.setTitle(R.string.titolalerta);

@@ -1,38 +1,33 @@
 package com.ordinador.pablo.calculadora;
-
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDelegate;
 
-import android.view.Menu;
-import android.view.View;
-import android.widget.Button;
-
-import android.content.Intent;
-import android.net.Uri;
+import android.view.Menu; // Classe Necessària per a eliminar el Menú
+import android.view.View; // Classe necessària per a cargar
+import android.widget.Button; // Classe Necessària per a programar els botons (Licència i Codi)
+import android.content.Intent; // Necessari per a executar la activity navegador per a cargar els links de la llicència i el codi
+import android.net.Uri; // Necessària per a cargar links
 
 public class menuopcions extends ActivitatPrincipal{
-    // Métode per a eliminar la barra de menú.
-    @Override
-    public boolean onCreateOptionsMenu(Menu menuconf) {
-        getMenuInflater().inflate(R.menu.menu, menuconf);
-        return false; // Important per a eliminar la barra del menú. Si estigués amb true, s'habilitaria.
+
+    public boolean onCreateOptionsMenu(Menu menuconf) { // Retornem un valor fals al menú, per tant, no es mostra en pantalla
+        return false;
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // Si el Mode Nocturn està habilitat, fes que el layout de el menu també tinqui el tema negre
-        if (AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES){
+
+        if (AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES){ // Si el mode nocturn està activat a la altra activity, fica'l també aquí.
             setTheme(R.style.DarkTheme);
         }
-        else {
+        else { // Si el mode nocturn NO està activat a l'altra Activity, no fiquis el tema obscur
             setTheme(R.style.AppTheme);
         }
 
         super.onCreate(savedInstanceState);
         setTitle(R.string.about); // Canvia el títol per el String "Sobre la app"
-        setContentView(R.layout.menulayout);
+        setContentView(R.layout.menulayout); // Mostra el layout menulayout.xml
 
-        // Configura els botons
         Button botogithub;
         botogithub = findViewById(R.id.botogithub);
         Button botognu;
@@ -61,9 +56,7 @@ public class menuopcions extends ActivitatPrincipal{
         });
     }
 
-    // Botó enrere NO mostra el missatge de sortida de la app, ja que sinò no es pot sortir del menulayout.xml
-    @Override
-    public void onBackPressed(){
+    public void onBackPressed(){ // Métode per a no mostrar el misatge d'alerta quan es clica el botó enrere, sinò que s'acaba l'activity i per tant, es retorna a la activityprincipal.
         finish();
     }
 }
