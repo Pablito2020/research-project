@@ -1,27 +1,32 @@
 <resources>
 
-    <!-- Strings de layout, launcher i menu -->
-    <string name="app_name">Calculator</string>
-    <string name="launcher">Calculator</string>
-    <string name="modenocturn">Night Mode</string>
-    <string name="about">About the app</string>
+    <!-- Nom de la App -->
+    <string name="app_name">ShortCuts</string>
 
-    <!-- Strings de layout sobre la app -->
-    <string name="importantinfo">Dear User: </string>
-    <string name="aboutapp">This app has been developed by Pablo Fraile Alonso for the "Treball de Recerca". All the
-    information and work are under the GNU License, so, if you want to use it, be aware of that.</string>
+    <!-- Strings per als botons -->
+    <string name="camara">Camera</string>
+    <string name="galeria">Gallery</string>
+    <string name="llanterna">Lantern</string>
+    <string name="contactes">Contacts</string>
+    <string name="trucar">Call</string>
+    <string name="whatsapp">WhatsApp</string>
 
-    <!-- Strings sobre el missatge de l'alerta al presionar el botó enrere al activity principal -->
-    <string name="titolalerta"> Are you sure?</string>
-    <string name="missatgealerta"> Do you want to close the app? </string>
-    <string name="respostasi"> Yes </string>
-    <string name="respostano"> No </string>
+    <!-- Strings per al Menú -->
+    <string name="configuracio">Settings</string>
+    <string name="info">About the app</string>
 
-    <!-- Strings de els Toast de multiplicació, divisió, suma i resta al mantindre presionat els botons. -->
-    <string name="divisio">split</string>
-    <string name="multiplicacio">multiplied</string>
-    <string name="suma">plus</string>
-    <string name="resta">minus</string>
-    <string name="igual">equals</string>
+    <!-- Strings per a info -->
+    <string name="informacio">About the app</string>
+    <string name="infoimportant">This app has been developed by Pablo Fraile Alonso for the Research project.
+    All the information and work are under the GNU License, so if you want to use it, be aware of that.</string>
+
+    <!-- Strings per a configuració -->
+    <string name="colorprincipal">Principal Color of the App</string>
+    <string name="rosa">Pink</string>
+    <string name="blau">Blue</string>
+    <string name="gris">Grey</string>
+    <string name="cyan">Cyan</string>
+    <string name="verd">Green</string>
+    <string name="taronja">Orange</string>
 
 </resources>

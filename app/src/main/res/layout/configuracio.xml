@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">ç
+
+    <Button
+        android:id="@+id/btrosa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/btcyan"
+        android:layout_marginTop="76dp"
+        android:text="@string/rosa" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="@string/colorprincipal" />
+
+    <Button
+        android:id="@+id/btgris"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/btrosa"
+        android:layout_marginEnd="39dp"
+        android:text="@string/gris" />
+
+    <Button
+        android:id="@+id/btcyan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="137dp"
+        android:text="@string/cyan" />
+
+    <Button
+        android:id="@+id/btverd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btcyan"
+        android:layout_centerHorizontal="true"
+        android:text="@string/verd" />
+
+    <Button
+        android:id="@+id/bttaronja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btgris"
+        android:layout_alignTop="@+id/btcyan"
+        android:text="@string/taronja" />
+
+    <Button
+        android:id="@+id/btblau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btrosa"
+        android:layout_centerHorizontal="true"
+        android:text="@string/blau" />
+
+
+</RelativeLayout>

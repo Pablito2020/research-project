@@ -1,28 +1,31 @@
 # Part pràctica del Treball de recerca
 	 
-## Creació d'una aplicació de Calculadora mitjançant la IDE Android Studio i el llenguatje de programació Java	 
+## Creació d'una aplicació d'Accessos directes mitjançant el llenguatge de programació Java i la IDE Android Studio
 	 
-## BUGS
+## Coses per fer:
 
-	 - [ ] Operacions múltiples (Exemple: 1 + 1 + 2 = )	 
+	 - [ ] Afegir noves opcions a la activity principal i arreglar la funció llanterna
 	 
-## Afegits vacants: 
+	 - [ ] Arreglar la activity info
 	 
-	 - [ ] Strings en Francés.
-	 - [ ] Strings en Alemany
-	 - [ ] Strings en Portugués	
+	 - [ ] Remodelar la activity opcions
 	 
-## Imatges del projecte 
+	 - [ ] Traduïr strings al Català i al Castellà.
+	 
+	 
+## Imatges del projecte ( están subjectes a canvis )
 
-![Captura 1](/imatges/tema-clar.jpg)
+![Captura 1](/imatges/imatge1.jpg)
 
-![Captura 2](/imatges/tema-obscur.jpg)
+![Captura 2](/imatges/imatge2.jpg)
 
-![Captura 3](/imatges/menu.jpg)
+![Captura 3](/imatges/imatge3.jpg)
 
-![Captura 4](/imatges/activity-2.jpg)
+![Captura 4](/imatges/imatge4.jpg)
 
-![Captura 5](/imatges/app-info.jpg)
+![Captura 5](/imatges/imatge5.jpg)
+
+![Captura 6](/imatges/imatge6.jpg)
 
 
 

@@ -1,23 +1,45 @@
 <resources>
-    <!-- Tema blanc -->
-    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/colorbarra</item>
-        <item name="colorPrimaryDark">@color/colorbarranot</item>
-        <item name="colorAccent">@color/colorswitch</item>
-        <item name="colortextespecial">@color/colortextespecial</item>
-        <item name="backgroundcolor">@color/colorfonsblanc</item>
-        <item name="buttoncolor">@color/colorbotoblanc</item>
-        <item name="textcolor">@color/colortextnegre</item>
+
+    <!-- Color de la App de Série ( Rosa )-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <!-- Tema obscur -->
-    <style name="DarkTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/colorbarra</item>
-        <item name="colorPrimaryDark">@color/colorbarranot</item>
-        <item name="colorAccent">@color/colorswitch</item>
-        <item name="colortextespecial">@color/colortextespecial</item>
-        <item name="backgroundcolor">@color/colorfonsnegre</item>
-        <item name="buttoncolor">@color/colorbotonegre</item>
-        <item name="textcolor">@color/colortextblanc</item>
+    <!-- Color de la App Blau -->
+    <style name="TemaBlau" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimaryBlau</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkBlau</item>
+        <item name="colorAccent">@color/colorAccentBlau</item>
     </style>
+
+    <!-- Color de la App fosc (negre/gris) -->
+    <style name="TemaGris" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimaryGris</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkGris</item>
+        <item name="colorAccent">@color/colorAccentGris</item>
+    </style>
+
+    <!-- Color de la App Cyan  -->
+    <style name="TemaCyan" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimaryCyan</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkCyan</item>
+        <item name="colorAccent">@color/colorAccentCyan</item>
+    </style>
+
+    <!-- Color de la App Verd  -->
+    <style name="TemaVerd" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimaryVerd</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkVerd</item>
+        <item name="colorAccent">@color/colorAccentVerd</item>
+    </style>
+
+    <!-- Color de la App Taronja  -->
+    <style name="TemaTaronja" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimaryTaronja</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkTaronja</item>
+        <item name="colorAccent">@color/colorAccentTaronja</item>
+    </style>
+
 </resources>

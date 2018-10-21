@@ -1,4 +1,4 @@
-package com.ordinador.pablo.calculadora;
+package com.ordinador.pablo.accesdirecte;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.ordinador.pablo.calculadora", appContext.getPackageName());
+        assertEquals("com.ordinador.pablo.accesdirecte", appContext.getPackageName());
     }
 }
