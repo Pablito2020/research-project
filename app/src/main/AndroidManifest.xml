@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ordinador.pablo.accesdirecte">
 
+    <!--- Utilitza el permís d'Apagar i encendre el WiFi-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,6 +17,9 @@
 
         <activity android:name=".Activitat_Principal">
             <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.HOME" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -21,8 +28,8 @@
         </activity>
 
         <!--- Activitats NO principals ( configuració i informació) -->
-        <activity android:name=".info"></activity>
-        <activity android:name=".configuracio"></activity>
+        <activity android:name=".info" />
+        <activity android:name=".configuracio" />
 
     </application>
 

@@ -1,10 +1,17 @@
 package com.ordinador.pablo.accesdirecte;
 
-import android.content.Intent;
-import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+
+import android.view.View; // Classe necessària per a interactuar amb els objectes de la interfície gràfica
+import android.content.Intent; // Classe necessària per a el métode reinicia
+import android.content.SharedPreferences; // Classe necessària per a guardar els nombres
+import android.widget.Button; // Classe necessària per a la programació del botó
+import android.widget.Spinner; // Classe necessària per a la programació del Spinner
+import android.widget.AdapterView; // Classe necessària per a la vista de el Array del Spinner
+import android.widget.ArrayAdapter; // Classe necessària per a la llista de el Spinner
+import android.widget.Toast; // Classe necessària per als missatges Toast
+import android.support.annotation.RequiresApi; // Classe necessària per a nombrar la API d'Android necessària per a x funció
 
 public class configuracio extends Activitat_Principal {
 
@@ -13,119 +20,116 @@ public class configuracio extends Activitat_Principal {
         final SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(TEXT, 1);
         editor.apply();
+        Toast.makeText(this,R.string.rosaaplicat, Toast.LENGTH_LONG).show();
     }
     public void guardadadesblau(){
         final SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         final SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(TEXT, 2);
         editor.apply();
+        Toast.makeText(this,R.string.blauaplicat, Toast.LENGTH_LONG).show();
     }
     public void guardadadesgris(){
         final SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         final SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(TEXT, 3);
         editor.apply();
+        Toast.makeText(this,R.string.grisaplicat, Toast.LENGTH_LONG).show();
     }
     public void guardadescyan(){
         final SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         final SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(TEXT, 4);
         editor.apply();
+        Toast.makeText(this,R.string.cyanaplicat, Toast.LENGTH_LONG).show();
     }
     public void guardadesverd(){
         final SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         final SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(TEXT, 5);
         editor.apply();
+        Toast.makeText(this,R.string.verdaplicat, Toast.LENGTH_LONG).show();
     }
     public void guardadestaronja(){
         final SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         final SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(TEXT, 6);
         editor.apply();
+        Toast.makeText(this,R.string.taronjaaplicat, Toast.LENGTH_LONG).show();
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         cargadades();
-        if (text == 1){
-            setTheme(R.style.AppTheme);
-        }
-        if (text == 2){
-            setTheme(R.style.TemaBlau);
-        }
-        if (text == 3){
-            setTheme(R.style.TemaGris);
-        }
-        if (text == 4){
-            setTheme(R.style.TemaCyan);
-        }
-        if (text == 5){
-            setTheme(R.style.TemaVerd);
-        }
-        if (text == 6){
-            setTheme(R.style.TemaTaronja);
-        }
         super.onCreate(savedInstanceState);
         setTitle(R.string.configuracio);
         setContentView(R.layout.configuracio);
 
-        Button botoblau;
-        botoblau = findViewById(R.id.btblau);
-        Button botorosa;
-        botorosa = findViewById(R.id.btrosa);
-        Button botogris;
-        botogris = findViewById(R.id.btgris);
-        Button botocyan;
-        botocyan = findViewById(R.id.btcyan);
-        Button botoverd;
-        botoverd = findViewById(R.id.btverd);
-        Button bototaronja;
-        bototaronja=findViewById(R.id.bttaronja);
+        // Definim el spinner color
+        Spinner color;
+        color = findViewById(R.id.spinercolor);
 
-        botorosa.setOnClickListener(new View.OnClickListener() {
+        // Botó per a anar a les aplicacions predeterminades
+        Button aplicacionspredeterminades;
+        aplicacionspredeterminades = findViewById(R.id.button);
+
+        // Configurem el spinner, la Array (llista que apareixerà i que es farà en cada cas)
+        // https://developer.android.com/guide/topics/ui/controls/spinner?hl=es-419
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.colors, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        color.setAdapter(adapter);
+        color.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onClick(View v) {
-                guardadadesrosa();
-                reinicia();
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (position){
+                    case 0:
+                        break;
+
+                    case 1:
+                        guardadadesrosa();
+                        reinicia();
+                        break;
+
+                    case 2:
+                        guardadadesblau();
+                        reinicia();
+                        break;
+
+                    case 3:
+                        guardadadesgris();
+                        reinicia();
+                        break;
+
+                    case 4:
+                        guardadescyan();
+                        reinicia();
+                         break;
+
+                    case 5:
+                        guardadesverd();
+                        reinicia();
+                        break;
+
+                    case 6:
+                        guardadestaronja();
+                        reinicia();
+                        break;
+                }
             }
-        });
-        botoblau.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                guardadadesblau();
-                reinicia();
-            }
-        });
-        botogris.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                guardadadesgris();
-                reinicia();
-            }
-        });
-        botocyan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                guardadescyan();
-                reinicia();
-            }
-        });
-        botoverd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                guardadesverd();
-                reinicia();
-            }
-        });
-        bototaronja.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                guardadestaronja();
-                reinicia();
+            public void onNothingSelected(AdapterView<?> parent) {
             }
         });
 
+        // Es configura el botó aplicacionspredeterminades
+        aplicacionspredeterminades.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N) // Afegit per Android Studio, demana la API de Android N per a funcionar.
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(android.provider.Settings.ACTION_MANAGE_DEFAULT_APPS_SETTINGS);
+                startActivity(i);
+            }
+        });
     }
 
     // Métode necessari per a reiniciar la Activity

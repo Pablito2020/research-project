@@ -1,21 +1,24 @@
 package com.ordinador.pablo.accesdirecte;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.content.Intent; // Classe necessària per a executar tasques
 import android.net.Uri; // Classe necessària per obrir la galeria
-import android.support.v7.app.AppCompatDelegate;
+import android.content.SharedPreferences; // Classe necessària per a guardar els paràmetres del canvi de color,
 import android.view.Menu; // Classe necessària per a dir que hi ha un menú
 import android.view.MenuInflater; // Classe necessària per a dir quin es l'arxiu xml del menú.
 import android.view.MenuItem; // Classe necessària per a programar la funció dels diferents ítems del xml menú
 import android.widget.Button; // Classe necessària per als botons
 import android.provider.MediaStore; // Classe necessària per a executar la app de càmera.
-import android.view.View; // Classe necessària per
+import android.view.View; // Classe necessària per a els elements d'interfície d'usuari
 import android.widget.Toast; // Classe necessària per a executar missatges tipus Toast.
+import android.widget.ToggleButton; // Classe Necessària per a controlar els botons tipus toggle
+import android.widget.CompoundButton; // Classe necessària per a controlar un botó amb dos estats (encés o no encés) com per exemple el Toggle Button
+import android.content.Context; // Classe necessària per a saber el contexte de la app
+import android.net.wifi.WifiManager; // Classe necessària per a controlar el wifi de el SmartPhone
+import android.net.ConnectivityManager; // Classe que respon a consultes sobre l'estat de la connectivitat de xarxa
+import android.net.NetworkInfo; // Classe que describeix l'estat de una interfície de xarxa
 
 public class Activitat_Principal extends AppCompatActivity {
 
@@ -98,33 +101,34 @@ public class Activitat_Principal extends AppCompatActivity {
     // Strings per al canvi de color
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String TEXT = "text";
-    public int text = 0;
+    public int nombre = 0;
+
     // Métode per al canvi de color
     public void cargadades(){
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
-        text = sharedPreferences.getInt(TEXT,0);
+        nombre = sharedPreferences.getInt(TEXT,0);
     }
 
     // Métode principal
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        cargadades();
-        if (text == 1){
+        cargadades(); // Carga el métode SharedPreferences
+        if (nombre == 1){
             setTheme(R.style.AppTheme);
         }
-        if (text == 2){
+        if (nombre == 2){
             setTheme(R.style.TemaBlau);
         }
-        if (text == 3){
+        if (nombre == 3){
             setTheme(R.style.TemaGris);
         }
-        if (text == 4){
+        if (nombre == 4){
             setTheme(R.style.TemaCyan);
         }
-        if (text == 5){
+        if (nombre == 5){
             setTheme(R.style.TemaVerd);
         }
-        if (text == 6){
+        if (nombre == 6){
             setTheme(R.style.TemaTaronja);
         }
         super.onCreate(savedInstanceState);
@@ -148,6 +152,14 @@ public class Activitat_Principal extends AppCompatActivity {
 
         Button whatsapp;
         whatsapp = findViewById(R.id.botowhatsapp);
+
+        ToggleButton toggle = findViewById(R.id.togglewifi);
+        ConnectivityManager conectat = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        assert conectat != null;
+        NetworkInfo wifi = conectat.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+        if (wifi.isConnected()){
+            toggle.setChecked(true);
+        }
 
         camera.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -185,6 +197,21 @@ public class Activitat_Principal extends AppCompatActivity {
                 whatsapp();
             }
         });
+        toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    WifiManager wifi = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+                    assert wifi != null;
+                    wifi.setWifiEnabled(true);
+                }
+                else{
+                    WifiManager wifi = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+                    assert wifi != null;
+                    wifi.setWifiEnabled(false);
+                }
+            }
+        });
 
     }
 
@@ -192,6 +219,7 @@ public class Activitat_Principal extends AppCompatActivity {
     public void onBackPressed(){
         principal();
     }
+
     // Métode principal ( Inicia la Activitat Principal)
     public void principal(){
         Intent i = new Intent(this,Activitat_Principal.class);

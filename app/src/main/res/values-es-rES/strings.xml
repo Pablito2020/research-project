@@ -1,0 +1,34 @@
+<resources>
+
+    <!-- Nom de la App -->
+    <string name="app_name">Atajos</string>
+
+    <!-- Strings per als botons -->
+    <string name="camara">Cámara</string>
+    <string name="galeria">Galería</string>
+    <string name="llanterna">Linterna</string>
+    <string name="contactes">Contactos</string>
+    <string name="trucar">Llamar</string>
+    <string name="whatsapp">WhatsApp</string>
+
+    <!-- Strings per al Menú -->
+    <string name="configuracio">Ajustes</string>
+    <string name="info">Sobre la App</string>
+
+    <!-- Strings per a info -->
+    <string name="informacio">Sobre la aplicación</string>
+    <string name="infoimportant">Esta aplicación ha sido desarrollada por Pablo Fraile Alonso para el trabajo
+        de investigación de Bachiller. Todo el trabajo e información recopilados están bajo la Licencia GNU,
+        así que si usted quiere usar o modificar alguno de los parámetros del trabajo,
+        sea consciente de este hecho.</string>
+
+    <!-- Strings per a configuració -->
+    <string name="colorprincipal">Color principal de la app</string>
+    <string name="rosa">Rosa</string>
+    <string name="blau">Azul</string>
+    <string name="gris">Gris</string>
+    <string name="cyan">Cyan</string>
+    <string name="verd">Verde</string>
+    <string name="taronja">Naranja</string>
+
+</resources>

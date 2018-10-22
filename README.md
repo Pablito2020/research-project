@@ -10,8 +10,6 @@
 	 
 	 - [ ] Remodelar la activity opcions
 	 
-	 - [ ] Traduïr strings al Català i al Castellà.
-	 
 	 
 ## Imatges del projecte ( están subjectes a canvis )
 

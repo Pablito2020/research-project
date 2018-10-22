@@ -1,0 +1,33 @@
+<resources>
+
+    <!-- Nom de la App -->
+    <string name="app_name">Dreceres</string>
+
+    <!-- Strings per als botons -->
+    <string name="camara">Càmera</string>
+    <string name="galeria">Galeria</string>
+    <string name="llanterna">Llanterna</string>
+    <string name="contactes">Contactes</string>
+    <string name="trucar">Trucades</string>
+    <string name="whatsapp">WhatsApp</string>
+
+    <!-- Strings per al Menú -->
+    <string name="configuracio">Configuració</string>
+    <string name="info">Sobre la App</string>
+
+    <!-- Strings per a info -->
+    <string name="informacio">Sobre l\'aplicació</string>
+    <string name="infoimportant">Aquesta aplicació ha estat desenvolupada per Pablo Fraile Alonso per al treball
+        de Recerca. Tota la informació i treball es troben sota la llicència GNU, de manera que si es vol utilitzar
+        quelcom d'aquest treball, es tingui en conte la llicència.</string>
+
+    <!-- Strings per a configuració -->
+    <string name="colorprincipal">Color principal de l\'aplicació </string>
+    <string name="rosa">Rosa</string>
+    <string name="blau">Blau</string>
+    <string name="gris">Gris</string>
+    <string name="cyan">Cyan</string>
+    <string name="verd">Verd</string>
+    <string name="taronja">Taronja</string>
+
+</resources>

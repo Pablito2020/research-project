@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="colors">
+        <item>@string/tria</item>
+        <item>@string/rosa</item>
+        <item>@string/blau</item>
+        <item>@string/gris</item>
+        <item>@string/cyan</item>
+        <item>@string/verd</item>
+        <item>@string/taronja</item>
+    </string-array>
+</resources>

@@ -22,11 +22,26 @@
 
     <!-- Strings per a configuració -->
     <string name="colorprincipal">Principal Color of the App</string>
-    <string name="rosa">Pink</string>
-    <string name="blau">Blue</string>
-    <string name="gris">Grey</string>
-    <string name="cyan">Cyan</string>
-    <string name="verd">Green</string>
-    <string name="taronja">Orange</string>
+    <string name="tria">choose the predifined color</string>
+    <string name="rosa">pink</string>
+    <string name="blau">blue</string>
+    <string name="gris">grey</string>
+    <string name="cyan">cyan</string>
+    <string name="verd">green</string>
+    <string name="taronja">orange</string>
+
+    <!-- Strings per al missatge del Toast de configuració -->
+    <string name="rosaaplicat">App Theme has been changed to Pink!</string>
+    <string name="blauaplicat">App theme has been changed to Blue!</string>
+    <string name="grisaplicat">App Theme has been changed to Grey!</string>
+    <string name="cyanaplicat">App Theme has been changed to Cyan!</string>
+    <string name="verdaplicat">App Theme has been changed to Green!</string>
+    <string name="taronjaaplicat">App theme has been changed to Orange!</string>
+
+    <!-- Strings per al missatge de compartir la app-->
+    <string name="comparteixamb">Share the app using: </string>
+    <string name="titol">Share my app</string>
+    <string name="cos">Please share my app and rate it with 5 stars :) </string>
+
 
 </resources>
