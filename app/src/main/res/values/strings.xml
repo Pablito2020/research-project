@@ -20,7 +20,7 @@
     <string name="infoimportant">This app has been developed by Pablo Fraile Alonso for the Research project.
     All the information and work are under the GNU License, so if you want to use it, be aware of that.</string>
 
-    <!-- Strings per a configuració -->
+    <!-- Strings per a configuració del color -->
     <string name="colorprincipal">Principal Color of the App</string>
     <string name="tria">choose the predifined color</string>
     <string name="rosa">pink</string>
@@ -29,6 +29,10 @@
     <string name="cyan">cyan</string>
     <string name="verd">green</string>
     <string name="taronja">orange</string>
+
+    <!-- Strings per a configuració del color -->
+    <string name="aplicaciopredeterminada">Choose the default home app</string>
+    <string name="click">click here</string>
 
     <!-- Strings per al missatge del Toast de configuració -->
     <string name="rosaaplicat">App Theme has been changed to Pink!</string>
