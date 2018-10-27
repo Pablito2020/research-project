@@ -1,4 +1,5 @@
 package com.ordinador.pablo.calculadora;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -11,55 +12,80 @@ import android.widget.Switch; // Classe necessària per a el switch
 import android.widget.TextView; // Classe necessària per la textview nombres
 import android.content.Context; // Classe necessària per a agafar el contexte per als missatges Toast
 import android.widget.Toast; // Classe necessària per als missatges Toast
+
 import android.view.Menu; // Classe necessària per mostrar el Menu
 import android.view.MenuItem; // Classe necessària per a mostrar els ítems del Menú.
+
 import android.content.DialogInterface; // Classe necessària per a el Dialog abans de sortir de la app
 import android.support.v7.app.AlertDialog; //Classe necessària per a el Dialog abans de sortir de la app
 
 public class ActivitatPrincipal extends AppCompatActivity {
 
-    // Variables
-    int resultatint = 0; // Variable necessària per al resultat (enters)
-    double multiplica= 0; // Variable necessària per al nombre pi
-    double resultat = 0; // Variable necessària per al resultat (decimal)
-    boolean coma = false; // Variable necessària per a la funció de coma
-    String primernombre = ""; // Variable necessària per a guardar el primer nombre escollit per l'usuari
-    String signe = ""; // Variable necessària per a guardar el signe escollit
-    String resultatstring = "";
-
-    // Métodes
-    public void activityopcions(View view){ // Métode per a iniciar la classe " sobre la aplicació"
+    // Métode per a iniciar el menuopcions.class (menuopcions.java)
+    public void activityopcions(View view){
         Intent i = new Intent(this, menuopcions.class);
         startActivity(i);
     }
-    public void activityprincipal(){  // Métode per a iniciar la classe activitat principal (necessari per al switch Mode Obscur)
+
+    // Métode per a iniciar la classe activitat principal (necessari per al switch Mode Obscur)
+    public void activityprincipal(){
         Intent i = new Intent(getApplicationContext(),ActivitatPrincipal.class);
         startActivity(i);
         finish();
     }
-    public boolean onCreateOptionsMenu(Menu menuconf) {  // Métode per a mostrar el menú
+
+    // Métode per a mostrar el menú
+    public boolean onCreateOptionsMenu(Menu menuconf) {
         getMenuInflater().inflate(R.menu.menu, menuconf);
         return true;
     }
-    public boolean onOptionsItemSelected (MenuItem opciomenu) { // Métode per a dir que es fa si es pren determinat apartat del menú
+
+    // Métode per a dir que es fa si es pren determinat apartat del menú
+    public boolean onOptionsItemSelected (MenuItem opciomenu) {
         int id=opciomenu.getItemId();
         if (id==R.id.about){
             activityopcions(null); // No es pot mostrar cap objecte view ( cap widget,etc.) per tant, li donem un parametre null (no tenim res)
         }
-        return super.onOptionsItemSelected(opciomenu); // Per si el usuari no clique cap botons, es retorna a la opció menu
+        return super.onOptionsItemSelected(opciomenu);
+    }
+
+    // Variables necessàries per a la calculadora
+    double anterior = 0;
+    double actual = 0;
+    double numfinal = 0;
+    String signe = "";
+
+    // Métode double Calcula
+    public double calcula(Double anterior, Double actual, String signe){
+        switch (signe){
+            case ("+"):
+                numfinal = anterior + actual;
+                break;
+            case ("-"):
+                numfinal = anterior - actual;
+                break;
+            case ("*"):
+                numfinal = anterior * actual;
+                break;
+            case ("/"):
+                numfinal = anterior / actual;
+                break;
+        }
+        return(numfinal);
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) { // Métode incial, inclòs per Android Studio.
-
+    protected void onCreate(Bundle savedInstanceState) {
         if (AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES){
             setTheme(R.style.DarkTheme);
-        }
-        else {
+        }else{
             setTheme(R.style.AppTheme);
         }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activitat_principal);
+
+        // Declaració del SwitchObscur i la seva funció.
         Switch switchobscur;
         switchobscur = findViewById(R.id.darkswitch);
         if (AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES){
@@ -80,16 +106,16 @@ public class ActivitatPrincipal extends AppCompatActivity {
         });
 
         // Dona nom als botons i al switch mitjançant la ID
-        Button nombre0 = findViewById(R.id.nombre0);                       // 0
-        Button nombre1 = findViewById(R.id.nombre1);                       // 1
-        Button nombre2 = findViewById(R.id.nombre2);                       // 2
-        Button nombre3 = findViewById(R.id.nombre3);                       // 3
-        Button nombre4 = findViewById(R.id.nombre4);                       // 4
-        Button nombre5 = findViewById(R.id.nombre5);                       // 5
-        Button nombre6 = findViewById(R.id.nombre6);                       // 6
-        Button nombre7 = findViewById(R.id.nombre7);                       // 7
-        Button nombre8 = findViewById(R.id.nombre8);                       // 8
-        Button nombre9 = findViewById(R.id.nombre9);                       // 9
+        Button nombre0 = findViewById(R.id.nombre0);                       // Botó 0
+        Button nombre1 = findViewById(R.id.nombre1);                       // Botó 1
+        Button nombre2 = findViewById(R.id.nombre2);                       // Botó 2
+        Button nombre3 = findViewById(R.id.nombre3);                       // Botó 3
+        Button nombre4 = findViewById(R.id.nombre4);                       // Botó 4
+        Button nombre5 = findViewById(R.id.nombre5);                       // Botó 5
+        Button nombre6 = findViewById(R.id.nombre6);                       // Botó 6
+        Button nombre7 = findViewById(R.id.nombre7);                       // Botó 7
+        Button nombre8 = findViewById(R.id.nombre8);                       // Botó 8
+        Button nombre9 = findViewById(R.id.nombre9);                       // Botó9
         Button botoigual = findViewById(R.id.botoigual);                   // Botó igual
         Button botodivisio = findViewById(R.id.botodivisio);               // Botó divisió
         Button botosuma = findViewById(R.id.botosuma);                     // Botó suma
@@ -99,7 +125,7 @@ public class ActivitatPrincipal extends AppCompatActivity {
         Button punt = findViewById(R.id.punt);                             // Botó de punt/coma
         Button pi = findViewById(R.id.pi);                                 // Botó de Pi
         Button doblezero = findViewById(R.id.nombre00);                    // Botó doble zero
-        final TextView operand = findViewById(R.id.operand);               // Text on apareixeràn els nombres
+        final TextView operand = findViewById(R.id.operand);               // Caixa de Text on apareixeràn els nombres
 
         // Programació de totes les accions dels botons
         nombre0.setOnClickListener(new View.OnClickListener() { // Administració del nombre 0
@@ -194,10 +220,9 @@ public class ActivitatPrincipal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 double numpi = Math.PI;
-                coma = true; // El nombre pi conté comes. Si no es canvia el boolean coma, la aplicació falla.
                 String input = operand.getText().toString();
                 if (!input.equals("")){
-                    multiplica = Double.parseDouble(input) * numpi;
+                    Double multiplica = Double.parseDouble(input) * numpi;
                     String multiplicacio = String.valueOf(multiplica);
                     operand.setText(multiplicacio);
                 }
@@ -213,38 +238,39 @@ public class ActivitatPrincipal extends AppCompatActivity {
                 String input = operand.getText().toString();
                 input = input + ".";
                 operand.setText(input);
-                coma = true;
             }
         });
 
         botosuma.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                    primernombre = operand.getText().toString();
+                if ( anterior == 0 && actual == 0){
+                    anterior = Double.parseDouble((String)operand.getText());
                     operand.setText("");
-                    signe = ("+");
+                }else{
+                    actual = Double.parseDouble((String)operand.getText());
+                    anterior = calcula(anterior,actual,signe);
+                    operand.setText("");
+                }
+                signe = "+";
             }
         });
 
         botoresta.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                String nombretext = operand.getText().toString(); // Agafa el text que hi ha a la textView i donali la variable string nombretext (únicament per a botoresta)
-
-                if (primernombre.equals("") && nombretext.equals("") && signe.equals("")){  //si es comença amb un nombre negatiu. Exemple -6 + 4
-                    String input = operand.getText().toString();
-                    input = input + "-";
-                    operand.setText(input);
-                }
-                if (!primernombre.equals("") && nombretext.equals("") && !signe.equals("")) {
-                    String input = operand.getText().toString();
-                    input = input + "-";
-                    operand.setText(input);
-                }
-                else { // Resta normal, cap nombre negatiu
-                    primernombre = operand.getText().toString();
+                String text = operand.getText().toString();
+                if (text.equals("")){
+                    operand.setText("-");
+                }else if( anterior == 0 && actual == 0){
+                    anterior = Double.parseDouble((String)operand.getText());
                     operand.setText("");
-                    signe = ("-");
+                    signe = "-";
+                }else{
+                    actual = Double.parseDouble((String)operand.getText());
+                    anterior = calcula(anterior,actual,signe);
+                    operand.setText("");
+                    signe = "-";
                 }
             }
         });
@@ -252,18 +278,30 @@ public class ActivitatPrincipal extends AppCompatActivity {
         botompultiplicacio.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                    primernombre = operand.getText().toString();
+                if ( anterior == 0 && actual == 0){
+                    anterior = Double.parseDouble((String)operand.getText());
                     operand.setText("");
-                    signe = ("*");
+                }else{
+                    actual = Double.parseDouble((String)operand.getText());
+                    anterior = calcula(anterior,actual,signe);
+                    operand.setText("");
+                }
+                signe = "*";
             }
         });
 
         botodivisio.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                    primernombre = operand.getText().toString();
+                if ( anterior == 0 && actual == 0){
+                    anterior = Double.parseDouble((String)operand.getText());
                     operand.setText("");
-                    signe = ("/");
+                }else{
+                    actual = Double.parseDouble((String)operand.getText());
+                    anterior = calcula(anterior,actual,signe);
+                    operand.setText("");
+                }
+                signe = "/";
             }
         });
 
@@ -279,54 +317,14 @@ public class ActivitatPrincipal extends AppCompatActivity {
         botoigual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (signe.equals("+")){
-                    if (coma){
-                        resultat = Double.parseDouble(primernombre) + Double.parseDouble(operand.getText().toString());
-                        resultatstring = String.valueOf(resultat);
-                        operand.setText(resultatstring);
-                        primernombre="";
-                    }
-                    else {
-                        resultatint = Integer.parseInt(primernombre) + Integer.parseInt(operand.getText().toString());
-                        resultatstring = String.valueOf(resultatint);
-                        operand.setText(resultatstring);
-                        primernombre="";
-                    }
-                }
-                if (signe.equals("-")){
-                    if (coma){
-                        resultat = Double.parseDouble(primernombre) - Double.parseDouble(operand.getText().toString());
-                        resultatstring = String.valueOf(resultat);
-                        operand.setText(resultatstring);
-                        primernombre="";
-                    }
-                    else {
-                        resultatint = Integer.parseInt(primernombre) - Integer.parseInt(operand.getText().toString());
-                        resultatstring = String.valueOf(resultatint);
-                        operand.setText(resultatstring);
-                        primernombre="";
-                    }
-                }
-                if (signe.equals("*")){
-                    if (coma){
-                        resultat = Double.parseDouble(primernombre) * Double.parseDouble(operand.getText().toString());
-                        resultatstring = String.valueOf(resultat);
-                        operand.setText(resultatstring);
-                        primernombre="";
-                    }
-                    else {
-                        resultatint = Integer.parseInt(primernombre) * Integer.parseInt(operand.getText().toString());
-                        resultatstring = String.valueOf(resultatint);
-                        operand.setText(resultatstring);
-                        primernombre="";
-                    }
-                }
-                if (signe.equals("/")){
-                    resultat = Double.parseDouble(primernombre) / Double.parseDouble(operand.getText().toString());
-                    resultatstring = String.valueOf(resultat);
-                    operand.setText(resultatstring);
-                    primernombre="";
-                }
+                actual = Double.parseDouble((String)operand.getText());
+                numfinal = calcula(anterior, actual, signe);
+                operand.setText(String.valueOf(numfinal));
+
+                // Es canvien les variables a zero, per tal de que l'usuari pugui fer operacions amb el resultat i no doni error.
+                anterior = 0;
+                numfinal = 0;
+                actual = 0;
             }
         });
 
@@ -380,15 +378,15 @@ public class ActivitatPrincipal extends AppCompatActivity {
             @Override
             public boolean onLongClick(View v) {
                 operand.setText("");
-                signe = ("");
-                primernombre = ("");
-                coma = false;
+                anterior = 0;
+                actual = 0;
+                numfinal = 0;
+                signe = "";
                 return true ;
             }
         });
     }
 
-    // Métodes per a el misatge d'alerta quan es pren el botó enrere.
     public void onBackPressed(){ // Quan pren el botó enrere, executa el métode mostraalerta
         mostraalerta();
     }

@@ -19,6 +19,7 @@
         </activity>
 
         <!--- Activitat del Menú -->
-        <activity android:name=".menuopcions"></activity>
+        <activity android:name=".menuopcions" android:label="@string/about" />
+
     </application>
 </manifest>

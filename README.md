@@ -1,10 +1,6 @@
 # Part pràctica del Treball de recerca
 	 
-## Creació d'una aplicació de Calculadora mitjançant la IDE Android Studio i el llenguatje de programació Java	 
-	 
-## BUGS
-
-	 - [ ] Operacions múltiples (Exemple: 1 + 1 + 2 = )	 
+## Creació d'una aplicació de Calculadora mitjançant la IDE Android Studio i el llenguatje de programació Java
 	 
 ## Afegits vacants: 
 	 
