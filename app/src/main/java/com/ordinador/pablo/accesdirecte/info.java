@@ -6,15 +6,11 @@ import android.content.Intent; // Classe necessària per a iniciar Activitats o 
 import android.support.design.widget.FloatingActionButton; // Classe necessària per a programar el botó flotant
 import android.view.Menu; // Classe necessària en aquest cas per a NO mostrar el menú
 import android.view.View; // Classe necessària per a programar tots els objectes de la interfície d'usuari.
-import android.widget.ShareActionProvider;
 
 public class info extends Activitat_Principal {
 
     // Métode per a no mostrar el menú
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return false;
-    }
+    public boolean onCreateOptionsMenu(Menu menu) { return false; }
 
     // Métode per a iniciar un Intent que mostri el menú compartir.
     // https://developer.android.com/guide/components/intents-filters?hl=es-419
@@ -33,7 +29,6 @@ public class info extends Activitat_Principal {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle(R.string.info);
         setContentView(R.layout.info);
 
         // Floating Action Button

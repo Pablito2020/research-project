@@ -2,14 +2,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ordinador.pablo.accesdirecte">
 
-    <!--- Utilitza el permís d'Apagar i encendre el WiFi-->
+    <!--- Permissos utilitzats per la App -->
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.FLASHLIGHT" />
-    <uses-feature android:name="android.hardware.camera" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
     <uses-feature android:name="android.hardware.camera.flash" />
+
+    <supports-screens
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true"
+        />
 
     <application
         android:allowBackup="true"
@@ -20,20 +25,21 @@
         android:theme="@style/AppTheme"
         android:launchMode="singleTask">
 
-        <activity android:name=".Activitat_Principal">
+        <activity android:name=".Activitat_Principal" android:configChanges="orientation" android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.SEND"/>
                 <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
 
                 <category android:name="android.intent.category.HOME" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="android.intent.action.SEND"/>
             </intent-filter>
         </activity>
 
         <!--- Activitats NO principals ( configuració i informació) -->
-        <activity android:name=".info" />
-        <activity android:name=".configuracio" />
+        <activity android:name=".info" android:label="@string/info" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".configuracio" android:label="@string/configuracio" android:configChanges="orientation" android:screenOrientation="portrait"/>
 
     </application>
 

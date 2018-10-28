@@ -3,6 +3,7 @@ package com.ordinador.pablo.accesdirecte;
 import android.os.Build;
 import android.os.Bundle;
 
+import android.view.Menu;
 import android.view.View; // Classe necessària per a interactuar amb els objectes de la interfície gràfica
 import android.content.Intent; // Classe necessària per a el métode reinicia
 import android.content.SharedPreferences; // Classe necessària per a guardar els nombres
@@ -11,7 +12,6 @@ import android.widget.Spinner; // Classe necessària per a la programació del S
 import android.widget.AdapterView; // Classe necessària per a la vista de el Array del Spinner
 import android.widget.ArrayAdapter; // Classe necessària per a la llista de el Spinner
 import android.widget.Toast; // Classe necessària per als missatges Toast
-import android.support.annotation.RequiresApi; // Classe necessària per a nombrar la API d'Android necessària per a x funció
 
 public class configuracio extends Activitat_Principal {
 
@@ -58,11 +58,13 @@ public class configuracio extends Activitat_Principal {
         Toast.makeText(this,R.string.taronjaaplicat, Toast.LENGTH_LONG).show();
     }
 
+    // Métode per a no mostrar el menú
+    public boolean onCreateOptionsMenu(Menu menu) { return false; }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         cargadades();
         super.onCreate(savedInstanceState);
-        setTitle(R.string.configuracio);
         setContentView(R.layout.configuracio);
 
         // Definim el spinner color
@@ -123,11 +125,14 @@ public class configuracio extends Activitat_Principal {
 
         // Es configura el botó aplicacionspredeterminades
         aplicacionspredeterminades.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.N) // Afegit per Android Studio, demana la API de Android N per a funcionar.
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(android.provider.Settings.ACTION_MANAGE_DEFAULT_APPS_SETTINGS);
-                startActivity(i);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
+                    Intent i = new Intent(android.provider.Settings.ACTION_MANAGE_DEFAULT_APPS_SETTINGS);
+                    startActivity(i);
+                } else {
+                    APIno();
+                }
             }
         });
     }
@@ -136,5 +141,8 @@ public class configuracio extends Activitat_Principal {
     public void reinicia(){
         Intent i = new Intent (this, configuracio.class);
         startActivity(i);
+    }
+    public void APIno(){
+        Toast.makeText(this,R.string.APInoN,Toast.LENGTH_LONG).show();
     }
 }

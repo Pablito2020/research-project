@@ -1,9 +1,7 @@
 package com.ordinador.pablo.accesdirecte;
 
-import android.hardware.camera2.CameraAccessException;
-import android.hardware.camera2.CameraManager;
-import android.hardware.camera2.CaptureRequest;
 import android.support.annotation.RequiresApi;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -29,15 +27,30 @@ import android.net.NetworkInfo; // Classe que describeix l'estat de una interfí
 import android.net.Network; // Classe necessària per al control de la xarxa
 
 import android.provider.MediaStore; // Classe necessària per a executar la app de càmera.
+import android.hardware.camera2.CameraAccessException; // Classe necessària per a saber si un dispositiu ha pogut accedir a CameraManager o no.
+import android.hardware.camera2.CameraManager; // Classe necessària per a detectar, caracteritzar i connectar a dispositius de càmera.
+import android.content.pm.PackageManager; // Classe necessària per a mirar les característiques de el dispositiu
 
 import android.widget.Toast; // Classe necessària per a executar missatges tipus Toast.
 
 import android.provider.Settings; // Classe necessària per a redireccionar a la aplicació configuració.
 import android.os.Build; // Classe necessària per a mirar la API del dispositiu
 
+import android.provider.AlarmClock; // Classe necessaria per a conseguir la aplicacio predeterminada de Alarma
+
 
 
 public class Activitat_Principal extends AppCompatActivity {
+
+    // Variables
+    // Per a la funcionalitat de canvi de Tema
+    public static final String SHARED_PREFS = "sharedPrefs";
+    public static final String TEXT = "text";
+    public int nombre = 0;
+    // Per a la funcionalitat de Llanterna
+    public boolean flash = false;
+    private String mCameraId;
+
 
     // Métode per obrir la Activity Informació de la app
     public void info(){
@@ -51,7 +64,13 @@ public class Activitat_Principal extends AppCompatActivity {
         startActivity(conf);
     }
 
-    // Métode per a fer check de la API de Android Actual ( necessari per a móbils que no tenen la API 28 (Android P))
+    // Métode per a detectar si el dispositiu té la funció de Flash
+    private boolean detectaflash() {
+        flash = this.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH);
+        return flash;
+    }
+
+    // Métode per a obrir el directori (configuració/dades mòbils) (únicament disponible per als dispositius amb la API 28, Android P)
     public void api(){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
             Intent i = new Intent(Settings.ACTION_DATA_USAGE_SETTINGS);
@@ -61,9 +80,6 @@ public class Activitat_Principal extends AppCompatActivity {
             Toast.makeText(this, "Your Android Version doesn't support that feature",Toast.LENGTH_LONG).show();
         }
     }
-
-    // Flashlight
-    private String mCameraId;
 
     // Métode per a mostrar el menú
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -99,9 +115,10 @@ public class Activitat_Principal extends AppCompatActivity {
         startActivity(i);
     }
 
-    // Métode per executar la llanterna
-    public void llanterna(){
-        Toast.makeText(this, "doesn't work for now", Toast.LENGTH_SHORT).show();
+    // Métode per a executar la Alarma
+    public void rellotje(){
+        Intent obrerellotje = new Intent(AlarmClock.ACTION_SET_ALARM);
+        startActivity(obrerellotje);
     }
 
     // Métode per executar el teléfon
@@ -123,14 +140,30 @@ public class Activitat_Principal extends AppCompatActivity {
             startActivity(i);
         }
         else {
-            Toast.makeText(this,"whatsapp isn't installed in your device", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.nowhatsapp, Toast.LENGTH_SHORT).show();
         }
     }
 
-    // Strings per al canvi de color
-    public static final String SHARED_PREFS = "sharedPrefs";
-    public static final String TEXT = "text";
-    public int nombre = 0;
+    // Métode per a executar el navegador (amb la pàgina predefinida google Espanya)
+    public void navegador(){
+        Uri pagweb = Uri.parse("https://google.es");
+        Intent google = new Intent(Intent.ACTION_VIEW, pagweb);
+        startActivity(google);
+    }
+
+    public void config(){
+        Intent i = getPackageManager().getLaunchIntentForPackage("com.android.settings");
+        startActivity(i);
+    }
+
+    public void maps(){
+        Intent i = getPackageManager().getLaunchIntentForPackage("com.google.android.apps.maps");
+        if (i != null){
+            startActivity(i);
+        } else {
+            Toast.makeText(this,"google Maps isn't installed on your device",Toast.LENGTH_LONG).show();
+        }
+    }
 
     // Métode per al canvi de color
     public void cargadades(){
@@ -161,34 +194,33 @@ public class Activitat_Principal extends AppCompatActivity {
             setTheme(R.style.TemaTaronja);
         }
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activitat__principal);
+        setContentView(R.layout.activitat_principal);
 
         // Botons
         Button camera;
         camera = findViewById(R.id.botocamera);
-
         Button galeria;
         galeria = findViewById(R.id.botogaleria);
-
-        Button llanterna;
-        llanterna = findViewById(R.id.botollanterna);
-
+        Button rellotje;
+        rellotje = findViewById(R.id.botoalarma);
         Button trucar;
         trucar = findViewById(R.id.bototrucar);
-
         Button contactes;
         contactes = findViewById(R.id.botocontactes);
-
         Button whatsapp;
         whatsapp = findViewById(R.id.botowhatsapp);
-
         Button datos;
         datos = findViewById(R.id.btdatos);
-
+        Button navegador;
+        navegador = findViewById(R.id.botonavegador);
+        Button config;
+        config = findViewById(R.id.botoconf_android);
+        final Button maps;
+        maps = findViewById(R.id.botomaps);
+        // Toggles
         ToggleButton wifitoggle;
         wifitoggle = findViewById(R.id.togglewifi);
-
-        ToggleButton llanternatoggle;
+        final ToggleButton llanternatoggle;
         llanternatoggle = findViewById(R.id.togglellanterna);
 
 
@@ -202,12 +234,6 @@ public class Activitat_Principal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 galeria();
-            }
-        });
-        llanterna.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                llanterna();
             }
         });
         trucar.setOnClickListener(new View.OnClickListener() {
@@ -228,7 +254,31 @@ public class Activitat_Principal extends AppCompatActivity {
                 whatsapp();
             }
         });
-
+        navegador.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navegador();
+            }
+        });
+        config.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                config();
+            }
+        });
+        maps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                maps();
+            }
+        });
+        // Configura el botó de Dades Mòbils (Redirecciona a configuració/dades movils), únicament disponible per a la API de Android 28 (Android P)
+        datos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                api();
+            }
+        });
 
         // Mira si el dispositiu està ja conectat a la xarxa i el tipus de conexió en que es troba
         final ConnectivityManager connexio = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -238,6 +288,7 @@ public class Activitat_Principal extends AppCompatActivity {
                 wifitoggle.setChecked(true);
             }
         }
+
         // Configura el toggle wifi
         wifitoggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -253,50 +304,64 @@ public class Activitat_Principal extends AppCompatActivity {
             }
         });
 
-        // Configura el botó de Dades Mòbils (Redirecciona a configuració/dades movils), únicament disponible per a la API de Android 28 (Android P)
-        datos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                api();
-            }
-        });
 
-        // Flashlight
-         final CameraManager mCameraManager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
+        // Flash
+         final CameraManager cam = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
          try {
-             mCameraId = mCameraManager.getCameraIdList()[0];
+             mCameraId = cam.getCameraIdList()[0];
          }
          catch (CameraAccessException e){
              e.printStackTrace();
          }
-
         // Configura la llanterna
         llanternatoggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked){
-                    try {
-                        mCameraManager.setTorchMode(mCameraId, true);
-                    } catch (CameraAccessException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else{
-
-                }
+             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+                 if (isChecked){
+                     if (detectaflash()) {
+                         try {
+                             cam.setTorchMode(mCameraId, true);
+                         } catch (CameraAccessException e) {
+                             e.printStackTrace();
+                         }
+                     } else {
+                         noflash();
+                         llanternatoggle.setChecked(false);
+                     }
+                 }else{
+                     if (detectaflash()){
+                         try{
+                             cam.setTorchMode(mCameraId,false);
+                         }catch (CameraAccessException e){
+                             e.printStackTrace();
+                         }
+                     } else {
+                         noflash();
+                         llanternatoggle.setChecked(false);
+                     }
+                 }
+             } else {
+                 noflash();
+             }
             }
         });
 
+         rellotje.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 rellotje();
+             }
+         });
     }
 
-    // Métode per al botó enrere, activa el métode principal
+    public void noflash(){
+        Toast.makeText(this,R.string.noflash, Toast.LENGTH_LONG).show();
+    }
+
+    // Métode per al botó enrere, executa la Activitat Principal
     public void onBackPressed(){
-        principal();
-    }
-
-    // Métode principal ( Inicia la Activitat Principal)
-    public void principal(){
         Intent i = new Intent(this,Activitat_Principal.class);
         startActivity(i);
     }

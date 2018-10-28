@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Colors elegits gràcies a la pàgina web material.io, feta per els disenyadors de google -->
+    <!-- link de Material.io: https://material.io/develop/ -->
+
     <!-- Color de la App de Série ( Rosa )-->
-    <color name="colorPrimary">#EC407A</color>
-    <color name="colorPrimaryDark">#D81B60</color>
-    <color name="colorAccent">#00BFA5</color>
+    <color name="colorPrimary">#d81b60</color>
+    <color name="colorPrimaryDark">#a00037</color>
+    <color name="colorAccent">#ff5c8d</color>
 
     <!-- Color de la App Blau -->
     <color name="colorPrimaryBlau">#3F51B5</color>
@@ -12,23 +15,23 @@
     <color name="colorAccentBlau">#8C9EFF</color>
 
     <!-- Color de la App fosc (negre-gris) -->
-    <color name="colorPrimaryGris">#9E9E9E</color>
-    <color name="colorPrimaryDarkGris">#616161</color>
-    <color name="colorAccentGris">#444444</color>
+    <color name="colorPrimaryGris">#393939</color>
+    <color name="colorPrimaryDarkGris">#2f2f2f</color>
+    <color name="colorAccentGris">#52b7f8</color>
 
     <!-- Color de la App cyan -->
-    <color name="colorPrimaryCyan">#00ACC1</color>
-    <color name="colorPrimaryDarkCyan">#0097A7</color>
-    <color name="colorAccentCyan">#00E5FF</color>
+    <color name="colorPrimaryCyan">#006064</color>
+    <color name="colorPrimaryDarkCyan">#00363a</color>
+    <color name="colorAccentCyan">#428e92</color>
 
     <!-- Color de la App verd -->
-    <color name="colorPrimaryVerd">#26A69A</color>
-    <color name="colorPrimaryDarkVerd">#00897B</color>
-    <color name="colorAccentVerd">#00BFA5</color>
+    <color name="colorPrimaryVerd">#64dd17</color>
+    <color name="colorPrimaryDarkVerd">#1faa00</color>
+    <color name="colorAccentVerd">#9cff57</color>
 
     <!-- Color de la App Taronja -->
-    <color name="colorPrimaryTaronja">#FF7043</color>
-    <color name="colorPrimaryDarkTaronja">#F4511E</color>
-    <color name="colorAccentTaronja">#FF6E40</color>
+    <color name="colorPrimaryTaronja">#f44336</color>
+    <color name="colorPrimaryDarkTaronja">#ba000d</color>
+    <color name="colorAccentTaronja">#ff7961</color>
 
 </resources>

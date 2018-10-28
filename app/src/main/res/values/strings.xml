@@ -3,17 +3,33 @@
     <!-- Nom de la App -->
     <string name="app_name">ShortCuts</string>
 
+    <!--                                     STRINGS PER AL LAYOUT I ACTIVITY PRINCIPAL                                  -->
     <!-- Strings per als botons -->
     <string name="camara">Camera</string>
     <string name="galeria">Gallery</string>
-    <string name="llanterna">Lantern</string>
+    <string name="alarma">Alarm</string>
     <string name="contactes">Contacts</string>
     <string name="trucar">Call</string>
     <string name="whatsapp">WhatsApp</string>
+    <string name="navegador">Browser</string>
+    <string name="config.android">Settings</string>
+    <string name="maps">Maps</string>
+
 
     <!-- Strings per al Menú -->
     <string name="configuracio">Settings</string>
     <string name="info">About the app</string>
+
+    <!-- Strings per a les textview -->
+    <string name="wifi">WiFi</string>
+    <string name="flash">Torch</string>
+    <!-- Avisos de informació -->
+
+    <string name="nowhatsapp">WhatsApp isn\'t installed on your device</string>
+    <string name="noflash">Can\'t access to the device FlashLight</string>
+
+
+    <!--                                     STRINGS PER AL LAYOUT I ACTIVITY CONFIGURACIÓ                                  -->
 
     <!-- Strings per a info -->
     <string name="informacio">About the app</string>
@@ -30,7 +46,7 @@
     <string name="verd">green</string>
     <string name="taronja">orange</string>
 
-    <!-- Strings per a configuració del color -->
+    <!-- Strings per a el botó i textview de aplicació predeterminada -->
     <string name="aplicaciopredeterminada">Choose the default home app</string>
     <string name="click">click here</string>
 
@@ -42,6 +58,12 @@
     <string name="verdaplicat">App Theme has been changed to Green!</string>
     <string name="taronjaaplicat">App theme has been changed to Orange!</string>
 
+    <!-- Strings per al missatge del Toast que indica que la versió de Android no soporta la funció -->
+    <string name="APInoN">App theme has been changed to Orange!</string>
+
+
+
+    <!--                                     STRINGS PER AL LAYOUT I ACTIVITY INFORMACIÓ DE LA APP                              -->
     <!-- Strings per al missatge de compartir la app-->
     <string name="comparteixamb">Share the app using: </string>
     <string name="titol">Share my app</string>

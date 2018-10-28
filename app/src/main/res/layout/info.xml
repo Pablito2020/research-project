@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="139dp"
+        android:layout_marginTop="176dp"
         android:gravity="center"
         android:text="@string/informacio" />
 
@@ -22,7 +22,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="193dp"
+        android:layout_marginTop="217dp"
+        android:gravity="center"
         android:text="@string/infoimportant" />
 
     <android.support.design.widget.FloatingActionButton
@@ -30,10 +31,27 @@
         android:layout_width="68dp"
         android:layout_height="61dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="38dp"
-        android:layout_marginEnd="31dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
         android:clickable="true"
         app:srcCompat="@android:drawable/ic_menu_share" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="123dp"
+        android:layout_marginStart="68dp"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/button2"
+        android:layout_toEndOf="@+id/aboutapp"
+        android:text="Button" />
 
 </RelativeLayout>
