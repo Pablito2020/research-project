@@ -3,31 +3,71 @@
     <!-- Nom de la App -->
     <string name="app_name">Dreceres</string>
 
+    <!--                                     STRINGS PER AL LAYOUT I ACTIVITY PRINCIPAL                                  -->
     <!-- Strings per als botons -->
     <string name="camara">Càmera</string>
     <string name="galeria">Galeria</string>
-    <string name="llanterna">Llanterna</string>
+    <string name="alarma">Alarma</string>
     <string name="contactes">Contactes</string>
     <string name="trucar">Trucades</string>
     <string name="whatsapp">WhatsApp</string>
+    <string name="navegador">Navegador</string>
+    <string name="config.android">Configuració</string>
+    <string name="maps">Mapes</string>
+
 
     <!-- Strings per al Menú -->
     <string name="configuracio">Configuració</string>
     <string name="info">Sobre la App</string>
 
+    <!-- Strings per a les textview -->
+    <string name="wifi">WiFi</string>
+    <string name="flash">Llanterna</string>
+
+    <!-- Avisos de informació -->
+    <string name="nowhatsapp">La aplicació Whatsapp no està instalada en aquest dispositiu</string>
+    <string name="noflash">No es possible accedir a el Flash del dispositiu</string>
+
+
+    <!--                                     STRINGS PER AL LAYOUT I ACTIVITY CONFIGURACIÓ                                  -->
+
     <!-- Strings per a info -->
     <string name="informacio">Sobre l\'aplicació</string>
     <string name="infoimportant">Aquesta aplicació ha estat desenvolupada per Pablo Fraile Alonso per al treball
         de Recerca. Tota la informació i treball es troben sota la llicència GNU, de manera que si es vol utilitzar
-        quelcom d'aquest treball, es tingui en conte la llicència.</string>
+        quelcom d'aquest treball, es tingui en conte en compte els paràmetres de la llicència.</string>
 
-    <!-- Strings per a configuració -->
+    <!-- Strings per a configuració del color -->
     <string name="colorprincipal">Color principal de l\'aplicació </string>
+    <string name="tria">Trií el color principal</string>
     <string name="rosa">Rosa</string>
     <string name="blau">Blau</string>
     <string name="gris">Gris</string>
     <string name="cyan">Cyan</string>
     <string name="verd">Verd</string>
     <string name="taronja">Taronja</string>
+
+    <!-- Strings per a el botó i textview de aplicació predeterminada -->
+    <string name="aplicaciopredeterminada">Aplicació de escritori per defecte</string>
+    <string name="click">Clica aquí</string>
+
+    <!-- Strings per al missatge del Toast de configuració -->
+    <string name="rosaaplicat">El tema de la aplicació ha canviat a Rosa!</string>
+    <string name="blauaplicat">El tema de la aplicació ha canviat a Blau!</string>
+    <string name="grisaplicat">El tema de la aplicació ha canviat a Gris!</string>
+    <string name="cyanaplicat">El tema de la aplicació ha canviat a Cian!</string>
+    <string name="verdaplicat">El tema de la aplicació ha canviat a Verd!</string>
+    <string name="taronjaaplicat">El tema de la aplicació ha canviat a Taronja!</string>
+
+    <!-- Strings per al missatge del Toast que indica que la versió de Android no soporta la funció -->
+    <string name="APInoN">La versió d\'Android del dipositiu no soporta aquesta funció</string>
+
+
+
+    <!--                                     STRINGS PER AL LAYOUT I ACTIVITY INFORMACIÓ DE LA APP                              -->
+    <!-- Strings per al missatge de compartir la app-->
+    <string name="comparteixamb">Compartir la aplicació amb: </string>
+    <string name="titol">Comparteix la App</string>
+    <string name="cos">Siusplau,descarga la aplicació "ShortCuts", es molt útil! </string>
 
 </resources>

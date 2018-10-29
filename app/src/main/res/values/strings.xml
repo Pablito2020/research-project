@@ -15,7 +15,6 @@
     <string name="config.android">Settings</string>
     <string name="maps">Maps</string>
 
-
     <!-- Strings per al Menú -->
     <string name="configuracio">Settings</string>
     <string name="info">About the app</string>
@@ -59,7 +58,7 @@
     <string name="taronjaaplicat">App theme has been changed to Orange!</string>
 
     <!-- Strings per al missatge del Toast que indica que la versió de Android no soporta la funció -->
-    <string name="APInoN">App theme has been changed to Orange!</string>
+    <string name="APInoN">Your Android Version doesn\'t support that feature</string>
 
 
 

@@ -38,6 +38,9 @@ import android.os.Build; // Classe necessària per a mirar la API del dispositiu
 
 import android.provider.AlarmClock; // Classe necessaria per a conseguir la aplicacio predeterminada de Alarma
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 
 public class Activitat_Principal extends AppCompatActivity {
@@ -171,6 +174,7 @@ public class Activitat_Principal extends AppCompatActivity {
         nombre = sharedPreferences.getInt(TEXT,0);
     }
 
+    private AdView mAdView;
     // Métode principal
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -195,6 +199,11 @@ public class Activitat_Principal extends AppCompatActivity {
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activitat_principal);
+
+        MobileAds.initialize(this,"ca-app-pub-8364082387419453~4975312786");
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         // Botons
         Button camera;

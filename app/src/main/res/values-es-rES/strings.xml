@@ -3,17 +3,32 @@
     <!-- Nom de la App -->
     <string name="app_name">Atajos</string>
 
+    <!--                                     STRINGS PER AL LAYOUT I ACTIVITY PRINCIPAL                                  -->
     <!-- Strings per als botons -->
     <string name="camara">Cámara</string>
     <string name="galeria">Galería</string>
-    <string name="llanterna">Linterna</string>
+    <string name="alarma">Alarma</string>
     <string name="contactes">Contactos</string>
     <string name="trucar">Llamar</string>
     <string name="whatsapp">WhatsApp</string>
+    <string name="navegador">Navegador</string>
+    <string name="config.android">Ajustes</string>
+    <string name="maps">Mapas</string>
 
     <!-- Strings per al Menú -->
     <string name="configuracio">Ajustes</string>
     <string name="info">Sobre la App</string>
+
+    <!-- Strings per a les textview -->
+    <string name="wifi">WiFi</string>
+    <string name="flash">Linterna</string>
+    <!-- Avisos de informació -->
+
+    <string name="nowhatsapp">WhatsApp no está instalado en su dispositivo</string>
+    <string name="noflash">No se puede acceder a la linterna</string>
+
+
+    <!--                                     STRINGS PER AL LAYOUT I ACTIVITY CONFIGURACIÓ                                  -->
 
     <!-- Strings per a info -->
     <string name="informacio">Sobre la aplicación</string>
@@ -22,13 +37,37 @@
         así que si usted quiere usar o modificar alguno de los parámetros del trabajo,
         sea consciente de este hecho.</string>
 
-    <!-- Strings per a configuració -->
-    <string name="colorprincipal">Color principal de la app</string>
-    <string name="rosa">Rosa</string>
-    <string name="blau">Azul</string>
-    <string name="gris">Gris</string>
-    <string name="cyan">Cyan</string>
-    <string name="verd">Verde</string>
-    <string name="taronja">Naranja</string>
+    <!-- Strings per a configuració del color -->
+    <string name="colorprincipal">Color principal de la App</string>
+    <string name="tria">Elija el color principal</string>
+    <string name="rosa">rosa</string>
+    <string name="blau">azul</string>
+    <string name="gris">gris</string>
+    <string name="cyan">cian</string>
+    <string name="verd">verde</string>
+    <string name="taronja">naranja</string>
+
+    <!-- Strings per a el botó i textview de aplicació predeterminada -->
+    <string name="aplicaciopredeterminada">Elija la aplicación de escritorio predeterminada</string>
+    <string name="click">Clic aquí</string>
+
+    <!-- Strings per al missatge del Toast de configuració -->
+    <string name="rosaaplicat">¡El tema de la app ha cambiado a Rosa!</string>
+    <string name="blauaplicat">¡El tema de la app ha cambiado a Azul!</string>
+    <string name="grisaplicat">¡El tema de la app ha cambiado a Gris!</string>
+    <string name="cyanaplicat">¡El tema de la app ha cambiado a Cian!</string>
+    <string name="verdaplicat">¡El tema de la app ha cambiado a Verde!</string>
+    <string name="taronjaaplicat">¡El tema de la app ha cambiado a Naranja!</string>
+
+    <!-- Strings per al missatge del Toast que indica que la versió de Android no soporta la funció -->
+    <string name="APInoN">La versión de Android del dispositivo no soporta esta función</string>
+
+
+
+    <!--                                     STRINGS PER AL LAYOUT I ACTIVITY INFORMACIÓ DE LA APP                              -->
+    <!-- Strings per al missatge de compartir la app-->
+    <string name="comparteixamb">Comparta la aplicación usando: </string>
+    <string name="titol">Comparta mi App</string>
+    <string name="cos">Por favor, descarga la aplicación Atajos, ¡es muy útil!</string>
 
 </resources>
