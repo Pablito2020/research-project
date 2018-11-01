@@ -178,6 +178,7 @@ public class Activitat_Principal extends AppCompatActivity {
     // Métode principal
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         cargadades(); // Carga el métode SharedPreferences
         if (nombre == 1){
             setTheme(R.style.AppTheme);

@@ -153,15 +153,18 @@
             android:layout_column="2"
             android:layout_row="4" />
 
+
     </GridLayout>
 
-    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-8364082387419453/8228162085"></com.google.android.gms.ads.AdView>
+        ads:adUnitId="ca-app-pub-8364082387419453/8228162085">
+    </com.google.android.gms.ads.AdView>
 
 </RelativeLayout>
