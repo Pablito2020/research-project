@@ -11,10 +11,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="291dp"
         android:gravity="center"
-        android:textColor="?attr/textcolor"
-        android:text="@string/aboutapp" />
+        android:text="@string/aboutapp"
+        android:textColor="?attr/textcolor" />
 
     <TextView
         android:id="@+id/importantinfo"
@@ -22,16 +23,15 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="217dp"
-        android:textColor="?attr/textcolor"
-        android:text="@string/importantinfo" />
+        android:layout_marginTop="235dp"
+        android:text="@string/importantinfo"
+        android:textColor="?attr/textcolor" />
 
     <Button
         android:id="@+id/botogithub"
         android:layout_width="126dp"
         android:layout_height="133dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="36dp"
+        android:layout_alignTop="@+id/botognu"
         android:layout_toStartOf="@+id/importantinfo"
         android:drawableBottom="@drawable/githublogo" />
 
@@ -40,7 +40,7 @@
         android:layout_width="126dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="62dp"
+        android:layout_marginBottom="89dp"
         android:layout_toEndOf="@+id/importantinfo"
         android:backgroundTint="?attr/colorControlHighlight"
         android:drawableBottom="@drawable/gnugpl" />

@@ -2,6 +2,10 @@
 	 
 ## Creació d'una aplicació de Calculadora mitjançant la IDE Android Studio i el llenguatje de programació Java
 	 
+	 
+## Link de la Aplicació de la Google Play Store:
+https://play.google.com/store/apps/details?id=com.ordinador.pablo.calculadora
+
 ## Afegits vacants: 
 	 
 	 - [ ] Strings en Francés.
