@@ -13,7 +13,15 @@ import android.widget.AdapterView; // Classe necessària per a la vista de el Ar
 import android.widget.ArrayAdapter; // Classe necessària per a la llista de el Spinner
 import android.widget.Toast; // Classe necessària per als missatges Toast
 
-public class configuracio extends Activitat_Principal {
+// Classes Importades per la llibrería: com.anjlab.android.iab.v3:library:1.0.44
+import com.anjlab.android.iab.v3.BillingProcessor;
+import com.anjlab.android.iab.v3.TransactionDetails;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+
+public class configuracio extends Activitat_Principal implements BillingProcessor.IBillingHandler {
+
+    BillingProcessor bp;
 
     public void guardadadesrosa(){
         final SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
@@ -61,11 +69,15 @@ public class configuracio extends Activitat_Principal {
     // Métode per a no mostrar el menú
     public boolean onCreateOptionsMenu(Menu menu) { return false; }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         cargadades();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.configuracio);
+
+        // Definim la clau per a el pagament dintre de la app
+        bp = new BillingProcessor(this, null, this);
 
         // Definim el spinner color
         Spinner color;
@@ -74,6 +86,9 @@ public class configuracio extends Activitat_Principal {
         // Botó per a anar a les aplicacions predeterminades
         Button aplicacionspredeterminades;
         aplicacionspredeterminades = findViewById(R.id.button);
+
+        Button adds;
+        adds = findViewById(R.id.adds);
 
         // Configurem el spinner, la Array (llista que apareixerà i que es farà en cada cas)
         // https://developer.android.com/guide/topics/ui/controls/spinner?hl=es-419
@@ -135,6 +150,21 @@ public class configuracio extends Activitat_Principal {
                 }
             }
         });
+
+        if (noanuncis){
+            adds.setEnabled(false);
+        }
+
+        adds.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (playstore()){
+                    bp.purchase(configuracio.this,"android.premium.comprat");
+                } else {
+                    finish();
+                }
+            }
+        });
     }
 
     // Métode necessari per a reiniciar la Activity
@@ -144,5 +174,58 @@ public class configuracio extends Activitat_Principal {
     }
     public void APIno(){
         Toast.makeText(this,R.string.APInoN,Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onProductPurchased(@NonNull String productId, @Nullable TransactionDetails details) {
+        final SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        final SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean(COMPRA,true);
+        editor.apply();
+        Toast.makeText(this,"Versió Completa Comprada!", Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onPurchaseHistoryRestored() {
+        final SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        final SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean(COMPRA,false);
+        editor.apply();
+    }
+
+    @Override
+    public void onBillingError(int errorCode, @Nullable Throwable error) {
+    }
+
+    @Override
+    public void onBillingInitialized() {
+        final SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        final SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean(COMPRA,false);
+        editor.apply();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (!bp.handleActivityResult(requestCode, resultCode, data)) {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
+    public boolean playstore(){
+        boolean playstore = BillingProcessor.isIabServiceAvailable(this);
+        boolean si = true;
+        if (!playstore){
+            si = false;
+        }
+        return(si);
+    }
+
+    @Override
+    public void onDestroy(){
+        if(bp != null){
+            bp.release();
+        }
+        super.onDestroy();
     }
 }

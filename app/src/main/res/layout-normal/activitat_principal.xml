@@ -2,24 +2,27 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity = "center"
     tools:context=".Activitat_Principal">
+
 
     <GridLayout
         android:id="@+id/gridLayout"
-        android:layout_width="335dp"
-        android:layout_height="510dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentTop="true"
+
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
         android:layout_marginBottom="0dp"
         android:layout_marginTop="1dp"
         android:columnCount="3"
+        android:rowCount="5"
         android:orientation="horizontal"
-        android:padding="0dp"
-        android:rowCount="5">
+        android:padding="0dp">
 
         <Button
             android:id="@+id/botocamera"
@@ -166,5 +169,6 @@
         ads:adSize="BANNER"
         ads:adUnitId="ca-app-pub-8364082387419453/8228162085">
     </com.google.android.gms.ads.AdView>
+
 
 </RelativeLayout>

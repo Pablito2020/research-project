@@ -6,39 +6,30 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.view.View; // Classe necessària per a els elements d'interfície d'usuari
-
 import android.content.Intent; // Classe necessària per a executar tasques
 import android.content.Context; // Classe necessària per a saber el contexte de la app
-
 import android.net.Uri; // Classe necessària per obrir la galeria
 import android.content.SharedPreferences; // Classe necessària per a guardar els paràmetres del canvi de color,
-
 import android.view.Menu; // Classe necessària per a dir que hi ha un menú
 import android.view.MenuInflater; // Classe necessària per a dir quin es l'arxiu xml del menú.
 import android.view.MenuItem; // Classe necessària per a programar la funció dels diferents ítems del xml menú
-
 import android.widget.Button; // Classe necessària per als botons
 import android.widget.ToggleButton; // Classe Necessària per a controlar els botons tipus toggle
 import android.widget.CompoundButton; // Classe necessària per a controlar un botó amb dos estats (encés o no encés) com per exemple el Toggle Button
-
 import android.net.wifi.WifiManager; // Classe necessària per a controlar el wifi de el SmartPhone
 import android.net.ConnectivityManager; // Classe que respon a consultes sobre l'estat de la connectivitat de xarxa
 import android.net.NetworkInfo; // Classe que describeix l'estat de una interfície de xarxa
 import android.net.Network; // Classe necessària per al control de la xarxa
-
 import android.provider.MediaStore; // Classe necessària per a executar la app de càmera.
 import android.hardware.camera2.CameraAccessException; // Classe necessària per a saber si un dispositiu ha pogut accedir a CameraManager o no.
 import android.hardware.camera2.CameraManager; // Classe necessària per a detectar, caracteritzar i connectar a dispositius de càmera.
 import android.content.pm.PackageManager; // Classe necessària per a mirar les característiques de el dispositiu
-
 import android.widget.Toast; // Classe necessària per a executar missatges tipus Toast.
-
 import android.provider.Settings; // Classe necessària per a redireccionar a la aplicació configuració.
 import android.os.Build; // Classe necessària per a mirar la API del dispositiu
-
 import android.provider.AlarmClock; // Classe necessaria per a conseguir la aplicacio predeterminada de Alarma
 
-import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdRequest; // Classe Necessària per a donar la ordre d'un anunci
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 
@@ -50,6 +41,9 @@ public class Activitat_Principal extends AppCompatActivity {
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String TEXT = "text";
     public int nombre = 0;
+    // Per a la funcionalitat de elimina anuncis
+    public static final String COMPRA = "compra";
+    public boolean noanuncis = false;
     // Per a la funcionalitat de Llanterna
     public boolean flash = false;
     private String mCameraId;
@@ -173,13 +167,17 @@ public class Activitat_Principal extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
         nombre = sharedPreferences.getInt(TEXT,0);
     }
+    public void cargaanuncis(){
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+        noanuncis = sharedPreferences.getBoolean(COMPRA,false);
+    }
 
     private AdView mAdView;
     // Métode principal
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        cargadades(); // Carga el métode SharedPreferences
+        cargadades(); // Carga el métode per a cargar les dades dels colors
         if (nombre == 1){
             setTheme(R.style.AppTheme);
         }
@@ -201,10 +199,13 @@ public class Activitat_Principal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activitat_principal);
 
-        MobileAds.initialize(this,"ca-app-pub-8364082387419453~4975312786");
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+        cargaanuncis();// Carga el métode per a cargar els anuncis
+        if (!noanuncis){
+            MobileAds.initialize(this,"ca-app-pub-8364082387419453~4975312786");
+            mAdView = findViewById(R.id.adView);
+            AdRequest adRequest = new AdRequest.Builder().build();
+            mAdView.loadAd(adRequest);
+        }
 
         // Botons
         Button camera;

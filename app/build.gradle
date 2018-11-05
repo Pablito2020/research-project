@@ -29,5 +29,7 @@ dependencies {
     //noinspection GradleCompatible
     implementation 'com.android.support:design:27.0.0'
     implementation'com.google.android.gms:play-services-ads:17.0.0'
-
+    //noinspection GradleCompatible
+    implementation 'com.android.support:gridlayout-v7:27.0.0'
+    implementation 'com.anjlab.android.iab.v3:library:1.0.44'
 }
