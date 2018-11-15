@@ -42,4 +42,18 @@
         <item name="colorAccent">@color/colorAccentTaronja</item>
     </style>
 
+    <!-- Fons Blanc  -->
+    <style name="FonsBlanc">
+        <item name="colorfons">@color/colorfonsblanc</item>
+        <item name="colorboto">@color/colorbotoblanc</item>
+        <item name="colortext">@color/colortextnegre</item>
+    </style>
+
+    <!-- Fons negre  -->
+    <style name="FonsNegre" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorfons">@color/colorfonsnegre</item>
+        <item name="colorboto">@color/colorbotonegre</item>
+        <item name="colortext">@color/colortextblanc</item>
+    </style>
+
 </resources>

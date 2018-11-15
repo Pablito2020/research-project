@@ -6,6 +6,8 @@ import android.content.Intent; // Classe necessària per a iniciar Activitats o 
 import android.support.design.widget.FloatingActionButton; // Classe necessària per a programar el botó flotant
 import android.view.Menu; // Classe necessària en aquest cas per a NO mostrar el menú
 import android.view.View; // Classe necessària per a programar tots els objectes de la interfície d'usuari.
+import android.widget.Button;
+import android.net.Uri;
 
 public class info extends Activitat_Principal {
 
@@ -17,9 +19,11 @@ public class info extends Activitat_Principal {
     public void share(){
         Intent i = new Intent(Intent.ACTION_SEND);
         i.setType("text/plain");
-        String titol = getResources().getString(R.string.titol);
-        String cos = getResources().getString(R.string.cos);
-        String comparteixamb = getResources().getString(R.string.comparteixamb); // Si s'utilitza String title = R.string.comparteixamb; falla, ja que retorna int
+
+        String titol = getString(R.string.titol);
+        String cos = getString(R.string.cos);
+        String comparteixamb = getString(R.string.comparteixamb);
+
         i.putExtra(Intent.EXTRA_SUBJECT, titol);
         i.putExtra(Intent.EXTRA_TEXT, cos);
         startActivity(Intent.createChooser(i, comparteixamb));
@@ -33,13 +37,38 @@ public class info extends Activitat_Principal {
 
         // Floating Action Button
         // https://developer.android.com/guide/topics/ui/floating-action-button
-        final FloatingActionButton compartir;
+        FloatingActionButton compartir;
         compartir = findViewById(R.id.botoflotant);
+
+        Button github;
+        github = findViewById(R.id.botogithub);
+
+        Button llicencia;
+        llicencia = findViewById(R.id.botognu);
+
 
         compartir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 share();
+            }
+        });
+
+        github.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri pagweb = Uri.parse("https://github.com/Pablito2020/Treball-de-Recerca");
+                Intent githubweb = new Intent(Intent.ACTION_VIEW, pagweb);
+                startActivity(githubweb);
+            }
+        });
+
+        llicencia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri pagweb = Uri.parse("https://raw.githubusercontent.com/Pablito2020/Treball-de-Recerca/master/LICENSE");
+                Intent gnu = new Intent(Intent.ACTION_VIEW, pagweb);
+                startActivity(gnu);
             }
         });
 

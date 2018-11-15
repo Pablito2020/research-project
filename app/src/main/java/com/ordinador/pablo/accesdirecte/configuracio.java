@@ -3,7 +3,7 @@ package com.ordinador.pablo.accesdirecte;
 import android.os.Build;
 import android.os.Bundle;
 
-import android.view.Menu;
+import android.view.Menu; // Classe necessària per a eliminar el menú
 import android.view.View; // Classe necessària per a interactuar amb els objectes de la interfície gràfica
 import android.content.Intent; // Classe necessària per a el métode reinicia
 import android.content.SharedPreferences; // Classe necessària per a guardar els nombres
@@ -69,17 +69,15 @@ public class configuracio extends Activitat_Principal implements BillingProcesso
     // Métode per a no mostrar el menú
     public boolean onCreateOptionsMenu(Menu menu) { return false; }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        cargadades();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.configuracio);
 
-        // Definim la clau per a el pagament dintre de la app
-        bp = new BillingProcessor(this, null, this);
+        // Definim la clau otorgada per el google play console per a el pagament dintre de la app
+        bp = new BillingProcessor(this, "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAps0SU8yTv+EVikISbvgTuVmVexI2v/TPlEuOjFIffo//p5JarP8qE6EBEjnhaFlRj+L/iAqoV5uDTRoD7cF3RHdplbrO9ebYEWEU/9jISdZlwXjc2OCTkJeuIXIDaP07yeY+iU+lSd7rFOjeP5hf639Q4O1ED57c8Kr6XA0nCPoBfhYtWIMIRkOqj2TJs+xF1E17350AGlPY/ZkqyKrGGkWjlTZcOr62SZ7agoVUcxk5f4Rfgd0Dbvxlaw3l5BT9VJ62e5HlzlqoeR8grC7+uiBRS5LqgQwDuXtKUk732KWUblsDmwSFTjrFl8L7re9WXwwxjK73Y/+dUVIfuHJ2OwIDAQAB", this);
 
-        // Definim el spinner color
+        // Spinner per a el color
         Spinner color;
         color = findViewById(R.id.spinercolor);
 
@@ -87,6 +85,7 @@ public class configuracio extends Activitat_Principal implements BillingProcesso
         Button aplicacionspredeterminades;
         aplicacionspredeterminades = findViewById(R.id.button);
 
+        // Botó per a eliminar els anuncis mitjançant un pagament
         Button adds;
         adds = findViewById(R.id.adds);
 
@@ -134,11 +133,10 @@ public class configuracio extends Activitat_Principal implements BillingProcesso
                 }
             }
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
+            public void onNothingSelected(AdapterView<?> parent) {}
         });
 
-        // Es configura el botó aplicacionspredeterminades
+        // Es configura el botó aplicacionspredeterminades ( Mirant primer el SDK del dispositiu)
         aplicacionspredeterminades.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -146,45 +144,40 @@ public class configuracio extends Activitat_Principal implements BillingProcesso
                     Intent i = new Intent(android.provider.Settings.ACTION_MANAGE_DEFAULT_APPS_SETTINGS);
                     startActivity(i);
                 } else {
-                    APIno();
+                    Toast.makeText(configuracio.this,R.string.APInoN,Toast.LENGTH_LONG).show();
                 }
             }
         });
 
-        if (noanuncis){
-            adds.setEnabled(false);
-        }
-
+        // Configura el botó compra la versió completa
+        if (noanuncis){ adds.setEnabled(false);} // Si ja està comprada la versió completa, deshabilita el botó
         adds.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (playstore()){
                     bp.purchase(configuracio.this,"android.premium.comprat");
                 } else {
-                    finish();
+                    Toast.makeText(configuracio.this,R.string.noplaystore,Toast.LENGTH_LONG).show();
                 }
             }
         });
     }
 
-    // Métode necessari per a reiniciar la Activity
+    // Reinicia la classe configuració
     public void reinicia(){
         Intent i = new Intent (this, configuracio.class);
         startActivity(i);
     }
-    public void APIno(){
-        Toast.makeText(this,R.string.APInoN,Toast.LENGTH_LONG).show();
-    }
 
+    // Inici de métodes implementats per el package "BillingProcessor.IBillingHandler"
     @Override
     public void onProductPurchased(@NonNull String productId, @Nullable TransactionDetails details) {
         final SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         final SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean(COMPRA,true);
         editor.apply();
-        Toast.makeText(this,"Versió Completa Comprada!", Toast.LENGTH_LONG).show();
+        Toast.makeText(this,R.string.comprat, Toast.LENGTH_LONG).show();
     }
-
     @Override
     public void onPurchaseHistoryRestored() {
         final SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
@@ -192,11 +185,13 @@ public class configuracio extends Activitat_Principal implements BillingProcesso
         editor.putBoolean(COMPRA,false);
         editor.apply();
     }
-
     @Override
     public void onBillingError(int errorCode, @Nullable Throwable error) {
+        final SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        final SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean(COMPRA,false);
+        editor.apply();
     }
-
     @Override
     public void onBillingInitialized() {
         final SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
@@ -204,14 +199,20 @@ public class configuracio extends Activitat_Principal implements BillingProcesso
         editor.putBoolean(COMPRA,false);
         editor.apply();
     }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (!bp.handleActivityResult(requestCode, resultCode, data)) {
             super.onActivityResult(requestCode, resultCode, data);
         }
     }
-
+    @Override
+    public void onDestroy(){
+        if(bp != null){
+            bp.release();
+        }
+        super.onDestroy();
+    }
+    // Métode per a saber si el móvil té l'accés a la playstore (opcional, no afegit per el package)
     public boolean playstore(){
         boolean playstore = BillingProcessor.isIabServiceAvailable(this);
         boolean si = true;
@@ -220,12 +221,6 @@ public class configuracio extends Activitat_Principal implements BillingProcesso
         }
         return(si);
     }
+    // Finalització de els métodes utilitzant el package: " BillingProcessor.IBillingHandler"
 
-    @Override
-    public void onDestroy(){
-        if(bp != null){
-            bp.release();
-        }
-        super.onDestroy();
-    }
 }

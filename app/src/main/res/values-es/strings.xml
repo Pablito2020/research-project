@@ -12,8 +12,9 @@
     <string name="trucar">Llamar</string>
     <string name="whatsapp">WhatsApp</string>
     <string name="navegador">Navegador</string>
-    <string name="config.android">Ajustes</string>
+    <string name="configandroid">Ajustes</string>
     <string name="maps">Mapas</string>
+    <string name="datos">Datos</string>
 
     <!-- Strings per al Menú -->
     <string name="configuracio">Ajustes</string>
@@ -59,9 +60,14 @@
     <string name="verdaplicat">¡El tema de la app ha cambiado a Verde!</string>
     <string name="taronjaaplicat">¡El tema de la app ha cambiado a Naranja!</string>
 
+    <!-- Strings per als TOAST de pagament dintre de la app -->
+    <string name="noanuncis">Elimina los anuncios dentro de la app</string>
+    <string name="botonoanuncis">Eliminar</string>
+    <string name="noplaystore">La aplicación Google PlayStore no está instalada en su dispositivo.. </string>
+    <string name="comprat"> ¡Versión sin anuncios desbloqueada! </string>
+
     <!-- Strings per al missatge del Toast que indica que la versió de Android no soporta la funció -->
     <string name="APInoN">La versión de Android del dispositivo no soporta esta función</string>
-
 
 
     <!--                                     STRINGS PER AL LAYOUT I ACTIVITY INFORMACIÓ DE LA APP                              -->

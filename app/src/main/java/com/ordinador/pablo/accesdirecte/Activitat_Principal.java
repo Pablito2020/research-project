@@ -1,10 +1,12 @@
 package com.ordinador.pablo.accesdirecte;
 
-import android.support.annotation.RequiresApi;
-
-import android.support.v7.app.AppCompatActivity;
+import android.icu.util.Calendar;
 import android.os.Bundle;
 
+import android.support.v7.app.AppCompatActivity;
+import android.support.annotation.RequiresApi;
+import android.text.style.BackgroundColorSpan;
+import android.util.TypedValue;
 import android.view.View; // Classe necessària per a els elements d'interfície d'usuari
 import android.content.Intent; // Classe necessària per a executar tasques
 import android.content.Context; // Classe necessària per a saber el contexte de la app
@@ -14,6 +16,7 @@ import android.view.Menu; // Classe necessària per a dir que hi ha un menú
 import android.view.MenuInflater; // Classe necessària per a dir quin es l'arxiu xml del menú.
 import android.view.MenuItem; // Classe necessària per a programar la funció dels diferents ítems del xml menú
 import android.widget.Button; // Classe necessària per als botons
+import android.widget.RelativeLayout;
 import android.widget.ToggleButton; // Classe Necessària per a controlar els botons tipus toggle
 import android.widget.CompoundButton; // Classe necessària per a controlar un botó amb dos estats (encés o no encés) com per exemple el Toggle Button
 import android.net.wifi.WifiManager; // Classe necessària per a controlar el wifi de el SmartPhone
@@ -108,8 +111,13 @@ public class Activitat_Principal extends AppCompatActivity {
 
     // Métode per a executar la galería
     public void galeria(){
-        Intent i = new Intent (Intent.ACTION_VIEW, Uri.parse("content://media/internal/images/media"));
-        startActivity(i);
+        //Intent i = new Intent (Intent.ACTION_VIEW, Uri.parse("content://media/internal/images/media"));
+        //startActivity(i);
+        Intent galeria = new Intent();
+        galeria.setAction(Intent.ACTION_VIEW); // Intent de veure
+        galeria.setType("image/*"); // MIME imatge
+        galeria.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(galeria);
     }
 
     // Métode per a executar la Alarma
@@ -163,21 +171,9 @@ public class Activitat_Principal extends AppCompatActivity {
     }
 
     // Métode per al canvi de color
-    public void cargadades(){
+    public void cargatema(){
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
         nombre = sharedPreferences.getInt(TEXT,0);
-    }
-    public void cargaanuncis(){
-        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
-        noanuncis = sharedPreferences.getBoolean(COMPRA,false);
-    }
-
-    private AdView mAdView;
-    // Métode principal
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-
-        cargadades(); // Carga el métode per a cargar les dades dels colors
         if (nombre == 1){
             setTheme(R.style.AppTheme);
         }
@@ -196,13 +192,50 @@ public class Activitat_Principal extends AppCompatActivity {
         if (nombre == 6){
             setTheme(R.style.TemaTaronja);
         }
+    }
+
+    public void cargaanuncis(){
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+        noanuncis = sharedPreferences.getBoolean(COMPRA,false);
+    }
+
+    public void obscurautomatic(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
+            Calendar hora = Calendar.getInstance();
+            int HORA = hora.get(Calendar.HOUR_OF_DAY);
+            if (HORA <= 6){
+                setTheme(R.style.FonsNegre);
+            } else if (HORA >= 22) {
+                setTheme(R.style.FonsNegre);
+            }else{
+                setTheme(R.style.FonsBlanc);
+            }
+        }
+    }
+
+    // Métode principal
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        cargatema(); //Mira el color principal de la app (carga abans de que es mostri el layout)
+        //obscurautomatic();  // Mira si l'hora del dispositiu està entre les 22:00 i les 6:00. Si es així activa el mode obscur
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
+            Calendar hora = Calendar.getInstance();
+            int HORA = hora.get(Calendar.HOUR_OF_DAY);
+            if (HORA <= 6){
+                setTheme(R.style.FonsNegre);
+            } else if (HORA >= 22) {
+                setTheme(R.style.FonsNegre);
+            }else{
+                setTheme(R.style.FonsBlanc);
+            }
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activitat_principal);
 
         cargaanuncis();// Carga el métode per a cargar els anuncis
         if (!noanuncis){
             MobileAds.initialize(this,"ca-app-pub-8364082387419453~4975312786");
-            mAdView = findViewById(R.id.adView);
+            AdView mAdView = findViewById(R.id.adView);
             AdRequest adRequest = new AdRequest.Builder().build();
             mAdView.loadAd(adRequest);
         }
@@ -299,7 +332,6 @@ public class Activitat_Principal extends AppCompatActivity {
                 wifitoggle.setChecked(true);
             }
         }
-
         // Configura el toggle wifi
         wifitoggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override

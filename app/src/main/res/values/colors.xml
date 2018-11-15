@@ -34,4 +34,14 @@
     <color name="colorPrimaryDarkTaronja">#ba000d</color>
     <color name="colorAccentTaronja">#ff7961</color>
 
+    <!-- Tema Obscur i blanc -->
+    <color name="colorfonsblanc">#ffffff</color>
+    <color name="colorbotoblanc">#f2f2f2</color>
+    <color name="colortextnegre">#111111</color>
+
+    <color name="colorfonsnegre">#333333</color>
+    <color name="colorbotonegre">#444444</color>
+    <color name="colortextblanc">#ffffff</color>
+
+
 </resources>
