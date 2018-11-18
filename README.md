@@ -2,13 +2,8 @@
 	 
 ## Creació d'una aplicació d'Accessos directes mitjançant el llenguatge de programació Java i la IDE Android Studio
 	 
-## Coses per fer:
-
-	 - [ ] Afegir noves opcions a la activity principal i arreglar la funció llanterna
-	 
-	 - [ ] Arreglar la activity info
-	 
-	 - [ ] Remodelar la activity opcions
+## Link de l'aplicació a la Google Play Store:
+https://play.google.com/store/apps/details?id=com.ordinador.pablo.accesdirecte
 	 
 	 
 ## Imatges del projecte ( están subjectes a canvis )
@@ -22,8 +17,6 @@
 ![Captura 4](/imatges/imatge4.jpg)
 
 ![Captura 5](/imatges/imatge5.jpg)
-
-![Captura 6](/imatges/imatge6.jpg)
 
 
 
