@@ -6,11 +6,6 @@
 ## Link de la Aplicació de la Google Play Store:
 https://play.google.com/store/apps/details?id=com.ordinador.pablo.calculadora
 
-## Afegits vacants: 
-	 
-	 - [ ] Strings en Francés.
-	 - [ ] Strings en Alemany
-	 - [ ] Strings en Portugués	
 	 
 ## Imatges del projecte 
 
