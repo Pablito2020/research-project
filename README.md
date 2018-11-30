@@ -7,6 +7,9 @@ Aquest TdR tractarà de l'aplicació del llenguatge de programació Java en les 
 
 ## Part Teòrica:
 
+- [ ] Introducció
+- [x] Abstract
+
 ## 1. Introducció al llenguatge de programació:
 - [x] 1.1 Definició de programar
 - [x] 1.2 Definició de programa.
@@ -39,29 +42,39 @@ Aquest TdR tractarà de l'aplicació del llenguatge de programació Java en les 
 ## 4. Android Studio:
 - [x] 4.1 Introducció a Android Studio
 - [X] 4.2 Android SDK
+- [X] 4.3 Gradle
+- [X] 4.4 El procés de Compilació
 
 ## 5 Java Adaptat a Android:
 - [x] Funcionament d'Android
-- [ ] ART i el seu funcionament
-- [ ] Recursos d'uan app Android
-- [ ] Manifest d'una app Android
-- [ ] Permissos d'una app Android
-- [ ] Compatibilitat gràfica
+- [x] ART i el seu funcionament
+- [x] Fonaments de la creació d'una aplicació Android
+- [x] Recursos de l'aplicació
+- [x] Recurs Layout
+
+## 6 Calculadora
+- [x] Creació del projecte
+- [x] Explicació de la interfície gràfica
+- [x] Explicació de les classes
+- [x] Explicació del codi font
+- [x] Procediment de penjar l'aplicació a la Google Play
+
+## 7 Dreceres
+- [x] Creació del projecte
+- [x] Explicació de la interfície gràfica
+- [x] Explicació de les classes
+- [ ] Explicació del codi font
+- [ ] Procediment de penjar l'aplicació a la Google Play
+
+
+- [ ] Conclusions
 
 ## Part Pràctica :
 
-- [ ] Creació d'una aplicació de Calculadora:
+## Calculadora
 
-     - [ ] Codi Font
-	 
-	      - [x] Funcionament correcte
-		  
-		  - [ ] Senzill i amb anotacions
-	 
-	 - [ ] UI ( Interfície d'usuari)
-	 
-	 - [ ] UI API ( APIS per a l'interfície d'usuari) no tenen que veure amb funcionalitat, sinò amb estètica 
+https://github.com/Pablito2020/Treball-de-Recerca/tree/calculadora
 
-	 - [ ] Afegida la GNU llicence
+## Dreceres
 
-- [ ] Aplicació 2 ( sense elecció encara) 
+https://github.com/Pablito2020/Treball-de-Recerca/tree/acces-directe
