@@ -4,15 +4,15 @@
     <string name="app_name">Calculadora</string>
     <string name="launcher">Calculadora</string>
     <string name="modenocturn">Mode Nocturn</string>
-    <string name="about">Sobre la aplicació</string>
+    <string name="about">Sobre l\'aplicació</string>
 
     <!-- Strings de layout sobre la app -->
     <string name="importantinfo">Estimat Usuari: </string>
-    <string name="aboutapp"> Aquesta aplicació ha estat desenvolupada per Pablo Fraile Alonso com a part pràctica del Treball de Recerca. Tota la teoria i la part pràctica es troba sota la Llicència GNU, així que si vosté vol utilitzar els continguts o millorar-los, tingui aquest factor en compte. </string>
+    <string name="aboutapp"> Aquesta aplicació ha estat desenvolupada per l\'alumne Pablo Fraile Alonso com a part pràctica del Treball de Recerca. Tota la teoria i la part pràctica es troba sota la Llicència GNU, així que si vosté vol utilitzar els continguts o millorar-los, tingui present aquest factor. </string>
 
     <!-- Strings sobre el missatge de l'alerta al presionar el botó enrere al activity principal -->
     <string name="titolalerta"> Estàs segur?</string>
-    <string name="missatgealerta"> Vols tancar la app? </string>
+    <string name="missatgealerta"> Vols tancar l\'aplicació? </string>
     <string name="respostasi"> Sí </string>
     <string name="respostano"> No </string>
 

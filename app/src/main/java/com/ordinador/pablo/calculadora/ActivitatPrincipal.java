@@ -309,8 +309,14 @@ public class ActivitatPrincipal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String input = operand.getText().toString();
-                input = input.substring(0,operand.length()-1); // https://developer.android.com/reference/android/widget/TextView
-                operand.setText(input);
+                if(input.equals("")){
+                    Context context = getApplicationContext();
+                    int duracio = Toast.LENGTH_SHORT;
+                    Toast.makeText(context, "", duracio).show();
+                } else {
+                    input = input.substring(0,operand.length()-1); // https://developer.android.com/reference/android/widget/TextView
+                    operand.setText(input);
+                }
             }
         });
 
