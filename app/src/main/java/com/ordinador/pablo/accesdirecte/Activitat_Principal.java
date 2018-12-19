@@ -5,8 +5,6 @@ import android.os.Bundle;
 
 import android.support.v7.app.AppCompatActivity;
 import android.support.annotation.RequiresApi;
-import android.text.style.BackgroundColorSpan;
-import android.util.TypedValue;
 import android.view.View; // Classe necessària per a els elements d'interfície d'usuari
 import android.content.Intent; // Classe necessària per a executar tasques
 import android.content.Context; // Classe necessària per a saber el contexte de la app
@@ -16,7 +14,6 @@ import android.view.Menu; // Classe necessària per a dir que hi ha un menú
 import android.view.MenuInflater; // Classe necessària per a dir quin es l'arxiu xml del menú.
 import android.view.MenuItem; // Classe necessària per a programar la funció dels diferents ítems del xml menú
 import android.widget.Button; // Classe necessària per als botons
-import android.widget.RelativeLayout;
 import android.widget.ToggleButton; // Classe Necessària per a controlar els botons tipus toggle
 import android.widget.CompoundButton; // Classe necessària per a controlar un botó amb dos estats (encés o no encés) com per exemple el Toggle Button
 import android.net.wifi.WifiManager; // Classe necessària per a controlar el wifi de el SmartPhone

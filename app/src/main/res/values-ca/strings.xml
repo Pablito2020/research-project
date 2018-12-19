@@ -18,7 +18,7 @@
 
         <!-- Strings per al Menú -->
         <string name="configuracio">Configuració</string>
-        <string name="info">Sobre la App</string>
+        <string name="info">Sobre l\'aplicació</string>
 
         <!-- Strings per a les textview -->
         <string name="wifi">WiFi</string>
@@ -33,7 +33,7 @@
 
         <!-- Strings per a info -->
         <string name="informacio">Sobre l\'aplicació</string>
-        <string name="infoimportant">Aquesta App ha estat desenvolupada per Pablo Fraile Alonso per al Treball de Recerca. Tota la informació i treball es troben
+        <string name="infoimportant">Aquesta App ha estat desenvolupada per l\'alumne Pablo Fraile Alonso per al Treball de Recerca. Tota la informació i treball es troben
         sota la llicència GNU, de manera que si es vol utilitzar quelcom d\'aquest treball, es tingui en compte els paràmetres especificats en la llicència</string>
 
 
@@ -63,15 +63,15 @@
         <string name="APInoN">La versió d\'Android del dispositiu no soporta aquesta funció </string>
 
         <!-- Strings per als TOAST de pagament dintre de la app -->
-        <string name="noanuncis">Elimina el anunci de la pantalla principal</string>
+        <string name="noanuncis">Elimina l\'anunci de la pantalla principal</string>
         <string name="botonoanuncis">Eliminar</string>
         <string name="noplaystore">L\'aplicació GooglePlaystore no està instalada en el seu dispositiu</string>
-        <string name="comprat"> Add-Free version unlocked! </string>
+        <string name="comprat"> Versió sense anuncis desbloquejada! </string>
 
         <!--                                     STRINGS PER AL LAYOUT I ACTIVITY INFORMACIÓ DE LA APP                              -->
         <!-- Strings per al missatge de compartir la app-->
-        <string name="comparteixamb">Compartir la aplicació amb: </string>
+        <string name="comparteixamb">Compartir l\'aplicació amb: </string>
         <string name="titol">Comparteix la App</string>
-        <string name="cos">Siusplau,descarga la aplicació "ShortCuts", es molt útil!</string>
+        <string name="cos">Siusplau,descàrrega l\'aplicació "Dreceres": https://play.google.com/store/apps/details?id=com.ordinador.pablo.accesdirecte </string>
 
 </resources>

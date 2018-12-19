@@ -155,7 +155,7 @@ public class configuracio extends Activitat_Principal implements BillingProcesso
             @Override
             public void onClick(View v) {
                 if (playstore()){
-                    bp.purchase(configuracio.this,"android.premium.comprat");
+                    bp.purchase(configuracio.this,"com.shortcuts.noanuncis");
                 } else {
                     Toast.makeText(configuracio.this,R.string.noplaystore,Toast.LENGTH_LONG).show();
                 }

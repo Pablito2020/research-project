@@ -33,7 +33,7 @@
 
     <!-- Strings per a info -->
     <string name="informacio">Sobre la aplicación</string>
-    <string name="infoimportant">Esta aplicación ha sido desarrollada por Pablo Fraile Alonso para el trabajo
+    <string name="infoimportant">Esta aplicación ha sido desarrollada por el alumno Pablo Fraile Alonso para el trabajo
         de investigación de Bachiller. Todo el trabajo e información recopilados están bajo la Licencia GNU,
         así que si usted quiere usar o modificar alguno de los parámetros del trabajo,
         sea consciente de este hecho.</string>
@@ -74,6 +74,6 @@
     <!-- Strings per al missatge de compartir la app-->
     <string name="comparteixamb">Comparta la aplicación usando: </string>
     <string name="titol">Comparta mi App</string>
-    <string name="cos">Por favor, descarga la aplicación Atajos, ¡es muy útil!</string>
+    <string name="cos">Por favor, descarga la aplicación Atajos: https://play.google.com/store/apps/details?id=com.ordinador.pablo.accesdirecte </string>
 
 </resources>
